@@ -155,6 +155,33 @@ p {
 	transform: scale(.85);
 	margin-top: .8vw;
 }
+#logoANNFRO {
+	fill: var(--white)
+}
+
+#logo1 {
+	stroke-dasharray: 143;
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 1s;
+}
+
+svg:hover #logo1 {
+	stroke-dasharray: 143;
+	stroke-dashoffset: 143;
+	transition: stroke-dashoffset 1s;
+}
+
+#logo2 {
+	stroke-dasharray: 149;
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 1s;
+}
+
+svg:hover #logo2 {
+	stroke-dasharray: 149;
+	stroke-dashoffset: 149;
+	transition: stroke-dashoffset 1s;
+}
 
 .header_nav-mobile {
 	grid-column: 3 / 4;
@@ -170,9 +197,6 @@ p {
 	letter-spacing: -0.05em;
 	text-transform: uppercase;
 	height: 53px;
-/* 	background-image: url('../img/menu-hover.svg');
-	background-repeat: no-repeat;
-	background-position: center; */
 }
 
 #menuButton svg {
@@ -391,8 +415,6 @@ svg:hover #SMbuttonSVG {
 	stroke-dashoffset: 908;
 	transition: stroke-dashoffset 1s;
 }
-
-
 
 .main_Works {
 	display: block;
