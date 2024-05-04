@@ -106,20 +106,6 @@ p {
 	font-weight: 100;
 }
 
-/* .bg {
-	position: absolute;
-  	width: 500px;
-  	height: 500px;
-  	display: flex;
-  	justify-content: center;
-  	align-items: center;
-	height: 180px;
-	width: 180px;
-	border-radius: 100%;
-	fill: linear-gradient(169deg, #cde052 0%, #cae055 100%);
-	filter: blur(267px);
-	z-index: -5; 
-} */
 
 #header {
   font-size: 16px;
