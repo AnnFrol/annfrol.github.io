@@ -1,7 +1,7 @@
 
 @media screen and (min-width: 600px) { 
 	.header_logo {
-		transform: none;
+		transform: scale(1.2);
 	}
 	.header_nav-desktop {
 		display: flex;
