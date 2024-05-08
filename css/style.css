@@ -9,7 +9,7 @@
 	--bluegreen: #35C8BF;
 	--lightred: #FFA1A1;
 	--black: #000;
-	--black-active: #00000080;
+	--black-active: #2A2A2A;
 	--gradient-background: radial-gradient(at 0% 30%, #cde052, transparent);
 	--background-radial-gradient: radial-gradient(at 0% 30%, rgb(205, 224, 82) 10px, rgba(205, 224, 82, 1),);
 	--gradient:  linear-gradient(51deg, rgba(255,161,161,1) 0%, rgba(237,209,205,1) 41%, rgba(205,224,82,1) 100%);
@@ -91,7 +91,7 @@ height="clamp(180px, 40vw, 340px)" width="clamp(180px, 40vw, 340px)" filter="blu
 .main_button:active {
 	color: var(--white-active);
 }
-.main_button:hover {
+.button:hover {
 	color: var(--white-active);
 	transition: .03s linear;
 }
@@ -223,7 +223,7 @@ svg:hover #logo2 {
 	background: var(--black);
 	border-radius: 30px;
 	width: 236px;
-	height: 386px;
+	height: 400px;
 	overflow: auto;
 	right: 32px;
 	top: 87px;
@@ -258,7 +258,7 @@ svg:hover #logo2 {
 }
 
 .sidebar {
-	margin-top: 112px;
+	margin-top: 120px;
 	
 }
 
@@ -271,8 +271,7 @@ svg:hover #logo2 {
 
 .sidebar_link {
 	display: block;
-	padding: 8px;
-	margin: 8px;
+	margin: 12px;
 	background-repeat: no-repeat;
 }
 
@@ -440,10 +439,10 @@ svg:hover #SMbuttonSVG {
 	animation: runAnimation 5s linear infinite;
 }
 .runSERVICES img {
-	animation: runAnimation 8s linear infinite;
+	animation: runAnimation 7s linear infinite;
 }
 .runCONTACT img {
-	animation: runAnimation 7s linear infinite;
+	animation: runAnimation 8s linear infinite;
 }
 
 @keyframes runAnimation {
@@ -647,8 +646,18 @@ svg:hover #SMbuttonSVG {
 
 .footerBall_Button :hover {
 	color: var(--black-active);
-	
+	transition: .03s linear;
 }
+.sidebar_item svg {
+	fill: var(--white);
+	transition: .03s linear;
+}
+
+.sidebar_item svg:hover {
+	fill: var(--white-active);
+	transition: .03s linear;
+}
+	
 .footerBall {
 	cursor: pointer;
 	display: flex;
