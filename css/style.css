@@ -388,7 +388,7 @@ h1::before {
 	display: flex;
 	position: absolute;
 	margin-left: calc(50% - 94px);
-	top: 76vh;
+	top: 74vh;
 	color: var(--white);
 	justify-content: center;
 }
