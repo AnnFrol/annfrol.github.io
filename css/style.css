@@ -21,6 +21,7 @@
 }
 
 body {
+	color: var(--background);
 	display: flex;
 	font-weight: 200;
 	font-style: normal;
@@ -33,7 +34,7 @@ body {
 	z-index: -25;
 	overflow: hidden;
 	width: 100%;
-	height: 1000px;
+	height: 1200px;
 }
 .bg-contact {
 	position: absolute;
@@ -55,12 +56,13 @@ body {
 	margin-bottom: 30vh;
 
 }
-/* #bg-three {
-	height: clamp(180px, 40vw, 340px);width: clamp(180px, 40vw, 340px);
-	margin-top: 410vh;
-	margin-left: calc(50% - 90px);
-} 
-height="clamp(180px, 40vw, 340px)" width="clamp(180px, 40vw, 340px)" filter="blur(clamp(60px, 20vw, 120px))" xmlns="http://www.w3.org/2000/svg">*/
+#bg-desktop-four {
+	position: absolute;
+	display: none;
+	margin-top: 60vh;
+	margin-left: 20vw;
+	z-index: -22;
+}
 
 #bg-four {
 	height: 120px;
@@ -75,14 +77,14 @@ height="clamp(180px, 40vw, 340px)" width="clamp(180px, 40vw, 340px)" filter="blu
 }
 #bg-desktop-two {
 	display: none;
-	margin-top: 40vh;
+	margin-top: 48vh;
 	margin-left: -20vh;
 	position: absolute;
 	z-index: -20;
 }
 #bg-desktop-three {
 	display: none;
-	margin-top: 34vh;
+	margin-top: 48vh;
 	margin-left: 90vw;
 	position: absolute;
 	z-index: -21;
@@ -130,22 +132,38 @@ p {
 }
 
 .header_languag a {
+	position: relative;
 	padding-bottom: 10px;
-	padding-left: 3px;
-	padding-right: 3px;
+	padding-left: 4px;
+	padding-right: 4px;
 	height: 53px;
 	align-items: center;
 }
-
-.header_languag a.active {
-	background: url('../img/lang.svg') no-repeat;
-	background-position: 50% 70%;
+#lang-svg-En, #lang-svg-Es{
+	position: absolute;
+	top: 18px;
+	left: 1px;
+	stroke-dasharray: 70;
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 0.3s;
 }
 
-.rectangle {
-	height: 11.2px;
-	width: 3.78px;
-	background-color: var(--white);
+a:hover #lang-svg-En, a:hover #lang-svg-Es{
+	stroke-dasharray: 70;
+	stroke-dashoffset: 70;
+	transition: stroke-dashoffset 0.3s;
+}
+
+.default-lang svg{
+	display: none;
+}
+
+.header_languag a:hover {
+	color: var(--white-active);
+}
+.default-cursor {
+	cursor: default;
+	display: inline;
 }
 
 .header_logo {
@@ -180,6 +198,45 @@ svg:hover #logo2 {
 	stroke-dasharray: 149;
 	stroke-dashoffset: 149;
 	transition: stroke-dashoffset 1s;
+}
+.header_nav-desktop {
+	display: none;
+	justify-content: flex-end;
+	grid-column: 3 / 4;
+	gap: 8px;
+}
+
+.header_nav-desktop a {
+	display: flex;
+	position: relative;
+	padding-left: 12px;
+	padding-right: 12px;
+	margin-right: 4px;
+	height: 100%;
+}
+
+.header_nav-desktop-svg  {
+	position: absolute;
+	top: 4px;
+	left: 0px;
+}
+
+#nav-desktop-svg {
+	stroke-dasharray: 450;
+	stroke-dashoffset: 450;
+	transition: stroke-dashoffset .6s;
+}
+a:hover #nav-desktop-svg {
+	stroke-dashoffset: 0;
+}
+
+#nav-desktop-svg-about {
+	stroke-dasharray: 295;
+	stroke-dashoffset: 295;
+	transition: stroke-dashoffset .6s;
+}
+a:hover #nav-desktop-svg-about {
+	stroke-dashoffset: 0;
 }
 
 .header_nav-mobile {
@@ -275,23 +332,6 @@ svg:hover #logo2 {
 	background-repeat: no-repeat;
 }
 
-.header_nav-desktop {
-	display: none;
-	justify-content: flex-end;
-	grid-column: 3 / 4;
-	gap: 24px;
-}
-
-.header_nav-desktop a{
-	display: flex;
-	margin-right: 4px;
-	height: 100%;
-}
-
-.header_nav-desktop:hover a:hover {
-	background-color: #CDE052;
-	color: #000;
-}
 
 .main_One {
 	height: 100vh; 
@@ -430,7 +470,7 @@ svg:hover #SMbuttonSVG {
 }
 
 .main_run img {
-	height: 14vh;
+	height: 8.5rem;
 	max-height: 200px;
 	max-width: none;
 }
@@ -493,23 +533,23 @@ svg:hover #SMbuttonSVG {
 
 .project-category {
 	padding-top: 10px;
-	margin-left: 75px;
+	margin-left: 20vw;
 }
 @keyframes moveInCircle { 
  0% {
-		transform: translateX(20px) translateY(0); /* начальное положение */
+		transform: translateX(30px) translateY(0); /* начальное положение */
 	}
 	25% {
-		transform: translateX(0) translateY(20px); /* положение после 25% анимации */
+		transform: translateX(0) translateY(30px); /* положение после 25% анимации */
 	}
 	50% {
-		transform: translateX(-20px) translateY(0); /* положение после 50% анимации */
+		transform: translateX(-30px) translateY(0); /* положение после 50% анимации */
 	}
 	75% {
-		transform: translateX(0) translateY(-20px); /* положение после 75% анимации */
+		transform: translateX(0) translateY(-30px); /* положение после 75% анимации */
 	}
 	100% {
-		transform: translateX(20px) translateY(0); /* конечное положение */
+		transform: translateX(30px) translateY(0); /* конечное положение */
 	}
 
 }
@@ -518,7 +558,7 @@ svg:hover #SMbuttonSVG {
 .project-description {
 	position: relative;
 	margin-top: 48px;
-	margin-left: 75px;
+	margin-left: 20vw;
 }
 .oneProject-SVGone {
 	position: absolute;
@@ -546,10 +586,9 @@ svg:hover #SMbuttonSVG {
 }
 	
 .projectButton {
-	transform: scale(80%);
 	margin-top: 24px;
 	cursor: pointer;
-	margin-left: 60px;
+	margin-left: 20vw;
 }
 
 .projectButtonTWO {
