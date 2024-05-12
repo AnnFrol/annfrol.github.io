@@ -131,6 +131,10 @@ p {
 	grid-column: 1 / 2;
 }
 
+.active-lang {
+	cursor: default;
+}
+
 .header_languag a {
 	position: relative;
 	padding-bottom: 10px;
@@ -139,28 +143,24 @@ p {
 	height: 53px;
 	align-items: center;
 }
-#lang-svg-En, #lang-svg-Es{
+
+.active-lang > #lang-svg-En, #lang-svg-Es {
 	position: absolute;
 	top: 18px;
 	left: 1px;
-	stroke-dasharray: 70;
+}
+
+.default-lang > #lang-svg-En, #lang-svg-Es { 
+	stroke-dasharray: 71;
+	stroke-dashoffset: 71;
+	transition: stroke-dashoffset .3s;
+}
+
+.default-lang:hover > #lang-svg-En,
+.default-lang:hover > #lang-svg-Es {
 	stroke-dashoffset: 0;
-	transition: stroke-dashoffset 0.3s;
 }
 
-a:hover #lang-svg-En, a:hover #lang-svg-Es{
-	stroke-dasharray: 70;
-	stroke-dashoffset: 70;
-	transition: stroke-dashoffset 0.3s;
-}
-
-.default-lang svg{
-	display: none;
-}
-
-.header_languag a:hover {
-	color: var(--white-active);
-}
 .default-cursor {
 	cursor: default;
 	display: inline;
