@@ -10,9 +10,9 @@
 	  display: none;
 	}
 	.main_game {
-		transform: scale(.8);
-		margin-left: -30vw;
-		margin-top: -10vw;
+		min-width: 800px;
+		margin-left: 4vw;
+		margin-top: -25vh;
 	}
 	#bg-desktop-one {
 		display: initial;
@@ -90,17 +90,13 @@
 
 @media screen and (min-width: 1200px) {
 	.main_game {
-		transform: none;
-		margin-left: auto;
-		margin-top: 6vw;
+		margin-left: 0;
+		margin-top: -4vh;
 	}
-	
 	.main_home-title {
-		margin-top: 140px;
-		padding-left: 5vw;
+		margin-top: 20vh;
+		padding-left: 6vw;
 		text-align: left;
-		width: 100%;
-		position: relative;
 	}
 	h1 {
 		font-size: 11.5vw;

@@ -336,16 +336,18 @@ a:hover #nav-desktop-svg-about {
 .game {
 	display: flex;
 	position: absolute;
-	overflow-x: hidden;
 	width: 100%;
-	height: 100%;
+	height: 80%;
 	z-index: 13;
+	overflow: hidden;
 }
 
 .main_game {
-	transform: scale(.6);
-	margin-left: -58vw;
-	margin-top: -20vw;
+	width: 100%;
+/* 	max-width: 2443px; */
+	min-width: 800px;
+	margin-left: -28vw;
+	margin-top: -36vh;
 }
 
 h1  {
