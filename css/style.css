@@ -284,7 +284,7 @@ a:hover #nav-desktop-svg-about {
 	overflow: auto;
 	right: 32px;
 	top: 87px;
-	z-index: 3;
+	z-index: 30;
 }	
 
 .menu {
@@ -333,31 +333,19 @@ a:hover #nav-desktop-svg-about {
 }
 
 
-
-.main_One {
-	height: 100vh; 
-}
-
 .game {
+	display: flex;
 	position: absolute;
-	top: 10vh;
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+	z-index: 13;
 }
 
 .main_game {
-	transform: scale(.6)
-}
-
-#main_gameRacquet {
-	position: relative;
-	z-index: 2;
-	left: -10vw;
-}
-
-.main_gameBalls {
-	position: absolute;
-	margin-left: -82vw;
-	margin-top: -396px;
-	z-index: 3;
+	transform: scale(.6);
+	margin-left: -58vw;
+	margin-top: -20vw;
 }
 
 h1  {
@@ -390,6 +378,10 @@ h4 {
 	font-size: clamp(.8rem, 1.2vw, 1rem);
 	font-weight: 200;
 	letter-spacing: .08em;
+}
+
+.main_One {
+	height: 100vh;
 }
 
 .main_home-title {

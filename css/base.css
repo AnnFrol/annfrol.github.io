@@ -10,17 +10,9 @@
 	  display: none;
 	}
 	.main_game {
-		transform: scale(76%);
-	}
-	#main_gameRacquet {
-		left: 15.5vw;
-	}
-	.main_gameBalls {
-		margin-left: 0;
-		margin-top: -396px;
-	}
-	.game {
-		top: 28vh;
+		transform: scale(.8);
+		margin-left: -30vw;
+		margin-top: -10vw;
 	}
 	#bg-desktop-one {
 		display: initial;
@@ -97,6 +89,12 @@
 }
 
 @media screen and (min-width: 1200px) {
+	.main_game {
+		transform: none;
+		margin-left: auto;
+		margin-top: 6vw;
+	}
+	
 	.main_home-title {
 		margin-top: 140px;
 		padding-left: 5vw;
