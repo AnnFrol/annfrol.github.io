@@ -333,23 +333,31 @@ a:hover #nav-desktop-svg-about {
 }
 
 
+
 .main_One {
 	height: 100vh; 
 }
 
-.main_game {
+.game {
 	position: absolute;
-	top: 11vh;
-	left: 5vw;
-	transform: scale(60%);
-	z-index: 1;
+	top: 10vh;
 }
 
-.main_gameBall {
+.main_game {
+	transform: scale(.6)
+}
+
+#main_gameRacquet {
+	position: relative;
+	z-index: 2;
+	left: -10vw;
+}
+
+.main_gameBalls {
 	position: absolute;
-	top: 24vh;
-	right: 5vw;
-	z-index: 1;
+	margin-left: -82vw;
+	margin-top: -396px;
+	z-index: 3;
 }
 
 h1  {
@@ -385,11 +393,11 @@ h4 {
 }
 
 .main_home-title {
-	position: absolute;
+	position: relative;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	width: 100%;
-	padding-top: 20vh;
+	padding-top: 23vh;
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--white);
@@ -419,7 +427,7 @@ h1::before {
 	width: 30vw;
 	max-width: 174px;
 	left: 60vw;
-	top: 48vh;
+	top: 44vh;
 }
 
 .main_button{

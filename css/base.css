@@ -10,9 +10,17 @@
 	  display: none;
 	}
 	.main_game {
-		top: 18vw;
-		left: 16vw;
 		transform: scale(76%);
+	}
+	#main_gameRacquet {
+		left: 15.5vw;
+	}
+	.main_gameBalls {
+		margin-left: 0;
+		margin-top: -396px;
+	}
+	.game {
+		top: 28vh;
 	}
 	#bg-desktop-one {
 		display: initial;
@@ -41,9 +49,6 @@
 	.footerBallSVG {
 		transform: scale(120%);
 		margin-top: -66px;	
-	}
-	.main_gameBall {
-		transform: scale(120%);
 	}
 	.services_list {
 		font-size: 116px;
@@ -92,11 +97,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-	.main_game {
-		top: 32vh;
-		left: 16vw;
-		transform: none;
-	}
 	.main_home-title {
 		margin-top: 140px;
 		padding-left: 5vw;
@@ -117,11 +117,8 @@
 		top: 20vh;
 		left: 68vw;
 	}
-	.main_gameBall {
-		transform: scale(140%);
-		top: 40vh;
-		right: auto;
-		left: 32vw;
+	.main_game {
+		transform: none;
 	}
 	.bg_main_Button {
 		display: none;
