@@ -422,6 +422,16 @@ h1::before {
 	left: 60vw;
 	top: 44vh;
 }
+.mephoto img {
+	position: relative;
+}
+
+.mephoto svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 
 .main_button{
 	cursor: pointer;
