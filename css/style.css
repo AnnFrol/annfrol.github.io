@@ -21,6 +21,7 @@
 }
 
 body {
+	padding-top: env(safe-area-inset-top);
 	color: var(--background);
 	display: flex;
 	font-weight: 200;
