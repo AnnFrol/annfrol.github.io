@@ -504,12 +504,14 @@ svg:hover #SMbuttonSVG {
 		transform: translateX(-100%); 
 	}
 }
-
+.sliderProject {
+	overflow: hidden;
+}
 .project {
 	padding-top: 40px;
 	flex-shrink: 0;
 	filter: blur(6px);
-	
+	overflow: hidden;
 }
 .project-categoryIMG {
 	display: none;
