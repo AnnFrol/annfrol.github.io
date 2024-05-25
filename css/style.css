@@ -21,7 +21,6 @@
 }
 
 body {
-	padding-top: env(safe-area-inset-top);
 	color: var(--background);
 	display: flex;
 	font-weight: 200;
@@ -35,8 +34,16 @@ body {
 	z-index: -25;
 	overflow: hidden;
 	width: 100%;
-	height: 1200px;
+	height: 1560px;
 }
+.bg-services {
+	position: absolute;
+	z-index: -25;
+	overflow: hidden;
+	width: 100%;
+	height: 1000px;
+}
+
 .bg-contact {
 	position: absolute;
 	z-index: -25;
@@ -368,8 +375,8 @@ h2 {
 
 h3 {
 	color: var(--white);
-	font-size: clamp(.91rem, 1.2vw, 2rem);
-	font-weight: 200;
+	font-size: clamp(.91rem, 1.4vw, 2rem);
+	font-weight: 100;
 	letter-spacing: .04em;
 	line-height: 154%;
 }
@@ -383,13 +390,14 @@ h4 {
 
 .main_One {
 	height: 100vh;
+	overflow: hidden;
 }
 
 .main_home-title {
 	position: relative;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	width: 100%;
+	width: 100vw;
 	padding-top: 23vh;
 	text-align: center;
 	text-transform: uppercase;
@@ -468,9 +476,7 @@ svg:hover #SMbuttonSVG {
 .main_Works {
 	display: block;
 }
-.runWORKS {
-	padding-top: 16vh;
-}
+
 .main_run {
 	white-space: nowrap;
 	overflow-x: hidden;
@@ -504,10 +510,16 @@ svg:hover #SMbuttonSVG {
 		transform: translateX(-100%); 
 	}
 }
-.sliderProject {
-	overflow: hidden;
+
+.projectCover {
+	width: 100%;
+	display: grid;
+	grid-template-rows: 1fr;
 }
-.project {
+.swiper-slide {
+	width: 100%;
+	height: auto;
+	position: relative;
 	padding-top: 40px;
 	flex-shrink: 0;
 	filter: blur(6px);
@@ -534,20 +546,25 @@ svg:hover #SMbuttonSVG {
 	display: block;
 	overflow: hidden; */
 
-.project.active {
+.swiper-slide.active {
   filter: none;
 }
-
-.project img {
+.swiper-slide img {
 	width: 324px;
 	height: auto;
 	left: -8px;
 }
-
 .project-category {
 	padding-top: 10px;
 	margin-left: 20vw;
 }
+.fire {
+	position: absolute;
+	top: 10px;
+	left: -60px;
+	z-index: -4;
+}
+
 @keyframes moveInCircle { 
  0% {
 		transform: translateX(30px) translateY(0); /* начальное положение */
@@ -567,31 +584,25 @@ svg:hover #SMbuttonSVG {
 
 }
 
-
 .project-description {
 	position: relative;
 	margin-top: 48px;
 	margin-left: 20vw;
 }
 .oneProject-SVGone {
+	width: 5em;
 	position: absolute;
-	margin-left: 12.5em;
+	margin-top: -1.4em;
+	margin-left: 12em;
 	z-index: -4;
 }
 .oneProject-SVGtwo {
 	position: absolute;
-	margin-top: 2.6em;
+	width: 3.5em;
+	margin-top: .8em;
 	margin-left: -.2em;
 	z-index: -4;
 }
-
-.fire {
-	position: absolute;
-	top: 10px;
-	left: -60px;
-	z-index: -4;
-}
-
 
 .project-description a {
 	font-weight: 600;
@@ -608,11 +619,12 @@ svg:hover #SMbuttonSVG {
 	display: none;
 	position: absolute;
 	left: max(20vw, 60px);
-	top: 150vh;
+	top: 14vh;
 	z-index: 4;
 	padding: 140px 20px 10px 20px;
 	animation: moveInCircle 3s linear infinite;
 }
+
 
 .servicesBOX {
 	display: flex;

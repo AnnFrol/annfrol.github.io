@@ -17,3 +17,14 @@ document.addEventListener("click", function(event) {
 				document.getElementById("menuButton").classList.remove("close");
 		}
 });
+
+ var swiper = new Swiper('.swiper-container', {
+	pagination: '.swiper-pagination',
+	slidesPerView: 1.5,
+
+	   centeredSlides: true,
+	speed: 600,
+	   loop: true,
+
+
+});

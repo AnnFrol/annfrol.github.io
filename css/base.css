@@ -48,7 +48,7 @@
  	#service_SVG {
 		transform: scale(140%);
 		margin-top: -165px;
-		margin-left: 20px;
+		margin-left: 6vw;
 	}
 	
 	#service_SVGtwo {
@@ -64,10 +64,8 @@
 	
 	.projectCover {
 		justify-content: center;
-		display: grid;
-		grid-template-rows: 1fr;
 	}
-	.project img {
+	.swiper-slide img {
 		width: min(60vw, 640px);
 		grid-column: 2 / 3;
 	}
@@ -126,7 +124,8 @@
 	#service_SVG {
 		transform: scale(188%) scaleX(-1);
 		margin-top: -180px;
-		left: 580px;
+		left: 448px;
+		margin-left: 10vw;
 	}
 	#service_SVGthree {
 		display: initial;
