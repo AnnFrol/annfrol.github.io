@@ -57,7 +57,9 @@
 		margin-left: 102px;
 		stroke-width: 1.3px;
 	}
-
+	.services_description {
+		padding-left: 20vw;
+	}
 	.servicesBOX-one {
 		margin-left: 10vw;
 	}
@@ -118,6 +120,10 @@
 	.services_list {
 		text-align: right;
 	}
+	.services_description {
+		padding-left: 8vw;
+		font-size: 1rem;
+	}
 	#service_SVGtwo {
 		display: none;
 	}
@@ -129,9 +135,6 @@
 	}
 	#service_SVGthree {
 		display: initial;
-	}
-	.main_Works {
-		margin-top: -240px;
 	}
 }
 

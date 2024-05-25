@@ -481,7 +481,7 @@ svg:hover #SMbuttonSVG {
 	white-space: nowrap;
 	overflow-x: hidden;
 	width: 100vw;
-	margin-top: 18vh;
+	margin-top: 16vh;
 	margin-bottom: 8vh;
 	z-index: -10;
 }
@@ -668,7 +668,7 @@ svg:hover #SMbuttonSVG {
 .services_description {
 	display: block;
 	width: max(30%, 500px);
-	padding: 80px 80px 10px 80px;
+	padding: 80px 60px 10px 78px;
 	align-content: flex-end;
 }
 
