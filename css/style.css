@@ -510,26 +510,52 @@ svg:hover #SMbuttonSVG {
 		transform: translateX(-100%); 
 	}
 }
+.swiper {
+	margin-top: 40px;
+	width: 100vw;
+
+}
 
 .swiper-slide {
-  width: 100vw;
+  width: 50%;
   height: 100%;
   position: relative;
   flex-shrink: 0;
-  filter: blur(6px);
   overflow: hidden;
+  filter: blur(6px);
+  transition: transform 0.3s, filter 0.3s;
+  transition-property: transform;
+  transform: scale(0.8)!important;
 }
+.swiper-slide.swiper-slide-active {
+  filter: none;
+}
+
+.swiper-slide img {
+	width: 100%;
+	height: auto;
+  }
+
+  .swiper-slide > h4, h3, button {
+	visibility: hidden;
+  }
+
+  .swiper-slide.swiper-slide-active > h4, .swiper-slide.swiper-slide-active > h3, .swiper-slide.swiper-slide-active > button {
+	visibility: visible;
+  }
+
+  .swiper-slide.swiper-slide-active {
+	filter: none;
+	transform: scale(1)!important;
+  }
+
 .project-categoryIMG {
 	display: none;
 	writing-mode: vertical-rl;
-	right: calc(50% - min(30vw, 320px) - 2vw);
+	right: calc(50% - min(30vw, 320px));
 	text-align: left;
 	position: absolute;
-	top: 0%;
-}
-
-.swiper-slide.active {
-  filter: none;
+	top: 0;
 }
 .swiper-slide img {
 	width: 324px;
@@ -537,7 +563,7 @@ svg:hover #SMbuttonSVG {
 	left: -8px;
 }
 .project-category {
-	margin-left: 20vw;
+	margin-left: 12vw;
 	padding-top: 10px;
 }
 .fire {
@@ -568,7 +594,7 @@ svg:hover #SMbuttonSVG {
 
 .project-description {
 	position: relative;
-	margin-left: 20vw;
+	margin-left: 12vw;
 	margin-top: 48px;
 }
 .oneProject-SVGone {
@@ -594,7 +620,7 @@ svg:hover #SMbuttonSVG {
 .projectButton {
 	margin-top: 24px;
 	cursor: pointer;
-	margin-left: 20vw;
+	margin-left: 12vw;
 }
 
 .projectButtonTWO {

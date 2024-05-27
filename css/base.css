@@ -64,9 +64,11 @@
 		margin-left: 10vw;
 	}
 	.swiper-slide img {
-		width: min(60vw, 640px);
+		width: min(60vw, 630px);
 		left: 0;
+		padding-right: min(2.8vw, 20px);
 	}
+	
 	.swiper-slide {
 		display: flex;
 		justify-content: center;
