@@ -536,7 +536,7 @@ svg:hover #SMbuttonSVG {
 	height: auto;
   }
 
-  .swiper-slide > h4, h3, button {
+.swiper-slide > h4, .swiper-slide > h3, .swiper-slide > button {
 	visibility: hidden;
   }
 
