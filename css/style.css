@@ -557,11 +557,12 @@ svg:hover #SMbuttonSVG {
 	position: absolute;
 	top: 0;
 }
-.swiper-slide img {
+.swiper-slide img, .swiper-slide video{
 	width: 324px;
 	height: auto;
 	left: -8px;
 }
+
 .project-category {
 	margin-left: 12vw;
 	padding-top: 10px;
@@ -612,6 +613,20 @@ svg:hover #SMbuttonSVG {
 	z-index: -4;
 }
 
+.twoProject-SVGone {
+	width: 1.7em;
+	position: absolute;
+	margin-top: -0.3em;
+	margin-left: 11.4em;
+	z-index: -4;
+}
+.threeProject-SVGone {
+	width: 3em;
+	position: absolute;
+	margin-top: -2.3em;
+	margin-left: 8em;
+	z-index: -4;
+}
 .project-description a {
 	font-weight: 600;
 	cursor: pointer;
