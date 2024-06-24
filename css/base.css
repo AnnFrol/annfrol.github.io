@@ -38,10 +38,6 @@
 	.arrowSVG {
 		display: none;
 	}
-	.footerBallSVG {
-		transform: scale(120%);
-		margin-top: -66px;	
-	}
 	.services_list {
 		font-size: 116px;
 	}
