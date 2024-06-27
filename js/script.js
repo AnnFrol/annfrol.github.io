@@ -30,18 +30,11 @@ document.addEventListener("click", function(event) {
 });
 
 function copyEmail() {
-	// Создаем элемент textarea для временного хранения текста
 	var textarea = document.createElement('textarea');
-	// Устанавливаем значение элемента textarea как email адрес
 	textarea.value = 'Ann.desi.d@gmail.com';
-	// Добавляем элемент textarea на страницу
 	document.body.appendChild(textarea);
-	// Выделяем текст в textarea
 	textarea.select();
-	// Копируем выделенный текст в буфер обмена
 	document.execCommand('copy');
-	// Удаляем элемент textarea с страницы
 	document.body.removeChild(textarea);
-	// Показываем всплывающее уведомление
-	alert('Email скопирован в буфер обмена');
+	alert('Email copied');
 }
