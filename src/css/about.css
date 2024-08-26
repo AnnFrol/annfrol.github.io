@@ -1,0 +1,131 @@
+.about-title {
+	position: relative;
+	width: 100vw;
+}
+
+.about-img {
+	position: fixed;
+	writing-mode: vertical-rl;
+	padding-top: 10vh;
+	left: -60px;
+}
+
+.about-me-SVG {
+	display: none;
+	position: absolute;
+	width: 54vw;
+	left: 5vw;
+	top: 13vh;
+}
+
+
+.about-title-h1 {
+	position: absolute;
+	left: 20vw;
+	top: 16vh;
+}
+.ball-one {
+	position: absolute;
+	width: clamp(28px, 6vw, 51px);
+	left: 50vw;
+	top: 40vh;
+}
+
+.ball-two {
+	position: absolute;
+	width: clamp(26px, 5vw, 56px);
+	left: 70vw;
+	top: 30vh;
+}
+
+.ball-three {
+	position: absolute;
+	width: clamp(34px, 7vw, 69px);
+	left: 60vw;
+	top: 22vh;
+}
+.about-title-SVG {
+	display: none;
+	position: absolute;
+	font-size: 20vw;
+	font-weight: 700;
+	line-height: 90%;
+	letter-spacing: -.12em;
+	z-index: 3;
+	-webkit-text-stroke-width: .02em;
+	-webkit-text-stroke-color: var(--black);
+	stroke-width: .02em;
+	left: 24vw;
+	top: 16vh;
+}
+.about-description {
+	position: relative;
+	width: clamp(260px, 60vw, 720px);
+	left: 20vw;
+	padding-top: 20vh;
+	top: 30vh;
+}
+.about-principles, .about_Skills {
+	position: relative;
+	width: 70vw;
+	left: 21vw;
+	top: 60vh;
+}
+
+.about h2 {
+	font-size: clamp(2.5rem, 10vw, 116px);
+}
+
+.mephoto-about {
+	position: absolute;
+	width: 42vw;
+	max-width: 285px;
+	top: 110vh;
+	right: 4vw;
+	left: 40vw;
+	will-change: left, opacity;
+	
+}
+
+.mephoto-about img {
+	position: relative;
+}
+
+.mephoto-about svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.about-p {
+	width: clamp(260px, 60vw, 640px);
+	padding: 4vh 0 10vh 1vw;
+}
+
+.about_skills-SVG {
+	position: absolute;
+	width: 36vw;
+	max-width: 227px;
+	padding-top: 22vh;
+	left: 18vw;
+}
+.about_Skills {
+	padding-top: 20vh;
+	padding-bottom: 40vh;
+}
+.runPROCESS {
+	position: relative;
+	top: 68vh;
+} 
+
+.animated-title span {
+	display: inline-block;
+	opacity: 0;
+	transform: translateY(50px);
+	will-change: opacity, transform;
+}
+
+.about_run {
+	top: 56vh;
+}
