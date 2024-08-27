@@ -22,7 +22,7 @@
 .about-title-h1 {
 	position: absolute;
 	left: 20vw;
-	top: 16vh;
+	top: 20vh;
 }
 .ball-one {
 	position: absolute;
@@ -56,7 +56,7 @@
 	-webkit-text-stroke-color: var(--black);
 	stroke-width: .02em;
 	left: 24vw;
-	top: 16vh;
+	top: 20vh;
 }
 .about-description {
 	position: relative;
@@ -82,7 +82,6 @@
 	max-width: 285px;
 	top: 110vh;
 	right: 4vw;
-	left: 40vw;
 	will-change: left, opacity;
 	
 }
@@ -107,12 +106,12 @@
 	position: absolute;
 	width: 36vw;
 	max-width: 227px;
-	padding-top: 22vh;
+	margin-top: -14vh;
 	left: 18vw;
 }
 .about_Skills {
 	padding-top: 20vh;
-	padding-bottom: 40vh;
+	padding-bottom: 60vh;
 }
 .runPROCESS {
 	position: relative;

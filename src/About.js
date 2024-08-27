@@ -74,9 +74,9 @@ function About() {
 			  <h3 className="animated-title about-p"><span>I am dedicated to accountability and excellence, always meeting deadlines and putting forth maximum effort.
 			  <br /><br />Driven by passion, I take on projects that captivate me, ensuring innovative and unique solutions.<br /><br />In collaboration, I prioritize respectful, harmonious relationships, fostering a positive and calm working environment.</span></h3>
 		  </div>
-	  <div className="about_Skills">
-		  <h2>Skills</h2>
-		  <h3 className="about-p"><strong>UX UI</strong> / <strong>Web Design</strong> / <strong>Motions</strong> /<br /><strong>Presentation</strong> / <strong>CJM</strong> / <strong>JTBD</strong> /<br /><strong>Front-End</strong></h3>
+	  <div className="about_Skills animated-title">
+		  <h2><span>Skills</span></h2>
+		  <h3 className="about-p animated-title"><span><strong>UX UI</strong> / <strong>Web Design</strong> / <strong>Motions</strong></span> /<br /><span><strong>Presentation</strong> / <strong>CJM</strong> / <strong>JTBD</strong></span> /<br /><span><strong>Front-End</strong></span></h3>
 	  </div>
 	  <div className="about_skills-SVG">
 		  <svg width="100%" height="100%" viewBox="0 0 227 198" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -162,15 +162,15 @@
 	.about-me-SVG {
 		width: 28vw;
 		left: 16vw;
-		top: 22vh;
+		top: 36vh;
 	}
 	.about-title-h1 {
 		left: 24vw;
-		top: 24vh;
+		top: 40vh;
 	}
 	.about-title-SVG {
 		left: 24vw;
-		top: 24vh;
+		top: 40vh;
 	}
 	.about-description {
 		left: 28vw;
@@ -189,7 +189,6 @@
 		padding-top: 18vh;
 	}
 	.about_skills-SVG {
-
 		left: 38vw;
 	}
 
