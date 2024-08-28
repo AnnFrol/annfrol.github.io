@@ -11,7 +11,7 @@ function About() {
 	gsap.to(".animated-title span", {
 	  scrollTrigger: {
 		trigger: ".animated-title",
-		start: "top 30%",
+		start: "top 40%",
 		end: "bottom 10%",
 		scrub: 1,
 	  },

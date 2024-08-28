@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import runContact from './assets/img/run_contact.svg';
 
 function Footer() {
