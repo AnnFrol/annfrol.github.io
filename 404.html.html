@@ -1,0 +1,8 @@
+<script type="text/javascript">
+  // Перенаправление на главную страницу сайта
+  var redirectTo = window.location.pathname;
+  if (redirectTo.startsWith('/annfrol.github.io/')) {
+	redirectTo = redirectTo.replace('/annfrol.github.io', '');
+  }
+  window.location.replace('/' + redirectTo);
+</script>
