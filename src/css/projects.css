@@ -1,0 +1,12 @@
+
+.projects-title-h1 {
+	position: absolute;
+	top: 20vh;
+}
+.projects-title-h1 span,
+p span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+  will-change: opacity, transform;
+}

@@ -1,12 +1,14 @@
 import React from 'react';
+import './css/projects.css';
+import AnimatedText from './AnimatedText';
 
-function Projects() {
+const Projects = () => {
   return (
 	<div>
-	  <h1>Projects</h1>
-	  <p>ProjectsText</p>
+	  <AnimatedText title="Projects" text="ProjectsText" />
 	</div>
   );
-}
+};
+
 
 export default Projects;

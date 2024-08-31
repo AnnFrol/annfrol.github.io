@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +47,10 @@ return (
 		</a>
 	  </div>
 	  <nav className="header_nav-desktop">
-		<Link className="projects-link" to="/projects">
+		<NavLink 
+		to="/projects"
+		className="projects-link" 
+		activeClassName="active-link">
 		  Projects
 		  <svg className="header_nav-desktop-svg" xmlns="http://www.w3.org/2000/svg" width="106" height="8" fill="none">
 			<path
@@ -56,8 +60,11 @@ return (
 			  d="M95.345 6.439C63.897 6.439 1 6.018 1 4.333c0-2.107 94.345 0 94.345-2.107C95.345.12 8.702 9.311 8.702 6.44s98.195 0 96.27-2.106c-1.925-2.107-77.015-5.016-77.015-2.107"
 			/>
 		  </svg>
-	  </Link>
-		<Link className="about-link" to="/about">
+	  </NavLink>
+		<NavLink
+		  to="/about"
+		  className="about-link"
+		  activeClassName="active-link">
 		  About
 		  <svg className="header_nav-desktop-svg" xmlns="http://www.w3.org/2000/svg" width="70" height="8" fill="none">
 			<path
@@ -67,7 +74,7 @@ return (
 			  d="M62.687 6.439C42.125 6.439 1 6.018 1 4.333c0-2.107 61.687 0 61.687-2.107C62.687.12 6.036 9.311 6.036 6.44s64.205 0 62.946-2.106c-1.26-2.107-50.356-5.016-50.356-2.107"
 			/>
 		  </svg>
-		</Link>
+		</NavLink>
 	  </nav>
 	  <nav className="header_nav-mobile">
 		<button  id="menuButton"
@@ -93,9 +100,15 @@ return (
 	  </nav>
 	</header>
 	<div id="menuItems" style={{ display: menuOpen ? 'block' : 'none' }}>
-	<Link className="menu active-menu" to="/">Home</Link>
-	<Link className="menu projects-link" to="/projects">Projects</Link>
-	<Link className="menu about-link" to="/about">About</Link>
+	<NavLink className="menu" exact to="/">
+	  Home
+	</NavLink>
+	<NavLink className="menu" to="/projects">
+	  Projects
+	</NavLink>
+	<NavLink className="menu" to="/about">
+	  About
+	</NavLink>
 	<button
 	  className="menu_main_button"
 	  onClick={() => {

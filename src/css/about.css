@@ -18,17 +18,18 @@
 	top: 13vh;
 }
 
-
 .about-title-h1 {
 	position: absolute;
 	left: 20vw;
 	top: 20vh;
 }
 .ball-one {
+	cursor: pointer;
 	position: absolute;
 	width: clamp(28px, 6vw, 51px);
 	left: 50vw;
 	top: 40vh;
+	transition: left 5s cubic-bezier(.5, -1, .5, 2);
 }
 
 .ball-two {

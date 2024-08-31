@@ -248,7 +248,9 @@ h5 {
 	color: var(--white-active);
 	transition: .03s linear;
 }
-
+.active-link {
+	
+}
 
 a:active {
 	color: var(--white-active);
@@ -381,8 +383,11 @@ svg:hover #logo2 {
 	left: 0px;
 	z-index: -1;
 }
-.active-menu #nav-desktop-svg-about {
-	stroke-dasharray: 0;
+.about-link.active #nav-desktop-svg-about {
+  stroke-dashoffset: 0;
+}
+.projects-link.active #nav-desktop-svg {
+  stroke-dashoffset: 0;
 }
 
 #nav-desktop-svg {
@@ -461,10 +466,12 @@ a:hover #nav-desktop-svg-about {
   gap: 20px;
   height: 32px;
 }
-
-#menuItems a.active-menu {
+.about-link.active #nav-desktop-svg-about {
+  stroke-dashoffset: 0;
+}
+#menuItems a.active {
 	align-items: center;
-	/* background-image: url('../img/nav-hovermenu.svg'); */
+	background-image: url('../assets/img/nav-hovermenu.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 }
