@@ -965,5 +965,17 @@ svg:hover #SMbuttonSVG {
 
 
 
+.animated-h1 {
+	position: relative;
+	top: 30vh;
+}
+.animated-h5 {	
+	position: relative;
+	width: 60vw;
+	min-width: 260px;
+}
+
+
+
 
 

@@ -49,8 +49,7 @@ return (
 	  <nav className="header_nav-desktop">
 		<NavLink 
 		to="/projects"
-		className="projects-link" 
-		activeClassName="active-link">
+		className={({ isActive }) => (isActive ? "projects-link active-link" : "projects-link")}>
 		  Projects
 		  <svg className="header_nav-desktop-svg" xmlns="http://www.w3.org/2000/svg" width="106" height="8" fill="none">
 			<path
@@ -61,10 +60,9 @@ return (
 			/>
 		  </svg>
 	  </NavLink>
-		<NavLink
-		  to="/about"
-		  className="about-link"
-		  activeClassName="active-link">
+		<NavLink 
+		to="/about"
+		className={({ isActive }) => (isActive ? "about-link active-link" : "about-link")}>
 		  About
 		  <svg className="header_nav-desktop-svg" xmlns="http://www.w3.org/2000/svg" width="70" height="8" fill="none">
 			<path

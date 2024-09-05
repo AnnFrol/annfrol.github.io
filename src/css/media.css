@@ -164,9 +164,11 @@
 		left: 16vw;
 		top: 36vh;
 	}
-	.about-title-h1 {
-		left: 24vw;
+	.animated-h1 {
+		width: 100vw;
+		left: 0;
 		top: 40vh;
+		text-align: center;
 	}
 	.about-title-SVG {
 		left: 24vw;

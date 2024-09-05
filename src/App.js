@@ -7,6 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import PageLoader from './PageLoader';
 import gsap from 'gsap';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -72,6 +73,7 @@ function App() {
 				<defs><linearGradient id="ab" x1="-26.299" x2="69.89" y1="43.316" y2="-89.4" gradientUnits="userSpaceOnUse"><stop stopColor="#FFA1A1"/><stop offset=".458" stopColor="#EDD1CD"/><stop offset="1" stopColor="#CDE052"/></linearGradient></defs>
 			</svg>
 		<main>
+		<ScrollToTop />
 		  <Routes>
 			<Route path="/" element={<Home />} />
 			<Route path="/about" element={<About />} />
