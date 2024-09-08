@@ -1,200 +1,137 @@
+@media screen and (min-width: 600px) {
+  .header_logo {
+    transform: scale(1.2);
+  }
+  .header_nav-desktop {
+    display: flex;
+  }
+  .header_nav-mobile {
+    display: none;
+  }
+  .main_game {
+    width: 130%;
+    left: -2vw;
+    top: 10vh;
+  }
+  .main_home-title {
+    top: 23vh;
+  }
+  #bg-desktop-one {
+    display: initial;
+  }
+  #bg-desktop-two {
+    display: initial;
+  }
+  #bg-desktop-three {
+    display: initial;
+  }
+  #bg-desktop-four {
+    display: initial;
+  }
+  #bg-four {
+    display: none;
+  }
+  h1 {
+    font-size: 20vw;
+  }
+  h1.home-title::before {
+    font-size: 4.56vw;
+  }
+  .arrowSVG {
+    display: none;
+  }
+  h2 {
+    font-size: 116px;
+  }
+  #service_SVG {
+    transform: scale(140%);
+    margin-top: -165px;
+    margin-left: 6vw;
+  }
+  #service_SVGtwo {
+    transform: scale(174%);
+    margin-top: -80px;
+    margin-left: 102px;
+    stroke-width: 1.3px;
+  }
+  .services_description {
+    padding-left: 20vw;
+  }
+  .servicesBOX-one {
+    margin-left: 10vw;
+  }
+  .swiper-slide img,
+  .swiper-slide video {
+    width: min(60vw, 630px);
+    left: 0;
+    padding-right: 20px;
+  }
 
-@media screen and (min-width: 600px) { 
-	.header_logo {
-		transform: scale(1.2);
-	}
-	.header_nav-desktop {
-		display: flex;
-	}
-	.header_nav-mobile {
-	  display: none;
-	}
-	.main_game {
-		width: 130%;
-		left: -2vw;
-		top: 10vh;
-	}
-	.main_home-title {
-		top: 23vh;
-	}
-	#bg-desktop-one {
-		display: initial;
-	}
-	#bg-desktop-two {
-		display: initial;
-	}
-	#bg-desktop-three {
-		display: initial;
-	}
-	#bg-desktop-four {
-		display: initial;
-	}
-	#bg-four {
-		display: none;
-	}
-	h1 {
-		font-size: 20vw;
-	}
-	h1.home-title::before {
-		font-size: 4.56vw;
-	}
-	.arrowSVG {
-		display: none;
-	}
-	h2 {
-		font-size: 116px;
-	}
- 	#service_SVG {
-		transform: scale(140%);
-		margin-top: -165px;
-		margin-left: 6vw;
-	}
-	#service_SVGtwo {
-		transform: scale(174%);
-		margin-top: -80px;
-		margin-left: 102px;
-		stroke-width: 1.3px;
-	}
-	.services_description {
-		padding-left: 20vw;
-	}
-	.servicesBOX-one {
-		margin-left: 10vw;
-	}
-	.swiper-slide img, .swiper-slide video {
-		width: min(60vw, 630px);
-		left: 0;
-		padding-right: 20px;
-	}
-	
-	.swiper-slide {
-		display: flex !important;
-		justify-content: center!important;
-		align-items: center!important; 
-		flex-direction: column!important; 
-	}
-	.project-category {
-		display: none;
-	}
-	.project-categoryIMG {
-		display: initial;
-	}
-	.projectButton {
-		display: none;
-	}
-	.projectButtonTWO {
-		display: initial;
-	}
-	.about-me-SVG {
-		display: initial;
-		width: 48vw;
-		left: 9vw;
-	}
-	.about-title-h1 {
-		left: 24vw;
-	}
-	.about-title-SVG {
-		display: initial;
-
-	}
-	.about-description {
-		left: 26vw;
-		top: 60vh;
-	}
-	.about-principles, .about_Skills {
-		left: 28vw;
-	}
-	.mephoto-about {
-		width: 30vw;
-		top: 56vh;
-	}
-	.about_skills-SVG {
-		left: 30vw;
-	}
+  .swiper-slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+  }
+  .project-category {
+    display: none;
+  }
+  .project-categoryIMG {
+    display: initial;
+  }
+  .projectButton {
+    display: none;
+  }
+  .projectButtonTWO {
+    display: initial;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-	.main_game {
-		width: 100%;
-		left: 0;
-		top: 10vh;
-	}
-	.main_home-title {
-		top: 42vh;
-		left: 6vw;
-		text-align: left;
-	}
-	h1, .about-title-SVG {
-		font-size: 11.5vw;
-	}
-	h1.home-title::before {
-		display: none
-	}
-	.main_home-title_before {
-		display: flex;
-	}
-	.mephoto {
-		top: 20vh;
-		left: 68vw;
-	}
-	.bg_main_Button {
-		display: none;
-	}
-	.services_list {
-		text-align: right;
-	}
-	.services_description {
-		padding-left: 8vw;
-		font-size: 1rem;
-	}
-	#service_SVGtwo {
-		display: none;
-	}
-	#service_SVG {
-		transform: scale(188%) scaleX(-1);
-		margin-top: -180px;
-		left: 448px;
-		margin-left: 10vw;
-	}
-	#service_SVGthree {
-		display: initial;
-	}
-	.about-me-SVG {
-		width: 28vw;
-		left: 16vw;
-		top: 36vh;
-	}
-	.animated-h1 {
-		width: 100vw;
-		left: 0;
-		top: 40vh;
-		text-align: center;
-	}
-	.about-title-SVG {
-		left: 24vw;
-		top: 40vh;
-	}
-	.about-description {
-		left: 28vw;
-		top: 60vh;
-	}
-	.about-principles, .about_Skills {
-		top: 100vh;
-		left: 36vw;
-	}
-	
-	.mephoto-about {
-		top: 148vh;
-		right: 62vw;
-	}
-	.about-img {
-		padding-top: 18vh;
-	}
-	.about_skills-SVG {
-		left: 38vw;
-	}
-
+  .main_game {
+    width: 100%;
+    left: 0;
+    top: 10vh;
+  }
+  .main_home-title {
+    top: 42vh;
+    left: 6vw;
+    text-align: left;
+  }
+  h1,
+  .about-title-SVG {
+    font-size: 11.5vw;
+  }
+  h1.home-title::before {
+    display: none;
+  }
+  .main_home-title_before {
+    display: flex;
+  }
+  .mephoto {
+    top: 20vh;
+    left: 68vw;
+  }
+  .bg_main_Button {
+    display: none;
+  }
+  .services_list {
+    text-align: right;
+  }
+  .services_description {
+    padding-left: 8vw;
+    font-size: 1rem;
+  }
+  #service_SVGtwo {
+    display: none;
+  }
+  #service_SVG {
+    transform: scale(188%) scaleX(-1);
+    margin-top: -180px;
+    left: 448px;
+    margin-left: 10vw;
+  }
+  #service_SVGthree {
+    display: initial;
+  }
 }
-
-
-

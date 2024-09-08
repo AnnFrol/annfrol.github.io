@@ -1,140 +1,160 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Регистрация плагина ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedText = ({ title, subtitle, text }) => {
+const AnimatedText = ({ title, subtitle, text, blockText, imgSrc }) => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const textRef = useRef(null);
+  const blockTextRef = useRef(null);
+  const imgRef = useRef(null);
 
-  useEffect(() => {
-	if (title) {
-	  const titleSpans = titleRef.current.querySelectorAll('span');
-
-	  // Анимация для h1 с ScrollTrigger
-	  gsap.fromTo(titleSpans, 
-		{ y: -100, opacity: 0 }, // Начальное положение (внизу и прозрачные)
-		{
-		  y: 0, 
-		  opacity: 1, // Конечное положение
-		  duration: 1,
-		  stagger: {
-			amount: 0.3,
-			from: "center",
-		  },
-		  ease: "power4.out",
-		  scrollTrigger: {
-			trigger: titleRef.current,
-			start: "top 80%", // Когда верхний край h1 достигает 80% окна
-			toggleActions: "play none none none", // Запуск анимации при скролле
-			once: true, // Анимация только один раз при скролле
-		  },
-		}
-	  );
-	}
-
-	if (subtitle) {
-	  const subtitleSpans = subtitleRef.current.querySelectorAll('span');
-
-	  // Анимация для h2 с ScrollTrigger
-	  gsap.fromTo(subtitleSpans, 
-		{ y: -100, opacity: 0 }, // Начальное положение
-		{
-		  y: 0, 
-		  opacity: 1,
-		  duration: 1,
-		  stagger: {
-			amount: 0.3,
-			from: "center",
-		  },
-		  ease: "power4.out",
-		  scrollTrigger: {
-			trigger: subtitleRef.current,
-			start: "top 80%", // Когда верхний край h2 достигает 80% окна
-			toggleActions: "play none none none",
-			once: true, // Анимация только один раз при скролле
-		  },
-		}
-	  );
-	}
-
-	if (text) {
-	  const textLines = textRef.current.querySelectorAll('.text-line');
-
-	  // Анимация для h5 с ScrollTrigger
-	  gsap.fromTo(textLines, 
-		{ y: -100, opacity: 0 }, // Начальное положение
-		{
-		  opacity: 1,
-		  y: 0,
-		  stagger: 0.2,
-		  ease: 'power3.out',
-		  duration: 1,
-		  scrollTrigger: {
-			trigger: textRef.current,
-			start: "top 50%", // Когда верхний край текста достигает 80% окна
-			toggleActions: "play none none none",
-			once: true, // Анимация только один раз при скролле
-		  },
-		}
-	  );
-	}
-  }, [title, subtitle, text]);
-
-  const renderSpans = (string) => {
-	return string.split('').map((char, index) => (
-	  <span
-		key={index}
-		style={{
-		  display: 'inline-block',
-		  opacity: 0,
-		  transform: 'translateY(50px)',
-		  willChange: 'opacity, transform',
-		  marginRight: char === ' ' ? '0.3em' : '0px',
-		}}
-	  >
-		{char}
-	  </span>
-	));
+  const animateText = (ref, staggerOptions, animationOptions) => {
+    if (ref.current) {
+      const spans = ref.current.querySelectorAll("span");
+      gsap.fromTo(
+        spans,
+        { y: -100, scaleY: 0.3, opacity: 0 },
+        {
+          scaleY: 1,
+          y: 0,
+          opacity: 1,
+          duration: animationOptions.duration || 0.8,
+          stagger: staggerOptions,
+          ease: animationOptions.ease || "power4.out",
+          scrollTrigger: {
+            trigger: ref.current,
+            start: animationOptions.start || "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+        }
+      );
+    }
   };
 
-  const renderLines = (string) => {
-	return string.split('\n').map((line, index) => (
-	  <div
-		key={index}
-		className="text-line"
-		style={{
-		  opacity: 0,
-		  transform: 'translateY(50px)',
-		  willChange: 'opacity, transform',
-		}}
-	  >
-		{line}
-	  </div>
-	));
+  const animateTextH5 = (ref, staggerOptions, animationOptions) => {
+    if (ref.current) {
+      const spans = ref.current.querySelectorAll("span");
+      gsap.fromTo(
+        spans,
+        { opacity: 0.4 },
+        {
+          opacity: 1,
+          duration: animationOptions.duration || 0.8,
+          stagger: staggerOptions,
+          ease: animationOptions.ease || "power3.out",
+          scrollTrigger: {
+            trigger: ref.current,
+            start: animationOptions.start || "top 70%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+        }
+      );
+    }
+  };
+
+  const animateImage = (imgRef) => {
+    if (imgRef.current) {
+      gsap.to(imgRef.current, {
+        y: "1500",
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top top",
+          end: "bottom 5%",
+          scrub: true,
+        },
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (title) {
+      animateText(titleRef, { from: "center", amount: 0.3 }, { duration: 0.8 });
+    }
+    if (subtitle) {
+      animateText(
+        subtitleRef,
+        { from: "center", amount: 0.3 },
+        { duration: 1 }
+      );
+    }
+    if (text) {
+      animateTextH5(textRef, { from: "start", amount: 0.8 }, { duration: 0.5 });
+    }
+    if (blockText) {
+      gsap.fromTo(
+        blockTextRef.current,
+        { y: -60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: blockTextRef.current,
+            start: "top 70%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+        }
+      );
+    }
+
+    // Запуск анимации изображения
+    animateImage(imgRef);
+  }, [title, subtitle, text, blockText]);
+
+  const renderSpans = (string) => {
+    return string.split("\n").map((line, index) => (
+      <span key={index} style={{ display: "block" }}>
+        {line.split("").map((char, i) => (
+          <span
+            key={i}
+            style={{
+              display: "inline-block",
+              opacity: 0,
+              transform: "translateY(50px)",
+              willChange: "opacity, transform",
+              marginRight: char === " " ? "0.3em" : "0px",
+            }}
+          >
+            {char}
+          </span>
+        ))}
+      </span>
+    ));
   };
 
   return (
-	<div>
-	  {title && (
-		<h1 ref={titleRef} className="animated-h1">
-		  {renderSpans(title)}
-		</h1>
-	  )}
-	  {subtitle && (
-		<h2 ref={subtitleRef} className="animated-h2">
-		  {renderSpans(subtitle)}
-		</h2>
-	  )}
-	  {text && (
-		<h5 ref={textRef} className="animated-h5">
-		  {renderLines(text)}
-		</h5>
-	  )}
-	</div>
+    <div>
+      {title && (
+        <h1 ref={titleRef} className="animated-h1">
+          {renderSpans(title)}
+        </h1>
+      )}
+      {subtitle && (
+        <h2 ref={subtitleRef} className="animated-h2">
+          {renderSpans(subtitle)}
+        </h2>
+      )}
+      {text && (
+        <h5 ref={textRef} className="animated-h5">
+          {renderSpans(text)}
+        </h5>
+      )}
+      {blockText && (
+        <h3 ref={blockTextRef} className="animated-h3">
+          {blockText}
+        </h3>
+      )}
+      {imgSrc && (
+        <img ref={imgRef} src={imgSrc} alt="About" className="about-SVG" />
+      )}
+    </div>
   );
 };
 
