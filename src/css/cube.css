@@ -1,0 +1,82 @@
+.scene {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16vw;
+  width: clamp(280px, 50vw, 400px);
+}
+.process {
+  width: 244px;
+  margin-left: 3vw;
+}
+.process-h6 {
+  margin-bottom: 20px;
+}
+.cube {
+  top: 12px;
+  width: 56px;
+  height: 56px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+}
+.one-cube {
+  transform: rotateX(45deg) rotateY(0deg) rotateZ(30deg);
+}
+
+.one-cube:hover {
+  transform: rotateX(230deg) rotateY(230deg); /* Поворот при наведении */
+}
+.two-cube {
+  transform: rotateX(60deg) rotateY(30deg);
+}
+.two-cube:hover {
+  transform: rotateX(260deg) rotateY(290deg); /* Поворот при наведении */
+}
+
+.face {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-face {
+  width: 49px; /* Меньше, чем внешние грани */
+  height: 49px;
+  background: var(--maxgreenyellow); /* Внутренний черный цвет */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.front {
+  transform: translateZ(28px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(28px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(28px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(28px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(28px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(28px);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  background-color: black; /* Цвет кружка */
+  border-radius: 50%; /* Создание круга */
+}
