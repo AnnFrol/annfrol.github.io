@@ -4,6 +4,7 @@ import photo from "./assets/img/Photome.png";
 import Works from "./Works";
 import Services from "./Services";
 import runWorks from "./assets/img/run_works.svg";
+import runProcess from "./assets/img/run_process.svg";
 import Cube from "./Cube";
 
 function Home() {
@@ -89,7 +90,10 @@ function Home() {
           </svg>
         </div>
         <Works />
-        <Services />
+      </div>
+      <Services />
+      <div className="main_run runPROCESS">
+        <img src={runProcess} alt="Process" />
       </div>
       <Cube />
     </div>

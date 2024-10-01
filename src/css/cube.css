@@ -1,18 +1,42 @@
+.scroll-container {
+  position: relative;
+}
+.horizontal_wrapper {
+  display: flex;
+  height: 100vh;
+}
 .scene {
   display: flex;
   flex-wrap: wrap;
-  margin: 16vw;
-  width: clamp(280px, 50vw, 400px);
+  margin-left: -12px;
 }
+
 .process {
-  width: 244px;
-  margin-left: 3vw;
+  width: 320px;
+  flex-shrink: 0;
+  height: 100vh;
 }
+
+.one-process {
+}
+.two-process {
+  margin-top: 16vw;
+}
+.three-process {
+  margin-top: -80vw;
+}
+
+.process-text {
+  margin-left: 90px;
+}
+
 .process-h6 {
   margin-bottom: 20px;
 }
+
 .cube {
-  top: 12px;
+  margin: 15px;
+  top: 66px;
   width: 56px;
   height: 56px;
   position: relative;
@@ -20,17 +44,17 @@
   transition: transform 0.4s;
 }
 .one-cube {
-  transform: rotateX(45deg) rotateY(0deg) rotateZ(30deg);
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 }
 
 .one-cube:hover {
-  transform: rotateX(230deg) rotateY(230deg); /* Поворот при наведении */
+  transform: rotateX(230deg) rotateY(180deg) rotateZ(152deg);
 }
 .two-cube {
-  transform: rotateX(60deg) rotateY(30deg);
+  transform: rotateX(180deg) rotateY(0deg) rotateZ(180deg);
 }
 .two-cube:hover {
-  transform: rotateX(260deg) rotateY(290deg); /* Поворот при наведении */
+  transform: rotateX(225deg) rotateY(230deg) rotateZ(30deg);
 }
 
 .face {
@@ -77,6 +101,23 @@
   width: 10px;
   height: 10px;
   margin: 2px;
-  background-color: black; /* Цвет кружка */
-  border-radius: 50%; /* Создание круга */
+  background-color: black;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  .scene {
+    margin: 16vw 0 16vw 16vw;
+  }
+  .two-process {
+    margin-left: 42vw;
+  }
+  .process-text {
+    margin-left: 90px;
+  }
+  .three-process {
+    margin-left: 120vw;
+  }
+}
+@media screen and (min-width: 1200px) {
 }

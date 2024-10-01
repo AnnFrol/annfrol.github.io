@@ -166,7 +166,7 @@ h5 {
 }
 
 h6 {
-  font-size: 2.7vw;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 900;
   line-height: 104%;
   letter-spacing: -0.08em;
@@ -658,8 +658,6 @@ svg:hover #SMbuttonSVG {
   display: block;
   margin-top: 84vh;
 }
-.runWORKS {
-}
 
 .main_run {
   white-space: nowrap;
@@ -676,6 +674,10 @@ svg:hover #SMbuttonSVG {
   max-height: 240px;
   max-width: none;
 }
+.runPROCESS {
+  position: relative;
+  top: 10vw;
+}
 
 .runWORKS img {
   animation: runAnimation 13s linear infinite;
@@ -691,7 +693,7 @@ svg:hover #SMbuttonSVG {
 }
 
 .runPROCESS img {
-  animation: runAnimation 20s linear infinite;
+  animation: runAnimation 13s linear infinite;
   will-change: transform;
 }
 
@@ -706,6 +708,7 @@ svg:hover #SMbuttonSVG {
 .swiper {
   margin-top: 40px;
   width: 100vw;
+  margin-left: 0 !important;
 }
 
 .swiper-slide {
