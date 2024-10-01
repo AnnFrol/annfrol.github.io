@@ -68,9 +68,9 @@
 }
 
 .inner-face {
-  width: 49px; /* Меньше, чем внешние грани */
+  width: 49px;
   height: 49px;
-  background: var(--maxgreenyellow); /* Внутренний черный цвет */
+  background: var(--maxgreenyellow);
   border-radius: 8px;
   display: flex;
   align-items: center;

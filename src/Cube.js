@@ -27,7 +27,7 @@ const Cube = () => {
           pin: true,
           scrub: true,
           invalidateOnRefresh: true,
-          preventOverlaps: true, // Предотвращает перекрытие событий
+          preventOverlaps: true,
         },
       });
     });
