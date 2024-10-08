@@ -16,6 +16,7 @@
     rgb(205, 224, 82) 10px,
     rgba(205, 224, 82, 1)
   );
+  --vh: 1vh;
   --gradient: linear-gradient(
     51deg,
     rgba(255, 161, 161, 1) 0%,

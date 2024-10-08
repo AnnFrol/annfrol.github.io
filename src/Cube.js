@@ -14,25 +14,36 @@ const Cube = () => {
       const horizontalWrapper = horizontalWrapperRef.current;
       const scrollContainer = scrollContainerRef.current;
 
-      const totalWidth = horizontalWrapper.scrollWidth;
-      const viewportWidth = window.innerWidth;
+      const updateAnimation = () => {
+        const totalWidth = horizontalWrapper.scrollWidth;
+        const viewportWidth = window.innerWidth;
 
-      gsap.to(horizontalWrapper, {
-        x: -(totalWidth - viewportWidth),
-        ease: "none",
-        scrollTrigger: {
-          trigger: scrollContainer,
-          start: "top top",
-          end: () => `+=${totalWidth - viewportWidth}`,
-          pin: true,
-          scrub: true,
-          invalidateOnRefresh: true,
-          preventOverlaps: true,
-        },
-      });
+        // Удаляем предыдущие ScrollTrigger
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+        gsap.to(horizontalWrapper, {
+          x: -(totalWidth - viewportWidth),
+          ease: "none",
+          scrollTrigger: {
+            trigger: scrollContainer,
+            start: "top top",
+            end: () => `+=${totalWidth - viewportWidth}`,
+            pin: true,
+            scrub: true,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+          },
+        });
+      };
+
+      updateAnimation();
+      window.addEventListener("resize", updateAnimation);
+
+      return () => {
+        window.removeEventListener("resize", updateAnimation);
+        ctx.revert();
+      };
     });
-
-    return () => ctx.revert();
   }, []);
 
   return (
@@ -40,6 +51,14 @@ const Cube = () => {
       <div className="horizontal_wrapper" ref={horizontalWrapperRef}>
         <div className="scene">
           <div className="process one-process">
+            <div className="process-text">
+              <h6 className="process-h6">Let's get acquainted</h6>
+              <p>
+                We'll schedule a video meeting to discuss project details and
+                get acquainted. Following that, we'll agree on terms, costs, and
+                finalize the contract.
+              </p>
+            </div>
             <div className="cube one-cube">
               <div className="face front">
                 <svg
@@ -258,16 +277,16 @@ const Cube = () => {
                 </svg>
               </div>
             </div>
+          </div>
+          <div className="process two-process">
             <div className="process-text">
-              <h6 className="process-h6">Let's get acquainted</h6>
+              <h6 className="process-h6">Analyze competitors</h6>
               <p>
                 We'll schedule a video meeting to discuss project details and
                 get acquainted. Following that, we'll agree on terms, costs, and
                 finalize the contract.
               </p>
             </div>
-          </div>
-          <div className="process two-process">
             <div className="cube two-cube">
               <div className="face front">
                 <svg
@@ -485,14 +504,6 @@ const Cube = () => {
                   />
                 </svg>
               </div>
-            </div>
-            <div className="process-text">
-              <h6 className="process-h6">Analyze competitors</h6>
-              <p>
-                We'll schedule a video meeting to discuss project details and
-                get acquainted. Following that, we'll agree on terms, costs, and
-                finalize the contract.
-              </p>
             </div>
           </div>{" "}
           <div className="process three-process">

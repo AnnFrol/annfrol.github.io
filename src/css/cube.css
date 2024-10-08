@@ -1,9 +1,11 @@
 .scroll-container {
   position: relative;
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
 }
 .horizontal_wrapper {
   display: flex;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 .scene {
   display: flex;
@@ -12,18 +14,21 @@
 }
 
 .process {
+  margin-left: 20px;
   width: 320px;
   flex-shrink: 0;
-  height: 100vh;
+  height: 30vh;
+  position: relative;
 }
 
 .one-process {
+  margin-top: 20vw;
 }
 .two-process {
-  margin-top: 16vw;
+  margin-top: 10vw;
 }
 .three-process {
-  margin-top: -80vw;
+  margin-top: 10vw;
 }
 
 .process-text {
@@ -36,10 +41,10 @@
 
 .cube {
   margin: 15px;
-  top: 66px;
+  top: 0;
   width: 56px;
   height: 56px;
-  position: relative;
+  position: absolute;
   transform-style: preserve-3d;
   transition: transform 0.4s;
 }
@@ -47,13 +52,13 @@
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 }
 
-.one-cube:hover {
+.process-text:hover + .one-cube {
   transform: rotateX(230deg) rotateY(180deg) rotateZ(152deg);
 }
 .two-cube {
   transform: rotateX(180deg) rotateY(0deg) rotateZ(180deg);
 }
-.two-cube:hover {
+.process-text:hover + .two-cube {
   transform: rotateX(225deg) rotateY(230deg) rotateZ(30deg);
 }
 
@@ -110,13 +115,16 @@
     margin: 16vw 0 16vw 16vw;
   }
   .two-process {
-    margin-left: 42vw;
-  }
-  .process-text {
-    margin-left: 90px;
+    margin-left: 32vw;
   }
   .three-process {
-    margin-left: 120vw;
+    margin-left: 100vw;
+  }
+  .two-process {
+    margin-top: 10vw;
+  }
+  .three-process {
+    margin-top: -14vw;
   }
 }
 @media screen and (min-width: 1200px) {
