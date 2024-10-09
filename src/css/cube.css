@@ -20,6 +20,19 @@
   height: 30vh;
   position: relative;
 }
+/* Стили для мобильной версии */
+.process-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cube-container {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
 
 .one-process {
   margin-top: 20vw;
@@ -30,17 +43,19 @@
 .three-process {
   margin-top: 10vw;
 }
+.four-process {
+  margin-left: 32vw;
+}
 
 .process-text {
   margin-left: 90px;
 }
-
 .process-h6 {
   margin-bottom: 20px;
 }
 
 .cube {
-  margin: 15px;
+  margin: 12px;
   top: 0;
   width: 56px;
   height: 56px;
@@ -49,17 +64,23 @@
   transition: transform 0.4s;
 }
 .one-cube {
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  transform: rotateX(230deg) rotateY(180deg) rotateZ(152deg);
 }
 
 .process-text:hover + .one-cube {
-  transform: rotateX(230deg) rotateY(180deg) rotateZ(152deg);
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 }
 .two-cube {
-  transform: rotateX(180deg) rotateY(0deg) rotateZ(180deg);
+  transform: rotateX(236deg) rotateY(360deg) rotateZ(132deg);
 }
 .process-text:hover + .two-cube {
-  transform: rotateX(225deg) rotateY(230deg) rotateZ(30deg);
+  transform: rotateX(180deg) rotateY(0deg) rotateZ(180deg);
+}
+.three-cube {
+  transform: rotateX(330deg) rotateY(300deg) rotateZ(90deg);
+}
+.process-text:hover + .three-cube {
+  transform: rotateX(630deg) rotateY(180deg) rotateZ(90deg);
 }
 
 .face {
