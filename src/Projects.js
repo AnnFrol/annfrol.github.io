@@ -5,7 +5,7 @@ import AnimatedText from "./AnimatedText";
 const Projects = () => {
   return (
     <main className="projects">
-      <div>
+      <div className="projects-H1">
         <AnimatedText title="Projects" />
       </div>
     </main>

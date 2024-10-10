@@ -9,42 +9,41 @@
 }
 .scene {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-left: -12px;
+  /*   width: 300vw; */
 }
 
 .process {
-  margin-left: 20px;
+  margin-left: 24vw;
   width: 320px;
   flex-shrink: 0;
   height: 30vh;
   position: relative;
 }
 /* Стили для мобильной версии */
-.process-container {
+.process-mobile {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
-.cube-container {
-  position: fixed;
+.cube-mobile {
+  position: sticky;
   top: 20%;
   left: 10%;
   transform: translate(-50%, -50%);
 }
 
-.one-process {
-  margin-top: 20vw;
+.one-process,
+.three-process,
+.five-process {
+  margin-top: 8vw;
 }
-.two-process {
-  margin-top: 10vw;
-}
-.three-process {
-  margin-top: 10vw;
-}
-.four-process {
-  margin-left: 32vw;
+.two-process,
+.four-process,
+.six-process {
+  margin-top: 18vw;
 }
 
 .process-text {
@@ -81,6 +80,24 @@
 }
 .process-text:hover + .three-cube {
   transform: rotateX(630deg) rotateY(180deg) rotateZ(90deg);
+}
+.four-cube {
+  transform: rotateX(144deg) rotateY(510deg) rotateZ(450deg);
+}
+.process-text:hover + .four-cube {
+  transform: rotateX(90deg) rotateY(270deg) rotateZ(90deg);
+}
+.five-cube {
+  transform: rotateX(508deg) rotateY(220deg) rotateZ(180deg);
+}
+.process-text:hover + .five-cube {
+  transform: rotateX(164deg) rotateY(90.1deg) rotateZ(106deg);
+}
+.six-cube {
+  transform: rotateX(328deg) rotateY(220deg) rotateZ(180deg);
+}
+.process-text:hover + .six-cube {
+  transform: rotateX(180deg) rotateY(450.1deg) rotateZ(270deg);
 }
 
 .face {
@@ -133,19 +150,7 @@
 
 @media screen and (min-width: 600px) {
   .scene {
-    margin: 16vw 0 16vw 16vw;
-  }
-  .two-process {
-    margin-left: 32vw;
-  }
-  .three-process {
-    margin-left: 100vw;
-  }
-  .two-process {
-    margin-top: 10vw;
-  }
-  .three-process {
-    margin-top: -14vw;
+    margin: 12vw 14vw auto 0vw;
   }
 }
 @media screen and (min-width: 1200px) {

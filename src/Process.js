@@ -57,35 +57,52 @@ const Process = () => {
     if (window.innerWidth <= 600) {
       // Мобильная логика
       const sections = processData.length;
+      const container = containerRef.current;
+      const cube = cubeRef.current;
+      const text = textRef.current;
 
-      // Вращение куба при скролле
-      gsap.to(cubeRef.current, {
-        rotationY: "+=360",
+      // Появление куба
+      gsap.fromTo(
+        cube,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: container,
+            start: "top bottom",
+            end: "top center",
+            scrub: true,
+          },
+        }
+      );
+
+      // Вращение куба и смена текста
+      const rotationPerStep = 360 / sections;
+      gsap.to(cube, {
+        rotationX: `+=${rotationPerStep * sections}`,
+        rotationY: `+=${rotationPerStep * sections}`,
+        rotationZ: `+=${rotationPerStep * sections}`,
         ease: "none",
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: () => `+=${window.innerHeight * sections}`,
+          trigger: container,
+          start: "top center",
+          end: "bottom top",
           scrub: true,
-        },
-      });
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const index = Math.min(
+              Math.floor(progress * sections),
+              sections - 1
+            );
+            const data = processData[index];
 
-      // Обновление текста при скролле
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: () => `+=${window.innerHeight * sections}`,
-        scrub: true,
-        onUpdate: (self) => {
-          const index = Math.floor(self.progress * sections);
-          const data = processData[index];
-
-          if (data) {
-            textRef.current.querySelector(".process-h6").textContent =
-              data.title;
-            textRef.current.querySelector(".process-p").textContent =
-              data.description;
-          }
+            if (data) {
+              textRef.current.querySelector(".process-h6").textContent =
+                data.title;
+              textRef.current.querySelector(".process-p").textContent =
+                data.description;
+            }
+          },
         },
       });
     } else {
@@ -130,8 +147,8 @@ const Process = () => {
   if (isMobile) {
     // Мобильная версия
     return (
-      <div className="process-container" ref={containerRef}>
-        <div className="cube-container">
+      <div className="process-mobile" ref={containerRef}>
+        <div className="cube-mobile">
           <Cube ref={cubeRef} cubeClass="mobile-cube" />
         </div>
         <div className="process-text" ref={textRef}>
