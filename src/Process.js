@@ -102,8 +102,7 @@ const Process = () => {
             trigger: container,
             start: "top top",
             end: "bottom bottom",
-            scrub: true, // Привязываем анимацию к скроллу
-            // markers: true, // Для отладки
+            scrub: true,
           },
         });
 
