@@ -18,45 +18,45 @@ const processData = [
   },
   {
     cubeClass: "two-cube",
-    title: "Analyze competitors",
+    title: "Analysis",
     description:
-      "We'll analyze your competitors to understand the market and identify opportunities to stand out.",
+      "I will conduct a competitive analysis and research the target audience for your product. This work will help create a website that is user-friendly, clear, and distinct from competitors' sites.",
     x: 131,
     y: 327,
     z: 152,
   },
   {
     cubeClass: "three-cube",
-    title: "Develop strategy",
+    title: "Structure Planning",
     description:
-      "We'll develop a comprehensive strategy to achieve your business goals effectively.",
+      "I will plan the logic and structure of the future website and, for large-scale projects, develop a prototype to visualize its flow. Additionally, I will gather ideas and select graphic, typographic, compositional, and color solutions, along with examples for discussion.",
     x: -140,
     y: 140,
     z: 271,
   },
   {
     cubeClass: "four-cube",
-    title: "Four strategy",
+    title: "Design Creation",
     description:
-      "444 We'll develop a comprehensive strategy to achieve your business goals effectively.",
+      "I will create up to three design concepts for the first screen, and you can choose the one you like the most. The selected style will define the design of the entire website. I’ll continue working on it, sharing progress along the way, and provide a video presentation explaining the decisions made.",
     x: 38,
     y: 218,
     z: 450,
   },
   {
     cubeClass: "five-cube",
-    title: "5 strategy",
+    title: "Website Launch",
     description:
-      "555 We'll develop a comprehensive strategy to achieve your business goals effectively.",
+      "I will code the approved design in React, add cool animations, make it responsive for different devices, and integrate forms and other functionality. I’ll also set up basic SEO optimization to ensure the site ranks well in search engines.",
     x: 488,
     y: 219,
     z: 217,
   },
   {
     cubeClass: "six-cube",
-    title: "6 strategy",
+    title: "Post-Launch Support",
     description:
-      "666 We'll develop a comprehensive strategy to achieve your business goals effectively.",
+      "After the launch, I will give you access and provide a video tutorial on how to manage the site on your own. For the first month, I’ll offer free support to help with any issues or questions that may arise.",
     x: 318,
     y: 153,
     z: 156,
