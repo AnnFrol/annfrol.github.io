@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Projects from "./Projects";
+import Process from "./Process";
 import Header from "./Header";
 import Footer from "./Footer";
 import PageLoader from "./PageLoader";
@@ -144,7 +144,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
+              <Route path="/process" element={<Process />} />
             </Routes>
           </main>
           <Footer />

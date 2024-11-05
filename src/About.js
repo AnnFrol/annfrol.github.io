@@ -3,6 +3,7 @@ import "./css/about.css";
 import photo_me_about from "./assets/img/PhotomeAbout.png";
 import about from "./assets/img/about.svg";
 import AnimatedText from "./AnimatedText";
+/* import FallingBalls from "./FallingBalls"; */
 
 function About() {
   return (
@@ -41,8 +42,6 @@ function About() {
       <div className="about-title-balls">
         <svg
           className="ball-one"
-          src="https://js.cx/clipart/train.gif"
-          onClick="this.style.left='400px'"
           xmlns="http://www.w3.org/2000/svg"
           width="100%"
           viewBox="0 0 51 46"
@@ -159,7 +158,6 @@ function About() {
           />
         </div>
       </div>
-
       <div className="about_Skills">
         <AnimatedText subtitle="Skills" />
         <h3 className="about-p">

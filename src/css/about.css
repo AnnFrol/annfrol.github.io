@@ -16,14 +16,17 @@
 .ball-one {
   position: absolute;
   width: clamp(28px, 6vw, 51px);
+}
+.ball-about-one {
   left: 50vw;
   top: 40vh;
-  /* transition: left 5s cubic-bezier(.5, -1, .5, 2); */
 }
 
 .ball-two {
   position: absolute;
   width: clamp(26px, 5vw, 56px);
+}
+.ball-about-two {
   left: 70vw;
   top: 30vh;
 }
@@ -31,6 +34,8 @@
 .ball-three {
   position: absolute;
   width: clamp(34px, 7vw, 69px);
+}
+.ball-about-three {
   left: 60vw;
   top: 22vh;
 }
@@ -46,6 +51,7 @@
   position: relative;
   left: 20vw;
   top: 60vh;
+  width: 78vw;
 }
 
 .about-Principles {
@@ -100,8 +106,7 @@
 
 @media screen and (min-width: 600px) {
   .about-h1 {
-    padding-left: 22vw;
-    padding-right: 10vw;
+    padding-left: 20vw;
   }
   .about-description {
     display: none;

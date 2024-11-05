@@ -16,20 +16,14 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc }) => {
       const spans = ref.current.querySelectorAll("span");
       gsap.fromTo(
         spans,
-        { y: -100, scaleY: 0.3, opacity: 0 },
+        { y: -100, scaleY: 0.2, opacity: 0 },
         {
           scaleY: 1,
           y: 0,
           opacity: 1,
           duration: animationOptions.duration || 0.8,
           stagger: staggerOptions,
-          ease: animationOptions.ease || "power4.out",
-          scrollTrigger: {
-            trigger: ref.current,
-            start: animationOptions.start || "top 80%",
-            toggleActions: "play none none none",
-            once: true,
-          },
+          ease: animationOptions.ease || "back.out",
         }
       );
     }
@@ -57,6 +51,30 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc }) => {
     }
   };
 
+  const animateTextH2 = (ref, staggerOptions, animationOptions) => {
+    if (ref.current) {
+      const spans = ref.current.querySelectorAll("span");
+      gsap.fromTo(
+        spans,
+        { y: -100, scaleY: 0.3, opacity: 0 },
+        {
+          scaleY: 1,
+          y: 0,
+          opacity: 1,
+          duration: animationOptions.duration || 0.8,
+          stagger: staggerOptions,
+          ease: animationOptions.ease || "power4.out",
+          scrollTrigger: {
+            trigger: ref.current,
+            start: animationOptions.start || "top 80%",
+            toggleActions: "play none none none",
+            once: true, // Чтобы анимация выполнялась только один раз
+          },
+        }
+      );
+    }
+  };
+
   const animateImage = (imgRef) => {
     if (imgRef.current) {
       gsap.to(imgRef.current, {
@@ -76,10 +94,10 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc }) => {
       animateText(titleRef, { from: "center", amount: 0.3 }, { duration: 0.8 });
     }
     if (subtitle) {
-      animateText(
+      animateTextH2(
         subtitleRef,
         { from: "center", amount: 0.3 },
-        { duration: 1 }
+        { duration: 1, start: "top 75%" } // Добавляем параметр start для настройки точки начала
       );
     }
     if (text) {

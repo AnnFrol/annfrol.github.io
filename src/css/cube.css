@@ -12,6 +12,9 @@
   flex-wrap: nowrap;
   margin-left: -12px;
 }
+.process-H1 {
+  height: 80vh;
+}
 
 .process {
   margin-left: 24vw;

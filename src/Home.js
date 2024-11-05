@@ -24,7 +24,13 @@ function Home() {
           filter="blur(100px)"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle r="48%" cx="50%" cy="50%" fill="var(--maxgreenyellow)" />
+          <circle
+            r="48%"
+            cx="50%"
+            cy="50%"
+            fill="var(--maxgreenyellow)"
+            overflow="hidden"
+          />
         </svg>
       </div>
       <div className="bg">
@@ -92,10 +98,9 @@ function Home() {
         <Works />
       </div>
       <Services />
-      <div className="main_run runPROCESS">
+      {/*       <div className="main_run runPROCESS">
         <img src={runProcess} alt="Process" />
-      </div>
-      <Process />
+      </div> */}
     </div>
   );
 }

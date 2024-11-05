@@ -55,12 +55,12 @@ const Header = () => {
         </div>
         <nav className="header_nav-desktop">
           <NavLink
-            to="/projects"
+            to="/process"
             className={({ isActive }) =>
-              isActive ? "projects-link active-link" : "projects-link"
+              isActive ? "process-link active-link" : "process-link"
             }
           >
-            Projects
+            Process
             <svg
               className="header_nav-desktop-svg"
               xmlns="http://www.w3.org/2000/svg"
@@ -146,8 +146,8 @@ const Header = () => {
         <NavLink className="menu" exact to="/">
           Home
         </NavLink>
-        <NavLink className="menu" to="/projects">
-          Projects
+        <NavLink className="menu" to="/process">
+          Process
         </NavLink>
         <NavLink className="menu" to="/about">
           About

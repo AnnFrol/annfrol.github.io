@@ -229,9 +229,28 @@ h6 {
 #bg-desktop-one {
   position: absolute;
   display: none;
-  margin-top: 40vh;
-  margin-left: 74vw;
+  top: 40vh;
+  left: 72vw;
+  overflow: hidden;
 }
+.bg-process {
+  position: absolute;
+  display: none;
+  margin-top: 32vh;
+  margin-left: -130px;
+  width: clamp(180px, 40vw, 300px);
+  height: clamp(180px, 40vw, 300px);
+  filter: blur(clamp(60px, 24vw, 200px));
+  z-index: -20;
+}
+.bg-process-one {
+  position: absolute;
+  display: none;
+  margin-top: 20vh;
+  margin-left: 73vw;
+  z-index: -20;
+}
+
 #bg-desktop-two {
   display: none;
   margin-top: 48vh;
@@ -352,6 +371,7 @@ p {
 }
 
 #logo1 {
+  fill-opacity: 0;
   stroke-dasharray: 143;
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 1s;
@@ -364,6 +384,7 @@ svg:hover #logo1 {
 }
 
 #logo2 {
+  fill-opacity: 0;
   stroke-dasharray: 149;
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 1s;
@@ -378,9 +399,11 @@ svg:hover #logo2 {
   display: none;
   justify-content: flex-end;
   grid-column: 3 / 4;
-  gap: 8px;
+  gap: 14px;
 }
-
+.process-link .header_nav-desktop-svg {
+  margin-left: -5px;
+}
 .header_nav-desktop a {
   display: flex;
   position: relative;
@@ -399,7 +422,7 @@ svg:hover #logo2 {
 .about-link.active #nav-desktop-svg-about {
   stroke-dashoffset: 0;
 }
-.projects-link.active #nav-desktop-svg {
+.process-link.active #nav-desktop-svg {
   stroke-dashoffset: 0;
 }
 
@@ -861,6 +884,7 @@ svg:hover #SMbuttonSVG {
   display: flex;
   width: 100vw;
   flex-wrap: wrap;
+  padding-bottom: 12vw;
 }
 .servicesBOX-one {
   /* 	width: max(50%, 600px); */
@@ -978,6 +1002,7 @@ svg:hover #SMbuttonSVG {
 .animated-h1 {
   position: relative;
   top: 30vh;
+  width: 80vw;
 }
 .animated-h5 {
   position: relative;
