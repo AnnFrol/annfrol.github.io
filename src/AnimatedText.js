@@ -23,7 +23,7 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc }) => {
           opacity: 1,
           duration: animationOptions.duration || 0.8,
           stagger: staggerOptions,
-          ease: animationOptions.ease || "back.out",
+          ease: animationOptions.ease || "power4.out",
         }
       );
     }
