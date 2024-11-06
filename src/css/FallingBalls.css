@@ -9,7 +9,7 @@
   top: -52vh;
 }
 .process-balls {
-  top: -120vh;
+  top: -114vh;
 }
 
 .ball-one {
@@ -51,5 +51,8 @@
   .falling-balls-container {
     top: -60vh;
     transform: scale(1);
+  }
+  .process-balls {
+    top: -120vh;
   }
 }

@@ -237,9 +237,9 @@ h6 {
 }
 .bg-process {
   position: absolute;
-  display: none;
+  fill: var(--pink);
   margin-top: 32vh;
-  margin-left: -130px;
+  margin-left: -240px;
   z-index: -20;
 }
 

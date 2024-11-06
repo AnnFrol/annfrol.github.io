@@ -121,6 +121,10 @@
   .bg_main_Button {
     display: none;
   }
+  .bg-process {
+    fill: var(--maxgreenyellow);
+    margin-left: -80px;
+  }
   #bg-desktop-three {
     display: initial;
   }
