@@ -34,7 +34,13 @@ function Home() {
         </svg>
       </div>
       <div className="bg">
-        <svg id="bg-one" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          id="bg-one"
+          height="300px"
+          width="300px"
+          filter="blur(200px)"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <circle r="48%" cx="50%" cy="50%" fill="var(--maxgreenyellow)" />
         </svg>
       </div>
@@ -98,9 +104,6 @@ function Home() {
         <Works />
       </div>
       <Services />
-      {/*       <div className="main_run runPROCESS">
-        <img src={runProcess} alt="Process" />
-      </div> */}
     </div>
   );
 }

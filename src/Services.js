@@ -5,14 +5,32 @@ function Services() {
   return (
     <div className="services">
       <div className="bg-services">
-        <svg id="bg-two" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          id="bg-two"
+          height="170px"
+          width="170px"
+          filter="blur(100px)"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <circle r="48%" cx="50%" cy="50%" fill="var(--maxgreenyellow)" />
         </svg>
       </div>
-      <svg id="bg-desktop-two" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        id="bg-desktop-two"
+        height="300px"
+        width="300px"
+        filter="blur(200px)"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <circle r="48%" cx="50%" cy="50%" fill="var(--pink)" />
       </svg>
-      <svg id="bg-desktop-three" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        id="bg-desktop-three"
+        height="300px"
+        width="300px"
+        filter="blur(200px)"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <circle r="48%" cx="50%" cy="50%" fill="var(--pink)" />
       </svg>
       <div className="main_run runSERVICES">

@@ -1,26 +1,25 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import "./css/FallingBalls.css"; // Импортируем CSS стили
 
-const FallingBalls = () => {
+const FallingBalls = ({ page }) => {
+  // Добавляем `page` в параметры
   const ballsRef = useRef([]);
-
-  const getRandom = (min, max) => Math.random() * (max - min) + min;
 
   const animateBalls = () => {
     ballsRef.current.forEach((ball, index) => {
-      gsap.fromTo(
-        ball,
-        { y: -100, x: getRandom(-50, 50) },
-        {
-          y: "40vh",
-          x: getRandom(-100, 100),
-          delay: getRandom(0, 1),
-          duration: getRandom(1.5, 3),
-          ease: "bounce.out",
-          repeat: -1,
-          repeatDelay: getRandom(0.5, 2),
-        }
-      );
+      if (ball) {
+        gsap.fromTo(
+          ball,
+          { y: -100 },
+          {
+            y: "82vh",
+            duration: 2,
+            ease: "bounce.out",
+            delay: index * 0.3,
+          }
+        );
+      }
     });
   };
 
@@ -28,22 +27,16 @@ const FallingBalls = () => {
     animateBalls();
   }, []);
 
-  const renderBalls = () => {
-    const ballComponents = [
+  // Определяем класс для контейнера мячиков в зависимости от страницы
+  const containerClass = `falling-balls-container ${page}-balls`;
+
+  return (
+    <div className={containerClass}>
       <svg
-        key="1"
         ref={(el) => (ballsRef.current[0] = el)}
-        className="ball-one"
+        className={`ball-one ${page}-ball-one`}
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
         viewBox="0 0 51 46"
-        style={{
-          position: "absolute",
-          top: "0",
-          left: `${getRandom(0, window.innerWidth - 50)}px`,
-          width: `${getRandom(40, 80)}px`,
-          height: `${getRandom(40, 80)}px`,
-        }}
       >
         <path
           fill="#35C8BF"
@@ -61,22 +54,12 @@ const FallingBalls = () => {
           d="M7.496 18.825c-2.04 6.235.265 12.254 3.045 15.703 2.846 3.53 7.52 5.844 12.713 6.56 5.183.713 10.664-.199 14.997-2.843 8.444-5.155 10.509-18.557 3.835-26.099C31.35.014 12.46 3.294 7.496 18.826Zm38.1-7.178c3.375 3.814 5.468 8.622 4.847 13.684-.936 7.638-4.883 13.02-10.152 16.236-5.214 3.183-11.63 4.198-17.572 3.38-5.931-.818-11.61-3.497-15.223-7.978-3.677-4.561-5.032-10.772-2.621-18.144 2.364-7.392 6.543-12.079 11.604-14.482C21.498 1.96 27.146 1.94 32.294 3.4c5.142 1.459 9.923 4.43 13.301 8.248Z"
           clipRule="evenodd"
         />
-      </svg>,
+      </svg>
       <svg
-        key="2"
         ref={(el) => (ballsRef.current[1] = el)}
-        className="ball-two"
-        width="100%"
-        viewBox="0 0 49 56"
-        fill="none"
+        className={`ball-two ${page}-ball-two`}
         xmlns="http://www.w3.org/2000/svg"
-        style={{
-          position: "absolute",
-          top: "0",
-          left: `${getRandom(0, window.innerWidth - 50)}px`,
-          width: `${getRandom(40, 80)}px`,
-          height: `${getRandom(40, 80)}px`,
-        }}
+        viewBox="0 0 49 56"
       >
         <path
           d="M1.21731 22.233C10.9333 -11.3418 49.1147 8.06332 46.7847 29.0659C43.0237 62.9669 -8.49872 55.027 1.21731 22.233Z"
@@ -94,22 +77,12 @@ const FallingBalls = () => {
           d="M41.6008 24.4708C42.3468 24.5509 42.8843 25.2005 42.8014 25.9217C41.738 35.1742 37.433 40.3314 32.4276 43.0197C27.1804 45.4843 16.9878 45.4843 14.27 42.8566C14.3529 42.1354 18.4308 42.7845 19.1768 42.8646C22.07 43.1754 26.8528 43.0079 31.1076 40.7227C35.2756 38.4841 39.1249 34.1159 40.1 25.6315C40.1829 24.9103 40.8548 24.3907 41.6008 24.4708Z"
           fill="black"
         />
-      </svg>,
+      </svg>
       <svg
-        key="3"
         ref={(el) => (ballsRef.current[2] = el)}
-        className="ball-three"
+        className={`ball-three ${page}-ball-three`}
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
         viewBox="0 0 73 69"
-        fill="none"
-        style={{
-          position: "absolute",
-          top: "0",
-          left: `${getRandom(0, window.innerWidth - 50)}px`,
-          width: `${getRandom(40, 80)}px`,
-          height: `${getRandom(40, 80)}px`,
-        }}
       >
         <path
           fill="#CDE052"
@@ -127,13 +100,9 @@ const FallingBalls = () => {
           d="M53.904 22.359c.75-.107 1.442.409 1.544 1.152.56 4.06-.336 10.67-3.23 16.968-2.908 6.327-7.92 12.524-15.751 15.488-6.155 2.33-10.85 2.087-14.198.358-3.332-1.722-5.08-4.789-5.595-7.597a1.37 1.37 0 0 1 1.104-1.587 1.36 1.36 0 0 1 1.595 1.083c.392 2.134 1.713 4.416 4.177 5.689 2.449 1.265 6.281 1.663 11.953-.484 6.953-2.632 11.511-8.17 14.22-14.062 2.72-5.92 3.484-12.01 3.007-15.47a1.372 1.372 0 0 1 1.174-1.538ZM48.46 33.576a1.35 1.35 0 0 1 1.154 1.537c-.264 1.754-1.254 4.01-2.39 6.026-1.146 2.032-2.558 4.03-3.813 5.244-8.296 8.028-14.841 7.43-17.487 5.243a1.348 1.348 0 0 1-.167-1.914 1.383 1.383 0 0 1 1.933-.178c1.06.877 5.964 2.505 13.81-5.089.988-.955 2.25-2.7 3.33-4.619 1.091-1.935 1.881-3.84 2.07-5.096a1.38 1.38 0 0 1 1.56-1.154Z"
           clipRule="evenodd"
         />
-      </svg>,
-    ];
-
-    return ballComponents;
-  };
-
-  return <div>{renderBalls()}</div>;
+      </svg>
+    </div>
+  );
 };
 
 export default FallingBalls;

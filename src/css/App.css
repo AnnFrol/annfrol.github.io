@@ -200,18 +200,20 @@ h6 {
 }
 #bg-one {
   margin-top: 60vh;
-  margin-left: -130px;
-  width: clamp(180px, 40vw, 300px);
+  margin-left: -60vw;
+  /*   width: clamp(180px, 40vw, 300px);
   height: clamp(180px, 40vw, 300px);
-  filter: blur(clamp(60px, 24vw, 200px));
+  filter: blur(clamp(60px, 24vw, 200px)); */
+}
+.bg-about {
 }
 #bg-two {
   margin-left: 70vw;
   margin-top: 50vh;
   margin-bottom: 30vh;
-  width: clamp(120px, 24vw, 200px);
+  /*   width: clamp(120px, 24vw, 200px);
   height: clamp(120px, 24vw, 200px);
-  filter: blur(clamp(60px, 18vw, 120px));
+  filter: blur(clamp(60px, 18vw, 120px)); */
 }
 #bg-desktop-four {
   position: absolute;
@@ -238,11 +240,9 @@ h6 {
   display: none;
   margin-top: 32vh;
   margin-left: -130px;
-  width: clamp(180px, 40vw, 300px);
-  height: clamp(180px, 40vw, 300px);
-  filter: blur(clamp(60px, 24vw, 200px));
   z-index: -20;
 }
+
 .bg-process-one {
   position: absolute;
   display: none;
@@ -256,9 +256,9 @@ h6 {
   margin-top: 48vh;
   margin-left: -20vh;
   position: absolute;
-  width: clamp(180px, 40vw, 300px);
+  /*   width: clamp(180px, 40vw, 300px);
   height: clamp(180px, 40vw, 300px);
-  filter: blur(clamp(60px, 26vw, 200px));
+  filter: blur(clamp(60px, 26vw, 200px)); */
   z-index: -20;
 }
 #bg-desktop-three {
@@ -266,9 +266,9 @@ h6 {
   margin-top: 48vh;
   margin-left: 90vw;
   position: absolute;
-  width: clamp(180px, 40vw, 300px);
+  /*   width: clamp(180px, 40vw, 300px);
   height: clamp(180px, 40vw, 300px);
-  filter: blur(clamp(60px, 24vw, 200px));
+  filter: blur(clamp(60px, 24vw, 200px)); */
   z-index: -21;
 }
 
@@ -1004,6 +1004,10 @@ svg:hover #SMbuttonSVG {
   top: 30vh;
   width: 80vw;
 }
+.process-animated-h1 {
+  width: 100vw;
+}
+
 .animated-h5 {
   position: relative;
 }

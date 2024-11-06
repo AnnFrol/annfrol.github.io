@@ -13,7 +13,7 @@
   padding-left: 18vw;
 }
 
-.ball-one {
+/* .ball-one {
   position: absolute;
   width: clamp(28px, 6vw, 51px);
 }
@@ -38,19 +38,19 @@
 .ball-about-three {
   left: 60vw;
   top: 22vh;
-}
+} */
 
 .about-description {
   position: relative;
   width: 80vw;
   left: 20vw;
-  top: 60vh;
+  top: -30vh;
 }
 .about-description-desktop {
   display: none;
   position: relative;
   left: 20vw;
-  top: 60vh;
+  top: -40vh;
   width: 78vw;
 }
 
@@ -58,7 +58,6 @@
   width: 80vw;
   position: relative;
   left: 20vw;
-  top: 100vh;
 }
 
 .about h2 {
@@ -100,8 +99,8 @@
   width: 80vw;
   position: relative;
   left: 20vw;
-  top: 120vh;
-  height: 80vh;
+  top: 20vh;
+  margin-bottom: -40vh;
 }
 
 @media screen and (min-width: 600px) {
@@ -140,9 +139,9 @@
     left: 36vw;
   }
   .about_Skills {
-    top: 132vh;
+    top: 32vh;
     left: 36vw;
-    height: 110vh;
+    margin-bottom: 0;
   }
 
   .mephoto-about {

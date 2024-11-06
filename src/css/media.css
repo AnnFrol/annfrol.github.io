@@ -16,6 +16,9 @@
   .main_home-title {
     top: 23vh;
   }
+  #bg-one {
+    margin-left: -10vw;
+  }
   #bg-desktop-one {
     display: initial;
   }

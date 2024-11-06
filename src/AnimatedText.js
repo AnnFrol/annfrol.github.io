@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedText = ({ title, subtitle, text, blockText, imgSrc }) => {
+const AnimatedText = ({ title, subtitle, text, blockText, imgSrc, page }) => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const textRef = useRef(null);
@@ -150,7 +150,7 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc }) => {
   return (
     <div>
       {title && (
-        <h1 ref={titleRef} className="animated-h1">
+        <h1 ref={titleRef} className={`animated-h1 ${page}-animated-h1`}>
           {renderSpans(title)}
         </h1>
       )}
