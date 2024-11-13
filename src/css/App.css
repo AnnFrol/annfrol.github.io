@@ -810,7 +810,14 @@ svg:hover #SMbuttonSVG {
     transform: translateX(30px) translateY(0); /* конечное положение */
   }
 }
-
+.fire-lotti {
+  width: 200px;
+  height: 200px;
+  top: 10px;
+  left: -60px;
+  position: absolute;
+  z-index: -4;
+}
 .project-description {
   position: relative;
   margin-left: min(12vw, 220px);

@@ -9,11 +9,14 @@ const FallingBalls = ({ page }) => {
   const animateBalls = () => {
     ballsRef.current.forEach((ball, index) => {
       if (ball) {
+        // Вычисляем значение y в пикселях
+        const yValue = window.innerHeight * 0.7 + 108;
+
         gsap.fromTo(
           ball,
           { y: -100 },
           {
-            y: "82vh",
+            y: yValue, // Используем вычисленное значение
             duration: 2,
             ease: "bounce.out",
             delay: index * 0.3,

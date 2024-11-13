@@ -78,11 +78,11 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc, page }) => {
   const animateImage = (imgRef) => {
     if (imgRef.current) {
       gsap.to(imgRef.current, {
-        y: "1500",
+        y: "1400",
         scrollTrigger: {
           trigger: ".about",
           start: "top top",
-          end: "bottom 5%",
+          end: "bottom 1%",
           scrub: true,
         },
       });

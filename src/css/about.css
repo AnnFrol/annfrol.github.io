@@ -7,6 +7,7 @@
   writing-mode: vertical-rl;
   padding-top: 10vh;
   left: -60px;
+  will-change: transform;
 }
 
 .about-h1 {
@@ -91,8 +92,10 @@
 }
 .about_skills-SVG {
   position: absolute;
-  width: 36vw;
-  max-width: 227px;
+  left: -100px;
+  width: 48vw;
+  min-width: 270px;
+  max-width: 600px;
   top: -12vh;
 }
 .about_Skills {
@@ -118,9 +121,6 @@
     width: 30vw;
     top: -8vh;
   }
-  .about_skills-SVG {
-    top: -16vh;
-  }
 }
 @media screen and (min-width: 1200px) {
   .about-h1 {
@@ -142,6 +142,9 @@
     top: 32vh;
     left: 36vw;
     margin-bottom: 0;
+  }
+  .about_skills-SVG {
+    top: -24vh;
   }
 
   .mephoto-about {

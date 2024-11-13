@@ -48,21 +48,27 @@
 }
 .mobile-cube .front {
   transform: translateZ(24px);
+  will-change: transform;
 }
 .mobile-cube .back {
   transform: rotateY(180deg) translateZ(24px);
+  will-change: transform;
 }
 .mobile-cube .left {
   transform: rotateY(-90deg) translateZ(24px);
+  will-change: transform;
 }
 .mobile-cube .right {
   transform: rotateY(90deg) translateZ(24px);
+  will-change: transform;
 }
 .mobile-cube .top {
   transform: rotateX(90deg) translateZ(24px);
+  will-change: transform;
 }
 .mobile-cube .bottom {
   transform: rotateX(-90deg) translateZ(24px);
+  will-change: transform;
 }
 
 .process-text {

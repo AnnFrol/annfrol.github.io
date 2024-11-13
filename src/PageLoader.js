@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-// Определите customEase здесь, используя любую подходящую функцию easing GSAP
 const customEase = gsap.parseEase("power2.inOut");
 
 export function PageLoader({ onLoadingComplete }) {
@@ -15,13 +14,10 @@ export function PageLoader({ onLoadingComplete }) {
     const colorBg = colorBgRef.current;
     const greyBg = greyBgRef.current;
 
-    // Массив с цветами
     const colors = ["#cde052", "#ff2a83", "#35c8bf"];
 
-    // Случайный выбор цвета для pink-bg
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-    // Установить выбранный цвет для pink-bg
     colorBg.style.backgroundColor = randomColor;
 
     const pageToPageAnim = gsap.timeline({

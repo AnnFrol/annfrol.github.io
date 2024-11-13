@@ -9,7 +9,7 @@
   top: -52vh;
 }
 .process-balls {
-  top: -114vh;
+  top: -110vh;
 }
 
 .ball-one {
@@ -20,7 +20,7 @@
   height: 60px;
 }
 .process-ball-one {
-  left: 46vw;
+  left: calc(35vw + 54px);
   top: -14vh;
 }
 
@@ -32,7 +32,7 @@
   height: 50px;
 }
 .process-ball-two {
-  left: 35vw;
+  left: calc(42vw - 147px);
   top: 1vh;
 }
 
@@ -44,7 +44,7 @@
   height: 70px;
 }
 .process-ball-three {
-  left: 66vw;
+  left: calc(68vw + 50px);
   top: -1vh;
 }
 @media (min-width: 600px) {
