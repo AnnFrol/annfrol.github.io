@@ -93,10 +93,10 @@
 .about_skills-SVG {
   position: absolute;
   left: -100px;
-  width: 48vw;
-  min-width: 270px;
+  width: 56vw;
+  min-width: 320px;
   max-width: 600px;
-  top: -12vh;
+  bottom: 21vh;
 }
 .about_Skills {
   width: 80vw;
@@ -144,7 +144,7 @@
     margin-bottom: 0;
   }
   .about_skills-SVG {
-    top: -24vh;
+    bottom: 26vh;
   }
 
   .mephoto-about {

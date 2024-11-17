@@ -3,20 +3,18 @@ import { gsap } from "gsap";
 import "./css/FallingBalls.css"; // Импортируем CSS стили
 
 const FallingBalls = ({ page }) => {
-  // Добавляем `page` в параметры
   const ballsRef = useRef([]);
 
   const animateBalls = () => {
     ballsRef.current.forEach((ball, index) => {
       if (ball) {
-        // Вычисляем значение y в пикселях
-        const yValue = window.innerHeight * 0.7 + 108;
+        const yValue = window.innerHeight * 0.77 + 64;
 
         gsap.fromTo(
           ball,
           { y: -100 },
           {
-            y: yValue, // Используем вычисленное значение
+            y: yValue,
             duration: 2,
             ease: "bounce.out",
             delay: index * 0.3,

@@ -112,7 +112,6 @@ const Process = () => {
         processData.forEach((data, index) => {
           const progressPosition = index / (sections - 1);
 
-          // Вращение куба и изменение текста одновременно
           tl.to(
             cube,
             {

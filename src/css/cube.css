@@ -143,7 +143,7 @@
 
 @media screen and (min-width: 600px) {
   .scene {
-    margin: 32vw 14vw auto 0vw;
+    margin: 0 14vw auto 0vw;
   }
   .process-text {
     margin-top: 0;
