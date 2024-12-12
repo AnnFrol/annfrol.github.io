@@ -101,7 +101,7 @@ function Works() {
             help users make a choice <br />
             from a variety of options.
           </h3>
-          <button className="projectButton">
+          {/*  <button className="projectButton">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="120"
@@ -124,7 +124,7 @@ function Works() {
               </g>
             </svg>
           </button>
-          <LottieFire />
+          <LottieFire /> */}
         </SwiperSlide>
         <SwiperSlide className="swiper-slide" id="mark-it">
           <img src={appMarkIt} alt="App Mark it" />
