@@ -20,24 +20,6 @@
 	--ease-out-quart: cubic-bezier(.175,.79,.38,.905);
 }
 
-#loader .maxgreenyellow-bg,
-#loader .grey-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 150%;
-  height: 100%;
-  background-color: var(--maxgreenyellow);
-  z-index: 1;
-  transform-origin: bottom left;
-  transform: translateY(-100%) rotate(-45deg);
-}
-
-#page-to-page .grey-bg {
-  z-index: 2;
-  background-color: var(--background);
-}
-
 body {
 	cursor: none;
 	font-weight: 200;
@@ -380,7 +362,7 @@ a:hover #nav-desktop-svg-about {
 
 #menuItems a.active-menu {
 	align-items: center;
-	background-image: url('../img/nav-hovermenu.svg');
+	background-image: url('../assets/img/nav-hovermenu.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -843,39 +825,22 @@ svg:hover #SMbuttonSVG {
 	margin: 0;
 }
 
+/* Privacy Policy */
 .privacy-footer-link {
 	color: var(--white-active);
 	text-decoration: none;
 	font-size: 12px;
 	opacity: 0.3;
 	font-weight: 900;
-	transition: opacity 0.3s ease, color 0.3s ease;
+	transition: opacity 0.3s ease;
 }
 
 .privacy-footer-link:hover {
 	opacity: 1;
-	color: var(--maxgreenyellow);
-	text-decoration: underline;
-	font-weight: 900;
 }
 
 .privacy-footer-link:active {
 	opacity: 0.7;
-	color: var(--maxgreenyellow);
-	font-weight: 900;
-}
-
-.privacy-footer-link:visited {
-	opacity: 0.3;
-	color: var(--white-active);
-	font-weight: 900;
-}
-
-.privacy-footer-link:focus {
-	opacity: 1;
-	outline: 1px solid var(--maxgreenyellow);
-	outline-offset: 2px;
-	font-weight: 900;
 }
 
 .footerlogo {
@@ -883,6 +848,7 @@ svg:hover #SMbuttonSVG {
 	justify-content: flex-end;
 	padding: 0;
 	margin: 0;
+	margin-left: auto;
 }
 
 

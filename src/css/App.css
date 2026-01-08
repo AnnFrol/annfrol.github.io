@@ -201,9 +201,36 @@ h6 {
 #bg-one {
   margin-top: 60vh;
   margin-left: -60vw;
+  /* Оптимизация для Safari iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: filter;
+  isolation: isolate;
   /*   width: clamp(180px, 40vw, 300px);
   height: clamp(180px, 40vw, 300px);
   filter: blur(clamp(60px, 24vw, 200px)); */
+}
+
+/* Оптимизация blur фильтров */
+#bg-one,
+#bg-desktop-one,
+#bg-desktop-four,
+.bg-process,
+.bg-process-one {
+  /* Аппаратное ускорение для blur */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: filter;
+  /* Изоляция для лучшей производительности */
+  isolation: isolate;
+}
+
+/* Уменьшить blur только на очень слабых устройствах */
+@media (max-width: 480px) and (max-height: 800px) {
+  #bg-one,
+  #bg-desktop-one {
+    filter: blur(60px) !important; /* Компромисс между качеством и производительностью */
+  }
 }
 .bg-about {
 }
@@ -545,6 +572,28 @@ a:hover #nav-desktop-svg-about {
   height: 80%;
   z-index: 3;
   overflow: hidden;
+  /* Оптимизация для производительности */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  /* Улучшение рендеринга */
+  contain: layout style paint;
+}
+
+/* Оптимизация SVG анимаций в Game */
+.game svg {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Упрощение анимаций на мобильных */
+@media (max-width: 768px) {
+  .game animateMotion {
+    animation-duration: 8s !important; /* Медленнее = меньше нагрузка */
+  }
 }
 
 .main_game {
@@ -706,19 +755,41 @@ svg:hover #SMbuttonSVG {
 .runWORKS img {
   animation: runAnimation 13s linear infinite;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .runSERVICES img {
   animation: runAnimation 20s linear infinite;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .runCONTACT img {
   animation: runAnimation 18s linear infinite;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .runPROCESS img {
   animation: runAnimation 13s linear infinite;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Упрощение анимаций на мобильных */
+@media (prefers-reduced-motion: reduce) {
+  .runWORKS img,
+  .runSERVICES img,
+  .runCONTACT img,
+  .runPROCESS img {
+    animation: none;
+  }
 }
 
 @keyframes runAnimation {
@@ -745,6 +816,26 @@ svg:hover #SMbuttonSVG {
   transition: transform 0.3s, filter 0.3s;
   transition-property: transform;
   transform: scale(0.8) !important;
+  /* Оптимизация для мобильных */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  will-change: transform, filter;
+}
+
+/* Упрощение blur на мобильных */
+@media (max-width: 768px) {
+  .swiper-slide {
+    filter: blur(2px);
+  }
+}
+
+/* Отключение blur на очень слабых устройствах */
+@media (max-width: 480px) {
+  .swiper-slide {
+    filter: none;
+  }
 }
 
 .swiper-slide img {
@@ -885,6 +976,22 @@ svg:hover #SMbuttonSVG {
   padding: 140px 20px 10px 20px;
   animation: moveInCircle 3s linear infinite;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Отключение анимации на мобильных */
+@media (max-width: 768px) {
+  .projectButtonTWO {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectButtonTWO {
+    animation: none;
+  }
 }
 
 .servicesBOX {
@@ -998,12 +1105,21 @@ svg:hover #SMbuttonSVG {
   padding-top: 200px;
 }
 
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  margin-top: 20vw;
+}
+
 .footerlogo {
   display: flex;
   justify-content: flex-end;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  margin-top: 20vw;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
 }
 
 .animated-h1 {
@@ -1013,6 +1129,9 @@ svg:hover #SMbuttonSVG {
 }
 .process-animated-h1 {
   width: 100vw;
+}
+.chooseright-animated-h1 {
+  width: 80vw;
 }
 
 .animated-h5 {

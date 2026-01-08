@@ -234,7 +234,8 @@ function Footer() {
             />
           </svg>
         </div>
-        <div className="footerlogo">
+        <div className="footer-bottom">
+          <div className="footerlogo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -268,6 +269,7 @@ function Footer() {
               d="M36.218 30.582h-3.956l-.006-3.268h3.962v3.268Zm-.66-5.882h3.302v11.11h-8.585v-3.268h5.283V24.7Z"
             />
           </svg>
+          </div>
         </div>
       </div>
     </footer>

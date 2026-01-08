@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Process from "./Process";
+import PrivacyPolicy from "./PrivacyPolicy";
+import ChooseRight from "./ChooseRight";
 import Header from "./Header";
 import Footer from "./Footer";
 import PageLoader from "./PageLoader";
@@ -52,8 +54,22 @@ function App() {
 
     updateVh(); // Устанавливаем начальное значение
 
-    window.addEventListener("resize", updateVh);
-    return () => window.removeEventListener("resize", updateVh);
+    // Исправление для Safari iOS - обновление при изменении ориентации
+    const handleResize = () => {
+      updateVh();
+      // Дополнительная задержка для Safari iOS
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        setTimeout(updateVh, 100);
+      }
+    };
+
+    window.addEventListener("resize", handleResize, { passive: true });
+    window.addEventListener("orientationchange", handleResize, { passive: true });
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+    };
   }, []);
 
   const handleLoadingComplete = () => {
@@ -145,6 +161,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/process" element={<Process />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/chooseright" element={<ChooseRight />} />
             </Routes>
           </main>
           <Footer />

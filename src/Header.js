@@ -143,7 +143,7 @@ const Header = () => {
         </nav>
       </header>
       <div id="menuItems" style={{ display: menuOpen ? "block" : "none" }}>
-        <NavLink className="menu" exact to="/">
+        <NavLink className="menu" to="/">
           Home
         </NavLink>
         <NavLink className="menu" to="/process">
