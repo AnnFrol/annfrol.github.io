@@ -57,8 +57,7 @@ function Works() {
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView="auto"
         spaceBetween={10}
-        loop={true}
-        loopedSlides={4}
+        loop={false}
         grabCursor={true}
         centeredSlides={true}
         breakpoints={{
@@ -66,11 +65,13 @@ function Works() {
             slidesPerView: 2,
             spaceBetween: 10,
             centeredSlides: true,
+            loop: false, // Отключаем loop для 2 слайдов (нужно минимум 5 слайдов для loop с 2 slidesPerView)
           },
           0: {
             slidesPerView: 1,
             spaceBetween: 10,
             centeredSlides: true,
+            loop: true, // Включаем loop для 1 слайда на мобильных (4 слайда достаточно)
           },
         }}
         onSwiper={(swiper) => {
