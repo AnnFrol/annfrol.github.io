@@ -182,7 +182,7 @@ const FrameSequenceAnimation = ({
 
   const playReverse = () => {
     const imageElements = imagesRef.current.filter(Boolean);
-    const totalFrames = imageElements.length;
+    // totalFrames can be derived from imageElements.length if needed
 
     // Останавливаем предыдущую анимацию
     stopAnimation();

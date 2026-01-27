@@ -3,15 +3,15 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const LottieFire = () => {
   const [shouldLoad, setShouldLoad] = useState(false);
-  const [isLowPerformance, setIsLowPerformance] = useState(false);
 
   useEffect(() => {
     const checkPerformance = () => {
+      // Check for low performance devices
       const isLowPerf = 
         /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
         /Android/i.test(navigator.userAgent) ||
         (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4);
-      setIsLowPerformance(isLowPerf);
+      void isLowPerf; // Performance check available for future use
       
       // Ленивая загрузка Lottie анимации (всегда загружаем, но с задержкой)
       const timer = setTimeout(() => {

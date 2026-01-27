@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import runContact from "./assets/img/run_contact.svg";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
-import { getEmail, openEmailClient, copyEmailToClipboard } from "./utils/email";
+import { openEmailClient } from "./utils/email";
 import { EMAIL_SUBJECT } from "./constants";
 import { useScrollRunAnimation } from "./hooks/useScrollRunAnimation";
 
