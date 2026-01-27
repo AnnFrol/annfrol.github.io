@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { LOADER_COLORS, ANIMATION_DURATION } from "./constants";
 
 const customEase = gsap.parseEase("power2.inOut");
 
@@ -14,9 +15,8 @@ export function PageLoader({ onLoadingComplete }) {
     const colorBg = colorBgRef.current;
     const greyBg = greyBgRef.current;
 
-    const colors = ["#cde052", "#ff2a83", "#35c8bf"];
-
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    const randomColor =
+      LOADER_COLORS[Math.floor(Math.random() * LOADER_COLORS.length)];
 
     colorBg.style.backgroundColor = randomColor;
 
@@ -32,7 +32,7 @@ export function PageLoader({ onLoadingComplete }) {
       onStart: () => {
         pageBgWrap.style.opacity = "1";
       },
-      duration: 1.5,
+      duration: ANIMATION_DURATION.SLOW,
       ease: customEase,
     });
 
@@ -41,7 +41,7 @@ export function PageLoader({ onLoadingComplete }) {
       {
         y: "0%",
         rotate: 0,
-        duration: 1.5,
+        duration: ANIMATION_DURATION.SLOW,
         ease: customEase,
         onComplete: () => {
           pageBgWrap.style.opacity = "0";

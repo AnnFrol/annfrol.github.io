@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import runServices from "./assets/img/run_services.svg";
+import { useScrollRunAnimation } from "./hooks/useScrollRunAnimation";
 
 function Services() {
+  const runServicesContainerRef = useRef(null);
+  const runServicesImageRef = useRef(null);
+  
+  // Анимация бегущей строки по скроллу
+  useScrollRunAnimation(runServicesContainerRef, runServicesImageRef);
+  
   return (
     <div className="services">
       <div className="bg-services">
@@ -33,8 +40,8 @@ function Services() {
       >
         <circle r="48%" cx="50%" cy="50%" fill="var(--pink)" />
       </svg>
-      <div className="main_run runSERVICES">
-        <img src={runServices} alt="services" />
+      <div className="main_run runSERVICES" ref={runServicesContainerRef}>
+        <img src={runServices} alt="services" ref={runServicesImageRef} />
       </div>
       <div className="servicesBOX">
         <div className="servicesBOX-one">

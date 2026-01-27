@@ -77,7 +77,7 @@
   width: 242px;
   position: relative;
 }
-.process-h6 {
+.process-h5 {
   margin-bottom: 20px;
 }
 
@@ -86,6 +86,13 @@
   transform-style: preserve-3d;
   transition: transform 0.4s;
   will-change: transform;
+  /* Оптимизация для Safari iOS */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 .one-process,
 .three-process,
@@ -142,6 +149,9 @@
 }
 
 @media screen and (min-width: 600px) {
+  .process-H1 {
+    padding-left: 8vw;
+  }
   .scene {
     margin: 0 14vw auto 0vw;
   }
@@ -193,10 +203,13 @@
   }
 }
 @media screen and (min-width: 1200px) {
+  .process-H1 {
+    padding-left: 0;
+  }
   .scene {
     margin: 12vw 14vw auto 0vw;
   }
   .process-text {
-    width: 256px;
+    width: 320px;
   }
 }

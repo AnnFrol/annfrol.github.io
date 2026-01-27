@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import appChooseRight from "./assets/img/AppChooseRight.png";
 import webPromrating from "./assets/img/promrating.png";
 import appMarkIt from "./assets/img/mark_it.png";
@@ -8,15 +11,19 @@ import bubbleWeb from "./assets/img/BubbleWeb.mp4";
 import LottieFire from "./LottieFire";
 
 function Works() {
+  const swiperRef = useRef(null);
+
   useEffect(() => {
     function setVideoAutoPlay() {
       const video = document.querySelector("video");
-      if (window.innerWidth >= 1500) {
-        video.autoPlay = true;
-        video.play(); // Запускает воспроизведение
-      } else {
-        video.autoPlay = false;
-        video.pause(); // Останавливает воспроизведение
+      if (video) {
+        if (window.innerWidth >= 1500) {
+          video.autoplay = true;
+          video.play(); // Запускает воспроизведение
+        } else {
+          video.autoplay = false;
+          video.pause(); // Останавливает воспроизведение
+        }
       }
     }
 
@@ -26,18 +33,31 @@ function Works() {
     // Добавление обработчика события изменения размера окна
     window.addEventListener("resize", setVideoAutoPlay);
 
+    // Обновление Swiper при изменении размера окна
+    const handleResize = () => {
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.update();
+      }
+      setVideoAutoPlay();
+    };
+
+    window.addEventListener("resize", handleResize);
+
     // Очистка обработчика при размонтировании компонента
     return () => {
       window.removeEventListener("resize", setVideoAutoPlay);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <>
       <Swiper
+        ref={swiperRef}
+        modules={[Navigation, Pagination, Autoplay]}
         slidesPerView="auto"
         spaceBetween={10}
-        loop={true}
+        loop={false}
         grabCursor={true}
         centeredSlides={true}
         breakpoints={{
@@ -45,12 +65,17 @@ function Works() {
             slidesPerView: 2,
             spaceBetween: 10,
             centeredSlides: true,
+            loop: false, // Отключаем loop для 2 слайдов (нужно минимум 5 слайдов для loop с 2 slidesPerView)
           },
           0: {
             slidesPerView: 1,
             spaceBetween: 10,
             centeredSlides: true,
+            loop: true, // Включаем loop для 1 слайда на мобильных (4 слайда достаточно)
           },
+        }}
+        onSwiper={(swiper) => {
+          swiperRef.current = { swiper };
         }}
         id="sliderProject"
         className="swiper mySwiper"

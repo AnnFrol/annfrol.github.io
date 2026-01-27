@@ -40,6 +40,9 @@
   h1 {
     font-size: 20vw;
   }
+  .chooseright-h1 .animated-h1 {
+    font-size: 16vw;
+  }
   h1.home-title::before {
     font-size: 4.56vw;
   }
@@ -108,6 +111,9 @@
   .about-title-SVG {
     font-size: 11.5vw;
   }
+  .chooseright-h1 .animated-h1 {
+    font-size: 11.5vw;
+  }
   h1.home-title::before {
     display: none;
   }
@@ -133,7 +139,6 @@
   }
   .services_description {
     padding-left: 8vw;
-    font-size: 1rem;
   }
   #service_SVGtwo {
     display: none;

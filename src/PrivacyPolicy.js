@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/privacy.css";
 import AnimatedText from "./AnimatedText";
+import { getEmail, openEmailClient } from "./utils/email";
 
 function PrivacyPolicy() {
   return (
@@ -18,7 +19,7 @@ function PrivacyPolicy() {
         <div className="privacy-section">
           <h3 className="privacy-subtitle">1. Introduction</h3>
           <p className="privacy-text">
-            Welcome to ChooseRight! ("we," "our," or "us"). ChooseRight! is a mobile application for iOS designed to help you make decisions without stress. The app allows users to create comparisons between options, add evaluation criteria (attributes), and rate each option. The application calculates relevance and helps you choose the optimal option.
+            Welcome to ChooseRight!. ChooseRight! is a mobile application for iOS designed to help you make decisions without stress. The app allows users to create comparisons between options, add evaluation criteria (attributes), and rate each option. The application calculates relevance and helps you choose the optimal option.
           </p>
           <p className="privacy-text">
             We are committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use ChooseRight!. The most important thing to know is that <strong>all your data is stored locally on your device</strong>, and we do not collect, transmit, or have access to your personal information.
@@ -183,11 +184,15 @@ function PrivacyPolicy() {
           </p>
           <p className="privacy-contact">
             <strong>Email:</strong>{" "}
-            <a 
-              href="mailto:Ann.desi.d@gmail.com?subject=Privacy Policy Inquiry - ChooseRight!"
+            <a
+              href={`mailto:${getEmail()}?subject=Privacy Policy Inquiry - ChooseRight!`}
+              onClick={(e) => {
+                e.preventDefault();
+                openEmailClient("Privacy Policy Inquiry - ChooseRight!");
+              }}
               className="privacy-link"
             >
-              Ann.desi.d@gmail.com
+              {getEmail()}
             </a>
           </p>
         </div>

@@ -166,13 +166,6 @@ h5 {
   letter-spacing: -0.03em;
 }
 
-h6 {
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
-  font-weight: 900;
-  line-height: 104%;
-  letter-spacing: -0.08em;
-  text-transform: uppercase;
-}
 
 .bg {
   position: absolute;
@@ -200,15 +193,12 @@ h6 {
 }
 #bg-one {
   margin-top: 60vh;
-  margin-left: -60vw;
+  margin-left: -130px;
   /* Оптимизация для Safari iOS */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: filter;
   isolation: isolate;
-  /*   width: clamp(180px, 40vw, 300px);
-  height: clamp(180px, 40vw, 300px);
-  filter: blur(clamp(60px, 24vw, 200px)); */
 }
 
 /* Оптимизация blur фильтров */
@@ -223,6 +213,13 @@ h6 {
   will-change: filter;
   /* Изоляция для лучшей производительности */
   isolation: isolate;
+}
+
+/* Уменьшить яркость круга на мобильных устройствах */
+@media screen and (max-width: 599px) {
+  #bg-one {
+    opacity: 0.3;
+  }
 }
 
 /* Уменьшить blur только на очень слабых устройствах */
@@ -258,9 +255,8 @@ h6 {
 #bg-desktop-one {
   position: absolute;
   display: none;
-  top: 40vh;
-  left: 72vw;
-  overflow: hidden;
+  margin-top: 40vh;
+  margin-left: 74vw;
 }
 .bg-process {
   position: absolute;
@@ -452,6 +448,9 @@ svg:hover #logo2 {
 .process-link.active #nav-desktop-svg {
   stroke-dashoffset: 0;
 }
+.projects-link.active #nav-desktop-svg-projects {
+  stroke-dashoffset: 0;
+}
 
 #nav-desktop-svg {
   stroke-dasharray: 450;
@@ -468,6 +467,15 @@ a:hover #nav-desktop-svg {
   transition: stroke-dashoffset 0.6s;
 }
 a:hover #nav-desktop-svg-about {
+  stroke-dashoffset: 0;
+}
+
+#nav-desktop-svg-projects {
+  stroke-dasharray: 380;
+  stroke-dashoffset: 380;
+  transition: stroke-dashoffset 0.6s;
+}
+a:hover #nav-desktop-svg-projects {
   stroke-dashoffset: 0;
 }
 
@@ -739,6 +747,10 @@ svg:hover #SMbuttonSVG {
   margin-top: 20vh;
   margin-bottom: 10vh;
   z-index: -10;
+  /* Оптимизация для мобильных */
+  contain: layout style paint;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .main_run img {
@@ -746,6 +758,9 @@ svg:hover #SMbuttonSVG {
   min-height: 80px;
   max-height: 240px;
   max-width: none;
+  /* Оптимизация рендеринга */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 .runPROCESS {
   position: relative;
@@ -753,25 +768,34 @@ svg:hover #SMbuttonSVG {
 }
 
 .runWORKS img {
+  /* На десктопе - CSS анимация, на мобильных - GSAP ScrollTrigger */
   animation: runAnimation 13s linear infinite;
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .runSERVICES img {
+  /* На десктопе - CSS анимация, на мобильных - GSAP ScrollTrigger */
   animation: runAnimation 20s linear infinite;
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .runCONTACT img {
+  /* На десктопе - CSS анимация, на мобильных - GSAP ScrollTrigger */
   animation: runAnimation 18s linear infinite;
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 
 .runPROCESS img {
@@ -779,7 +803,35 @@ svg:hover #SMbuttonSVG {
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  contain: layout style paint;
+}
+
+/* Оптимизация анимации на мобильных */
+@media (max-width: 768px) {
+  .main_run {
+    /* Упрощение композиции на мобильных */
+    isolation: isolate;
+  }
+  
+  .runWORKS img,
+  .runSERVICES img,
+  .runCONTACT img {
+    /* На мобильных CSS анимация отключается, используется GSAP ScrollTrigger */
+    animation: none !important;
+    /* Начальная позиция для GSAP */
+    transform: translate3d(33%, 0, 0);
+    -webkit-transform: translate3d(33%, 0, 0);
+  }
+  
+  .runPROCESS img {
+    /* Использование GPU для анимации */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* Отключение will-change после начала анимации для экономии ресурсов */
+    will-change: auto;
+  }
 }
 
 /* Упрощение анимаций на мобильных */
@@ -794,10 +846,12 @@ svg:hover #SMbuttonSVG {
 
 @keyframes runAnimation {
   0% {
-    transform: translateX(33%);
+    transform: translate3d(33%, 0, 0);
+    -webkit-transform: translate3d(33%, 0, 0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
   }
 }
 .swiper {
@@ -1134,6 +1188,66 @@ svg:hover #SMbuttonSVG {
   width: 80vw;
 }
 
+@media screen and (min-width: 1200px) {
+  .chooseright-animated-h1 {
+    width: 100vw;
+  }
+}
+
 .animated-h5 {
   position: relative;
+}
+
+/* Fire container для главной страницы (только до 600px) */
+.home-fire-container {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.home-fire-container .projectButtonTWO {
+  display: block;
+  position: relative;
+  left: auto;
+  top: auto;
+  padding: 0;
+  animation: none;
+  background: none;
+  border: none;
+  cursor: default;
+  pointer-events: none;
+  transform: scale(0.8);
+  transform-origin: bottom left;
+}
+
+.home-fire-container .projectButtonTWO svg {
+  width: 162px;
+  height: 55px;
+}
+
+.home-fire-container .fire-lotti {
+  width: 200px;
+  height: 200px;
+  top: -140px;
+  left: -60px;
+  position: absolute;
+  z-index: -4;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .home-fire-container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .home-fire-container .fire-lotti {
+    top: -140px;
+  }
 }

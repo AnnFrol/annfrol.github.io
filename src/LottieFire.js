@@ -1,7 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const LottieFire = () => {
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [isLowPerformance, setIsLowPerformance] = useState(false);
+
+  useEffect(() => {
+    const checkPerformance = () => {
+      const isLowPerf = 
+        /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+        /Android/i.test(navigator.userAgent) ||
+        (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4);
+      setIsLowPerformance(isLowPerf);
+      
+      // Ленивая загрузка Lottie анимации (всегда загружаем, но с задержкой)
+      const timer = setTimeout(() => {
+        setShouldLoad(true);
+      }, 500); // Уменьшить задержку
+      return () => clearTimeout(timer);
+    };
+    checkPerformance();
+  }, []);
+
   return (
     <button className="projectButtonTWO">
       <svg
@@ -25,16 +45,21 @@ const LottieFire = () => {
           />
         </g>
       </svg>
-      <DotLottieReact
-        src="https://lottie.host/d1f9a70f-4439-4c51-a1d4-f832771232a7/UzvBch780a.json"
-        className="fire-lotti"
-        backgroundColor="transparent"
-        speed={1}
-        direction={1}
-        mode="normal"
-        loop
-        autoplay
-      />
+      {shouldLoad && (
+        <DotLottieReact
+          src="https://lottie.host/d1f9a70f-4439-4c51-a1d4-f832771232a7/UzvBch780a.json"
+          className="fire-lotti"
+          backgroundColor="transparent"
+          speed={1}
+          direction={1}
+          mode="normal"
+          loop
+          autoplay
+          onError={(error) => {
+            console.warn("Lottie animation failed to load:", error);
+          }}
+        />
+      )}
     </button>
   );
 };

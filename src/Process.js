@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./css/cube.css";
 import Cube from "./Cube";
 import AnimatedText from "./AnimatedText";
-import runProcess from "./assets/img/run_process.svg";
 import FallingBalls from "./FallingBalls";
+import { useMobileForProcess } from "./hooks/useDeviceDetection";
+import { usePerformanceCheck } from "./hooks/usePerformanceCheck";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +68,8 @@ const processData = [
 ];
 
 const Process = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  const isMobile = useMobileForProcess();
+  const isLowPerformance = usePerformanceCheck();
   const containerRef = useRef(null);
   const cubeRef = useRef(null);
   const textRef = useRef(null);
@@ -75,97 +77,99 @@ const Process = () => {
   const horizontalWrapperRef = useRef(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
-    };
 
-    window.addEventListener("resize", handleResize);
+    // Небольшая задержка для инициализации после рендера
+    const initTimeout = setTimeout(() => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      if (isMobile) {
+        const cube = cubeRef.current;
+        const container = containerRef.current;
+        const text = textRef.current;
 
-    if (isMobile) {
-      const cube = cubeRef.current;
-      const container = containerRef.current;
-      const text = textRef.current;
+        if (cube && container && text) {
+          const sections = processData.length;
+          const sectionHeight = window.innerHeight;
+          const totalHeight = sectionHeight * sections;
+          container.style.height = `${totalHeight}px`;
 
-      if (cube && container && text) {
-        const sections = processData.length;
-        const sectionHeight = window.innerHeight;
-        const totalHeight = sectionHeight * sections;
-        container.style.height = `${totalHeight}px`;
+          gsap.set(cube, {
+            rotateX: 230,
+            rotateY: 150,
+            rotateZ: 156,
+          });
 
-        gsap.set(cube, {
-          rotateX: 230,
-          rotateY: 150,
-          rotateZ: 156,
-        });
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: true,
-          },
-        });
-
-        processData.forEach((data, index) => {
-          const progressPosition = index / (sections - 1);
-
-          tl.to(
-            cube,
-            {
-              rotateX: data.x,
-              rotateY: data.y,
-              rotateZ: data.z,
-              duration: 0.05,
-              ease: "none",
-              onUpdate: () => {
-                // Изменение текста в процессе вращения куба
-                text.querySelector(".process-h6").textContent = data.title;
-                text.querySelector(".process-p").textContent = data.description;
-              },
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: true,
             },
-            progressPosition
-          );
-        });
+          });
+
+          processData.forEach((data, index) => {
+            const progressPosition = index / (sections - 1);
+
+            tl.to(
+              cube,
+              {
+                rotateX: data.x,
+                rotateY: data.y,
+                rotateZ: data.z,
+                duration: 0.05,
+                ease: "none",
+                onUpdate: () => {
+                  // Изменение текста в процессе вращения куба
+                  const h5 = text.querySelector(".process-h5");
+                  const p = text.querySelector(".process-p");
+                  if (h5) h5.textContent = data.title;
+                  if (p) p.textContent = data.description;
+                },
+              },
+              progressPosition
+            );
+          });
+        }
+      } else {
+        const horizontalWrapper = horizontalWrapperRef.current;
+        const scrollContainer = scrollContainerRef.current;
+
+        if (horizontalWrapper && scrollContainer) {
+          const updateAnimation = () => {
+            const totalWidth = horizontalWrapper.scrollWidth;
+            const viewportWidth = window.innerWidth;
+
+            // Удаляем предыдущие ScrollTrigger
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+            gsap.to(horizontalWrapper, {
+              x: -(totalWidth - viewportWidth),
+              ease: "none",
+              scrollTrigger: {
+                trigger: scrollContainer,
+                start: "top top",
+                end: () => `+=${totalWidth - viewportWidth}`,
+                pin: true,
+                scrub: true,
+                invalidateOnRefresh: true,
+                anticipatePin: 1,
+              },
+            });
+          };
+
+          updateAnimation();
+          window.addEventListener("resize", updateAnimation);
+
+          return () => {
+            window.removeEventListener("resize", updateAnimation);
+          };
+        }
       }
-    } else {
-      const horizontalWrapper = horizontalWrapperRef.current;
-      const scrollContainer = scrollContainerRef.current;
-
-      const updateAnimation = () => {
-        const totalWidth = horizontalWrapper.scrollWidth;
-        const viewportWidth = window.innerWidth;
-
-        // Удаляем предыдущие ScrollTrigger
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-        gsap.to(horizontalWrapper, {
-          x: -(totalWidth - viewportWidth),
-          ease: "none",
-          scrollTrigger: {
-            trigger: scrollContainer,
-            start: "top top",
-            end: () => `+=${totalWidth - viewportWidth}`,
-            pin: true,
-            scrub: true,
-            invalidateOnRefresh: true,
-            anticipatePin: 1,
-          },
-        });
-      };
-
-      updateAnimation();
-      window.addEventListener("resize", updateAnimation);
-
-      return () => {
-        window.removeEventListener("resize", updateAnimation);
-      };
-    }
+    }, 100);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      clearTimeout(initTimeout);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [isMobile]);
@@ -177,7 +181,7 @@ const Process = () => {
           className="bg-process-one"
           height="200px"
           width="200px"
-          filter="blur(110px)"
+          filter={isLowPerformance ? "blur(50px)" : "blur(110px)"}
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle r="48%" cx="50%" cy="50%" fill="var(--pink)" />
@@ -188,7 +192,7 @@ const Process = () => {
           className="bg-process"
           height="300px"
           width="300px"
-          filter="blur(200px)"
+          filter={isLowPerformance ? "blur(80px)" : "blur(200px)"}
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle r="48%" cx="50%" cy="50%" />
@@ -204,7 +208,7 @@ const Process = () => {
           <div className="process-mobile">
             <Cube ref={cubeRef} cubeClass="mobile-cube" />
             <div className="process-text" ref={textRef}>
-              <h6 className="process-h6">{processData[0].title}</h6>
+              <h5 className="process-h5">{processData[0].title}</h5>
               <p className="process-p">{processData[0].description}</p>
             </div>
           </div>
@@ -219,7 +223,7 @@ const Process = () => {
                   className={`process ${data.cubeClass.split("-")[0]}-process`}
                 >
                   <div className="process-text">
-                    <h6 className="process-h6">{data.title}</h6>
+                    <h5 className="process-h5">{data.title}</h5>
                     <p>{data.description}</p>
                   </div>
                   <Cube cubeClass={data.cubeClass} />

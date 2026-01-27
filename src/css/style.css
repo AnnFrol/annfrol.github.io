@@ -71,6 +71,14 @@ h5 {
 	letter-spacing: -.03em;
 }
 
+p {
+	font-size: clamp(1.11rem, 1.2vw, 1.6rem);
+	color: var(--white);
+	font-weight: 100;
+	line-height: 1.5em;
+	letter-spacing: .03em;
+}
+
 .bg {
 	position: absolute;
 	z-index: -25;
@@ -150,11 +158,6 @@ h5 {
 
 a:active {
 	color: var(--white-active);
-}
-
-p {
-	color: var(--white);
-	font-weight: 100;
 }
 
 
@@ -525,13 +528,13 @@ svg:hover #SMbuttonSVG {
 }
 
 .runWORKS img {
-	animation: runAnimation 5s linear infinite;
+	animation: runAnimation 13s linear infinite;
 }
 .runSERVICES img {
-	animation: runAnimation 7s linear infinite;
+	animation: runAnimation 20s linear infinite;
 }
 .runCONTACT img {
-	animation: runAnimation 8s linear infinite;
+	animation: runAnimation 18s linear infinite;
 }
 
 .runPROCESS img {
@@ -541,10 +544,12 @@ svg:hover #SMbuttonSVG {
 
 @keyframes runAnimation {
 	0% {
-		transform: translateX(0%);
+		transform: translate3d(33%, 0, 0);
+		-webkit-transform: translate3d(33%, 0, 0);
 	}
 	100% {
-		transform: translateX(-100%); 
+		transform: translate3d(-100%, 0, 0);
+		-webkit-transform: translate3d(-100%, 0, 0);
 	}
 }
 .swiper {
@@ -653,7 +658,7 @@ svg:hover #SMbuttonSVG {
 .twoProject-SVGone {
 	width: 1.7em;
 	margin-top: -.2em;
-	margin-left: 11.4em;
+	margin-left: 11em;
 }
 
 .threeProject-SVGone {
@@ -663,12 +668,12 @@ svg:hover #SMbuttonSVG {
 }
 .fourProject-SVGone {
 	width: 3.5em;
-	margin-top: -2.2em;
-	margin-left: 12.2em;
+	margin-top: -2.1em;
+	margin-left: 12em;
 }
 .fourProject-SVGtwo {
 	width: 3em;
-	margin-top: 0.7em;
+	margin-top: 0.6em;
 	margin-left: 0.4em;
 }
 

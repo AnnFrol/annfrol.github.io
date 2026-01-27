@@ -1,32 +1,42 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { gsap } from "gsap";
-import "./css/FallingBalls.css"; // Импортируем CSS стили
+import "./css/FallingBalls.css";
+import { usePerformanceCheck } from "./hooks/usePerformanceCheck";
 
 const FallingBalls = ({ page }) => {
   const ballsRef = useRef([]);
+  const isLowPerformance = usePerformanceCheck();
 
-  const animateBalls = () => {
+  const animateBalls = useCallback(() => {
     ballsRef.current.forEach((ball, index) => {
       if (ball) {
         const yValue = window.innerHeight * 0.77 + 64;
+        
+        // На слабых устройствах использовать более простую анимацию
+        const duration = isLowPerformance ? 1.5 : 2;
+        const ease = isLowPerformance ? "power2.out" : "bounce.out";
 
         gsap.fromTo(
           ball,
           { y: -100 },
           {
             y: yValue,
-            duration: 2,
-            ease: "bounce.out",
+            duration: duration,
+            ease: ease,
             delay: index * 0.3,
           }
         );
       }
     });
-  };
+  }, [isLowPerformance]);
 
   useEffect(() => {
-    animateBalls();
-  }, []);
+    // Небольшая задержка для лучшей производительности
+    const timer = setTimeout(() => {
+      animateBalls();
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [isLowPerformance, animateBalls]);
 
   // Определяем класс для контейнера мячиков в зависимости от страницы
   const containerClass = `falling-balls-container ${page}-balls`;

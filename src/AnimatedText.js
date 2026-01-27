@@ -22,6 +22,7 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc, page }) => {
           y: 0,
           opacity: 1,
           duration: animationOptions.duration || 0.8,
+          delay: animationOptions.delay || 0,
           stagger: staggerOptions,
           ease: animationOptions.ease || "power4.out",
         }
@@ -91,7 +92,9 @@ const AnimatedText = ({ title, subtitle, text, blockText, imgSrc, page }) => {
 
   useEffect(() => {
     if (title) {
-      animateText(titleRef, { from: "center", amount: 0.3 }, { duration: 0.8 });
+      // Без задержки для страницы chooseright - заголовок появляется первым
+      const delay = 0;
+      animateText(titleRef, { from: "center", amount: 0.3 }, { duration: 0.8, delay });
     }
     if (subtitle) {
       animateTextH2(

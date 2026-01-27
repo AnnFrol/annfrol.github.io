@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import gsap from "gsap";
 import Home from "./Home";
 import About from "./About";
 import Process from "./Process";
@@ -8,32 +9,22 @@ import ChooseRight from "./ChooseRight";
 import Header from "./Header";
 import Footer from "./Footer";
 import PageLoader from "./PageLoader";
-import gsap from "gsap";
 import ScrollToTop from "./ScrollToTop";
+import GradientDefs from "./components/GradientDefs/GradientDefs";
+import { useCursor } from "./hooks/useCursor";
+import { useViewportHeight } from "./hooks/useViewportHeight";
+import { ROUTES } from "./constants";
 
 function App() {
+  const location = useLocation();
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const contentRef = useRef(null);
+  const previousPathRef = useRef(location.pathname);
+  const hasLoadedOnceRef = useRef(false);
 
-  useEffect(() => {
-    const cursor = document.querySelector(".cursor");
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-    if (!isSafari) {
-      const moveCursor = (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-      };
-
-      document.addEventListener("mousemove", moveCursor);
-
-      return () => {
-        document.removeEventListener("mousemove", moveCursor);
-      };
-    } else {
-      document.body.style.cursor = "auto";
-    }
-  }, []);
+  useCursor();
+  useViewportHeight();
 
   useEffect(() => {
     if (loadingComplete) {
@@ -46,123 +37,55 @@ function App() {
     }
   }, [loadingComplete]);
 
-  useEffect(() => {
-    const updateVh = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-
-    updateVh(); // Устанавливаем начальное значение
-
-    // Исправление для Safari iOS - обновление при изменении ориентации
-    const handleResize = () => {
-      updateVh();
-      // Дополнительная задержка для Safari iOS
-      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        setTimeout(updateVh, 100);
-      }
-    };
-
-    window.addEventListener("resize", handleResize, { passive: true });
-    window.addEventListener("orientationchange", handleResize, { passive: true });
-    
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("orientationchange", handleResize);
-    };
-  }, []);
-
   const handleLoadingComplete = () => {
     setLoadingComplete(true);
+    setIsTransitioning(false);
+    hasLoadedOnceRef.current = true;
   };
+
+  // Handle transitions to chooseright page
+  useEffect(() => {
+    const currentPath = location.pathname;
+    const previousPath = previousPathRef.current;
+
+    // Если переходим на chooseright с другой страницы
+    if (currentPath === ROUTES.CHOOSERIGHT && previousPath !== ROUTES.CHOOSERIGHT) {
+      // Используем setTimeout чтобы избежать конфликтов с текущим рендером
+      setTimeout(() => {
+        if (hasLoadedOnceRef.current) {
+        setIsTransitioning(true);
+        setLoadingComplete(false);
+      }
+      }, 0);
+    }
+    // Если уходим с chooseright на другую страницу
+    else if (previousPath === ROUTES.CHOOSERIGHT && currentPath !== ROUTES.CHOOSERIGHT) {
+      setIsTransitioning(false);
+    }
+
+    previousPathRef.current = currentPath;
+  }, [location.pathname]);
+
+  const showLoader = !loadingComplete || isTransitioning;
 
   return (
     <>
       <div className="cursor"></div>
-      {!loadingComplete && (
+      {showLoader && (
         <PageLoader onLoadingComplete={handleLoadingComplete} />
       )}
-      {loadingComplete && (
+      {loadingComplete && !isTransitioning && (
         <div ref={contentRef} style={{ opacity: 0 }}>
           <Header />
-          <svg className="absolute">
-            <defs>
-              <linearGradient
-                id="za"
-                x1="28.334"
-                x2="22.36"
-                y1="1.61"
-                y2="14.559"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FFA1A1" />
-                <stop offset=".458" stopColor="#EDD1CD" />
-                <stop offset="1" stopColor="#CDE052" />
-              </linearGradient>
-            </defs>
-            <defs>
-              <linearGradient
-                id="abc"
-                x1="-57.4342"
-                y1="65.4236"
-                x2="114.541"
-                y2="-201.413"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FFA1A1" />
-                <stop offset="0.458333" stopColor="#EDD1CD" />
-                <stop offset="1" stopColor="#CDE052" />
-              </linearGradient>
-              <linearGradient
-                id="abcd"
-                x1="6.91775"
-                y1="31.5455"
-                x2="61.2941"
-                y2="2.45737"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FFA1A1" />
-                <stop offset="0.458333" stopColor="#EDD1CD" />
-                <stop offset="1" stopColor="#CDE052" />
-              </linearGradient>
-            </defs>
-            <defs>
-              <linearGradient
-                id="a"
-                x1="5.84"
-                x2="53.28"
-                y1="28.806"
-                y2="5.343"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FFA1A1" />
-                <stop offset=".458" stopColor="#EDD1CD" />
-                <stop offset="1" stopColor="#CDE052" />
-              </linearGradient>
-            </defs>
-            <defs>
-              <linearGradient
-                id="ab"
-                x1="-26.299"
-                x2="69.89"
-                y1="43.316"
-                y2="-89.4"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FFA1A1" />
-                <stop offset=".458" stopColor="#EDD1CD" />
-                <stop offset="1" stopColor="#CDE052" />
-              </linearGradient>
-            </defs>
-          </svg>
+          <GradientDefs />
           <main>
             <ScrollToTop />
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/process" element={<Process />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/chooseright" element={<ChooseRight />} />
+              <Route path={ROUTES.HOME} element={<Home />} />
+              <Route path={ROUTES.ABOUT} element={<About />} />
+              <Route path={ROUTES.PROCESS} element={<Process />} />
+              <Route path={ROUTES.PRIVACY} element={<PrivacyPolicy />} />
+              <Route path={ROUTES.CHOOSERIGHT} element={<ChooseRight />} />
             </Routes>
           </main>
           <Footer />

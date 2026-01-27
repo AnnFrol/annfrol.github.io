@@ -7,6 +7,12 @@
   transition: transform 0.3s;
   transform: scale(0.6);
   top: -52vh;
+  /* Оптимизация для Safari iOS */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform: translateZ(0) scale(0.6);
+  -webkit-transform: translateZ(0) scale(0.6);
 }
 .process-balls {
   top: -110vh;
@@ -50,7 +56,8 @@
 @media (min-width: 600px) {
   .falling-balls-container {
     top: -60vh;
-    transform: scale(1);
+    transform: translateZ(0) scale(1);
+    -webkit-transform: translateZ(0) scale(1);
   }
   .process-balls {
     top: -120vh;
