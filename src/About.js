@@ -51,7 +51,7 @@ function About() {
 
       <div className="about-Principles">
         <div className="mephoto-about">
-          <img src={photo_me_about} alt="Froltsova Anna photo About" />
+          <img src={photo_me_about} alt="Froltsova Anna" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100%"

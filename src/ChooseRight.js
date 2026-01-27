@@ -98,6 +98,12 @@ function ChooseRight() {
 
   // Анимация background элементов при загрузке страницы
   useEffect(() => {
+    // Копируем ref значения для использования в cleanup
+    const ellipseEl = ellipseRef.current;
+    const ellipse2El = ellipse2Ref.current;
+    const chekEl = chekRef.current;
+    const projectContainerEl = projectContainerRef.current;
+    
     let retryCount = 0;
     const maxRetries = 10;
 
@@ -195,15 +201,12 @@ function ChooseRight() {
 
     return () => {
       // Очищаем все анимации при размонтировании
-      const ellipse = ellipseRef.current;
-      const ellipse2 = ellipse2Ref.current;
-      const chek = chekRef.current;
-      if (ellipse || ellipse2 || chek) {
-        gsap.killTweensOf([ellipse, ellipse2, chek]);
+      if (ellipseEl || ellipse2El || chekEl) {
+        gsap.killTweensOf([ellipseEl, ellipse2El, chekEl]);
       }
       // Скрываем контейнер при размонтировании
-      if (projectContainerRef.current) {
-        gsap.set(projectContainerRef.current, { opacity: 0 });
+      if (projectContainerEl) {
+        gsap.set(projectContainerEl, { opacity: 0 });
       }
     };
   }, [location.pathname]);
