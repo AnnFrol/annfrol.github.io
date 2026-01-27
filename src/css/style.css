@@ -765,8 +765,7 @@ svg:hover #SMbuttonSVG {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	text-align: center;
+	margin-left: calc(50% - 90px);
 	margin-top: 14vh;
 }
 
@@ -939,24 +938,7 @@ svg:hover #SMbuttonSVG {
 	font-size: clamp(2.5rem, 10vw, 116px);
 }
 
-.mephoto-about {
-	position: absolute;
-	width: 42vw;
-	max-width: 285px;
-	top: 110vh;
-	right: 4vw;
-	left: 40vw;
-}
-
-.mephoto-about img {
-	position: relative;
-}
-
-.mephoto-about svg {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+/* .mephoto-about styles moved to about.css */
 
 
 .about-p {
