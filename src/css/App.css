@@ -1110,7 +1110,8 @@ svg:hover #SMbuttonSVG {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: calc(50% - 90px);
+  width: 100%;
+  text-align: center;
   margin-top: 14vh;
 }
 
