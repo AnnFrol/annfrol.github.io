@@ -65,6 +65,7 @@ function Home() {
           height="200px"
           width="200px"
           filter={isLowPerformance ? "blur(50px)" : "blur(100px)"}
+          style={{ opacity: isLowPerformance ? 0.3 : 1 }}
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle
@@ -82,6 +83,7 @@ function Home() {
           height="300px"
           width="300px"
           filter={isLowPerformance ? "blur(80px)" : "blur(200px)"}
+          style={{ opacity: isLowPerformance ? 0.3 : 1 }}
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle r="48%" cx="50%" cy="50%" fill="var(--maxgreenyellow)" />
@@ -140,6 +142,7 @@ function Home() {
             height="180"
             width="180"
             filter={isLowPerformance ? "blur(60px)" : "blur(150px)"}
+            style={{ opacity: isLowPerformance ? 0.3 : 1 }}
           >
             <circle r="48%" cx="50%" cy="50%" fill="var(--maxgreenyellow)" />
           </svg>

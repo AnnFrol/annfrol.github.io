@@ -182,6 +182,7 @@ const Process = () => {
           height="200px"
           width="200px"
           filter={isLowPerformance ? "blur(50px)" : "blur(110px)"}
+          style={{ opacity: isLowPerformance ? 0.3 : 1 }}
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle r="48%" cx="50%" cy="50%" fill="var(--pink)" />
@@ -193,6 +194,7 @@ const Process = () => {
           height="300px"
           width="300px"
           filter={isLowPerformance ? "blur(80px)" : "blur(200px)"}
+          style={{ opacity: isLowPerformance ? 0.3 : 1 }}
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle r="48%" cx="50%" cy="50%" />
