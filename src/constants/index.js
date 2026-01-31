@@ -7,7 +7,7 @@ export const EMAIL_SUBJECT = "New Dream Project";
 export const SOCIAL_LINKS = {
   behance: "https://www.behance.net/AnnKolnbro",
   instagram: "https://www.instagram.com/annfroltsova/",
-  telegram: "https://annkolnobro.t.me/",
+  telegram: "https://t.me/AnnFroCom",
 };
 
 // Routes
