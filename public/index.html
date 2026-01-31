@@ -32,15 +32,16 @@
       sizes="16x16"
       href="%PUBLIC_URL%/aplfav.svg"
     />
+    <link rel="canonical" href="https://annfro.com" />
     <meta
       property="og:image"
-      content="https://annfrol.github.io/template.png"
+      content="https://annfro.com/template.png"
     />
     <meta
       property="og:image:alt"
-      content="Cover image of Anna Froltsova's portfolio"
+      content="Anna Froltsova - Digital Nomad Designer portfolio"
     />
-    <meta property="og:url" content="https://annfrol.github.io" />
+    <meta property="og:url" content="https://annfro.com" />
     <meta property="og:type" content="website" />
 
     <!--
@@ -60,9 +61,9 @@
     <title>Anna Froltsova - Digital Designer</title>
     <meta
       name="keywords"
-      content="Designer, applications, creative, portfolio, Nomad Designer"
+      content="UX UI designer, web design, app design, motion design, digital designer, portfolio, Anna Froltsova, Nomad Designer, CJM, JTBD, front-end"
     />
-    <meta name="description" content="Digital Nomad Designer" />
+    <meta name="description" content="Anna Froltsova — Digital Nomad Designer specializing in UX/UI, web design, app design, and motion. 7+ years experience. Portfolio of apps, websites, and creative projects." />
     <meta name="author" content="Anna Froltsova" />
     <meta
       property="og:title"
@@ -70,7 +71,7 @@
     />
     <meta
       property="og:description"
-      content="Portfolio of Anna Froltsova, a Digital Nomad Designer specializing in creative applications and web design."
+      content="Portfolio of Anna Froltsova — UX/UI designer with 7+ years experience. App design, web design, motion design. Choose Right, Mark it, Promrating, and more."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -79,9 +80,9 @@
     />
     <meta
       name="twitter:description"
-      content="Creative portfolio showcasing the work of Anna Froltsova, a Digital Nomad Designer."
+      content="Anna Froltsova — Digital Designer. UX/UI, apps, web design, motion. 7+ years. Choose Right, Mark it, Promrating."
     />
-    <meta name="twitter:image" content="%PUBLIC_URL%/template.png" />
+    <meta name="twitter:image" content="https://annfro.com/template.png" />
     <meta
       name="twitter:image:alt"
       content="Cover image of Anna Froltsova's portfolio"
@@ -89,6 +90,45 @@
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Anna Froltsova Portfolio" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://annfro.com/#person",
+          "name": "Anna Froltsova",
+          "jobTitle": "Digital Designer",
+          "url": "https://annfro.com",
+          "image": "https://annfro.com/template.png",
+          "sameAs": [
+            "https://www.behance.net/AnnKolnbro",
+            "https://www.instagram.com/annfroltsova/",
+            "https://t.me/AnnFroCom"
+          ],
+          "description": "Digital Nomad Designer specializing in UX/UI, web design, app design, and motion. 7+ years of experience in web agencies."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://annfro.com/#website",
+          "url": "https://annfro.com",
+          "name": "Anna Froltsova Portfolio",
+          "description": "Portfolio of Anna Froltsova — UX/UI designer, app design, web design, motion design.",
+          "publisher": { "@id": "https://annfro.com/#person" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Anna Froltsova Portfolio",
+          "description": "Digital design portfolio showcasing app design (Choose Right, Mark it), web design (Promrating, Bubble), and art direction projects.",
+          "author": { "@id": "https://annfro.com/#person" },
+          "url": "https://annfro.com"
+        }
+      ]
+    }
+    </script>
     <base href="/" />
   </head>
   <body>
