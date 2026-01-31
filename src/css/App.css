@@ -1275,7 +1275,7 @@ svg:hover #SMbuttonSVG {
 /* Ссылка Behance: на картинке справа снизу, чёрный фон */
 .work-behance-link {
   position: absolute;
-  bottom: 4.5px;
+  bottom: 20px;
   right: 0;
   z-index: 5;
   display: flex;
