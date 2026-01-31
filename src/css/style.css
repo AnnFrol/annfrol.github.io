@@ -902,6 +902,8 @@ svg:hover #SMbuttonSVG {
 	position: absolute;
 	width: 36vw;
 	max-width: 227px;
+	height: 36vw;
+	max-height: 227px;
 	padding-top: 22vh;
 	left: 18vw;
 }

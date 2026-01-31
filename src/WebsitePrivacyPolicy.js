@@ -69,28 +69,48 @@ function WebsitePrivacyPolicy() {
         </div>
 
         <div className="privacy-section">
-          <h3 className="privacy-subtitle">6. Third-Party Links</h3>
+          <h3 className="privacy-subtitle">6. Third-Party Resources Loaded by the Site</h3>
+          <p className="privacy-text">
+            When you visit this website, your browser may automatically load resources from third-party services:
+          </p>
+          <ul className="privacy-list">
+            <li>
+              <strong>Google Fonts</strong> (fonts.googleapis.com) — we use it to display the site’s typography. When fonts are loaded, Google may receive your IP address and other technical data. See{" "}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="privacy-link">Google’s Privacy Policy</a>.
+            </li>
+            <li>
+              <strong>Lottie</strong> (lottie.host) — we use it for animations. Loading animation files may send requests to Lottie’s servers, which may log technical data. See{" "}
+              <a href="https://lottiefiles.com/page/privacy-policy" target="_blank" rel="noopener noreferrer" className="privacy-link">LottieFiles Privacy Policy</a>.
+            </li>
+          </ul>
+          <p className="privacy-text">
+            We do not control these third-party services. We recommend reviewing their privacy policies for details on how they handle data.
+          </p>
+        </div>
+
+        <div className="privacy-section">
+          <h3 className="privacy-subtitle">7. Third-Party Links</h3>
           <p className="privacy-text">
             The site may link to external sites (e.g. social networks, App Store, other portfolios). Those sites have their own privacy policies and data practices. We are not responsible for their handling of your data.
           </p>
         </div>
 
         <div className="privacy-section">
-          <h3 className="privacy-subtitle">7. Your Rights</h3>
+          <h3 className="privacy-subtitle">8. Your Rights</h3>
           <p className="privacy-text">
             Because we do not collect personal data through this website, there is no account or profile to access or delete on our side. If you have questions about data held by our hosting provider (GitHub), please refer to GitHub’s privacy documentation. For questions about this policy or our practices, you can contact us at the email below.
           </p>
         </div>
 
         <div className="privacy-section">
-          <h3 className="privacy-subtitle">8. Changes to This Policy</h3>
+          <h3 className="privacy-subtitle">9. Changes to This Policy</h3>
           <p className="privacy-text">
             We may update this Website Privacy Policy from time to time. The “Last Updated” date at the top will be revised when we do. We encourage you to review this page periodically.
           </p>
         </div>
 
         <div className="privacy-section">
-          <h3 className="privacy-subtitle">9. Contact</h3>
+          <h3 className="privacy-subtitle">10. Contact</h3>
           <p className="privacy-text">
             Operator: <strong>IE Froltsova (Individual Entrepreneur Froltsova), Kazakhstan</strong>.
           </p>
@@ -113,7 +133,7 @@ function WebsitePrivacyPolicy() {
         </div>
 
         <div className="privacy-section">
-          <h3 className="privacy-subtitle">10. Other Policies</h3>
+          <h3 className="privacy-subtitle">11. Other Policies</h3>
           <p className="privacy-text">
             If you are interested in the privacy practices of our mobile app ChooseRight!, please see the separate{" "}
             <Link to={ROUTES.PRIVACY} className="privacy-link">

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Player } from "@lottiefiles/react-lottie-player";
 import "./css/chooseright.css";
 import AnimatedText from "./AnimatedText";
 import FrameSequenceAnimation from "./FrameSequenceAnimation";
@@ -501,13 +501,11 @@ function ChooseRight() {
                 />
               </g>
             </svg>
-            <DotLottieReact
+            <Player
               src="https://lottie.host/d1f9a70f-4439-4c51-a1d4-f832771232a7/UzvBch780a.json"
               className="fire-lotti"
-              backgroundColor="transparent"
+              background="transparent"
               speed={1}
-              direction={1}
-              mode="normal"
               loop
               autoplay
             />

@@ -4,13 +4,9 @@
   "icon": [
     {
       "src": "aplfav.svg",
-      "sizes": "64x64 32x32 16x16 24x24 192x192 512x512",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "aplefav.png",
-      "type": "image/png",
-      "sizes": "180x180"
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "start_url": ".",

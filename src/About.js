@@ -4,7 +4,7 @@ import photo_me_about from "./assets/img/PhotomeAbout.png";
 import about from "./assets/img/about.svg";
 import AnimatedText from "./AnimatedText";
 import FallingBalls from "./FallingBalls";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 function About() {
   return (
@@ -111,15 +111,15 @@ function About() {
             <strong>Front-End</strong>
           </span>
         </h3>
-        <DotLottieReact
-          className="about_skills-SVG"
-          src="https://lottie.host/35cf7791-d321-4ba2-b336-755f237c0d8b/X51rEiwGJY.json"
-          backgroundColor="transparent"
-          mode="normal"
-          direction={1}
-          loop
-          autoplay
-        />
+        <div className="about_skills-SVG">
+          <Player
+            src="https://lottie.host/35cf7791-d321-4ba2-b336-755f237c0d8b/X51rEiwGJY.json"
+            background="transparent"
+            loop
+            autoplay
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
       </div>
     </div>
   );

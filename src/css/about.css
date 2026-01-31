@@ -96,6 +96,9 @@
   width: 56vw;
   min-width: 320px;
   max-width: 600px;
+  height: 56vw;
+  min-height: 320px;
+  max-height: 600px;
   bottom: 21vh;
 }
 .about_Skills {
