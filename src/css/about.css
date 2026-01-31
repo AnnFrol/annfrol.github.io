@@ -92,14 +92,10 @@
 }
 .about_skills-SVG {
   position: absolute;
-  left: -100px;
-  width: 56vw;
-  min-width: 320px;
-  max-width: 600px;
-  height: 56vw;
-  min-height: 320px;
-  max-height: 600px;
-  bottom: 21vh;
+  left: 4vh;
+  width: clamp(180px, 28vw, 300px);
+  height: clamp(180px, 28vw, 300px);
+  bottom: 43vh;
 }
 .about_Skills {
   width: 80vw;
@@ -124,6 +120,9 @@
     width: 30vw;
     top: -8vh;
   }
+  .about_skills-SVG {
+    bottom: 48vh;
+  }
 }
 @media screen and (min-width: 1200px) {
   .about-h1 {
@@ -147,7 +146,8 @@
     margin-bottom: 0;
   }
   .about_skills-SVG {
-    bottom: 26vh;
+    bottom: 48vh;
+    left: 4vh;
   }
 
   .mephoto-about {

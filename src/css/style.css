@@ -901,9 +901,9 @@ svg:hover #SMbuttonSVG {
 .about_skills-SVG {
 	position: absolute;
 	width: 36vw;
-	max-width: 227px;
+	max-width: 300px;
 	height: 36vw;
-	max-height: 227px;
+	max-height: 300px;
 	padding-top: 22vh;
 	left: 18vw;
 }
