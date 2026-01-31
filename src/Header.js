@@ -58,28 +58,6 @@ const Header = () => {
         </div>
         <nav className="header_nav-desktop">
           <NavLink
-            to={ROUTES.PROCESS}
-            className={({ isActive }) =>
-              isActive ? "process-link active-link" : "process-link"
-            }
-          >
-            Process
-            <svg
-              className="header_nav-desktop-svg"
-              xmlns="http://www.w3.org/2000/svg"
-              width="106"
-              height="8"
-              fill="none"
-            >
-              <path
-                id="nav-desktop-svg"
-                stroke="url(#a)"
-                strokeLinecap="round"
-                d="M95.345 6.439C63.897 6.439 1 6.018 1 4.333c0-2.107 94.345 0 94.345-2.107C95.345.12 8.702 9.311 8.702 6.44s98.195 0 96.27-2.106c-1.925-2.107-77.015-5.016-77.015-2.107"
-              />
-            </svg>
-          </NavLink>
-          <NavLink
             to={ROUTES.ABOUT}
             className={({ isActive }) =>
               isActive ? "about-link active-link" : "about-link"
@@ -98,6 +76,50 @@ const Header = () => {
                 stroke="url(#a)"
                 strokeLinecap="round"
                 d="M62.687 6.439C42.125 6.439 1 6.018 1 4.333c0-2.107 61.687 0 61.687-2.107C62.687.12 6.036 9.311 6.036 6.44s64.205 0 62.946-2.106c-1.26-2.107-50.356-5.016-50.356-2.107"
+              />
+            </svg>
+          </NavLink>
+          <NavLink
+            to={ROUTES.WORKS}
+            className={({ isActive }) =>
+              isActive ? "works-link active-link" : "works-link"
+            }
+          >
+            Works
+            <svg
+              className="header_nav-desktop-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="8"
+              fill="none"
+            >
+              <path
+                id="nav-desktop-svg-works"
+                stroke="url(#a)"
+                strokeLinecap="round"
+                d="M62.687 6.439C42.125 6.439 1 6.018 1 4.333c0-2.107 61.687 0 61.687-2.107C62.687.12 6.036 9.311 6.036 6.44s64.205 0 62.946-2.106c-1.26-2.107-50.356-5.016-50.356-2.107"
+              />
+            </svg>
+          </NavLink>
+          <NavLink
+            to={ROUTES.PROCESS}
+            className={({ isActive }) =>
+              isActive ? "process-link active-link" : "process-link"
+            }
+          >
+            Process
+            <svg
+              className="header_nav-desktop-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="106"
+              height="8"
+              fill="none"
+            >
+              <path
+                id="nav-desktop-svg"
+                stroke="url(#a)"
+                strokeLinecap="round"
+                d="M95.345 6.439C63.897 6.439 1 6.018 1 4.333c0-2.107 94.345 0 94.345-2.107C95.345.12 8.702 9.311 8.702 6.44s98.195 0 96.27-2.106c-1.925-2.107-77.015-5.016-77.015-2.107"
               />
             </svg>
           </NavLink>
@@ -146,14 +168,14 @@ const Header = () => {
         </nav>
       </header>
       <div id="menuItems" style={{ display: menuOpen ? "block" : "none" }}>
-        <NavLink className="menu" to={ROUTES.HOME}>
-          Home
+        <NavLink className="menu" to={ROUTES.ABOUT}>
+          About
+        </NavLink>
+        <NavLink className="menu" to={ROUTES.WORKS}>
+          Works
         </NavLink>
         <NavLink className="menu" to={ROUTES.PROCESS}>
           Process
-        </NavLink>
-        <NavLink className="menu" to={ROUTES.ABOUT}>
-          About
         </NavLink>
         <button className="menu_main_button" onClick={openEmailClient}>
           <div className="main_send-message">Send Message</div>

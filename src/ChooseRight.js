@@ -471,10 +471,10 @@ function ChooseRight() {
   }, [location.pathname]);
 
   return (
-    <div ref={projectContainerRef} className="chooseright-project">
+    <div ref={projectContainerRef} className="chooseright-work">
       {shouldLoadFire && (
         <div ref={fireContainerRef} className="chooseright-fire-container">
-          <button className="projectButtonTWO">
+          <button className="workButtonTWO">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="162"

@@ -15,7 +15,9 @@ export const ROUTES = {
   HOME: "/",
   ABOUT: "/about",
   PROCESS: "/process",
+  WORKS: "/works",
   PRIVACY: "/privacy-policy",
+  WEBSITE_PRIVACY: "/website-privacy-policy",
   CHOOSERIGHT: "/chooseright",
 };
 

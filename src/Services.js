@@ -420,11 +420,11 @@ function Services() {
           </div>
         </div>
         <h3 className="services_description">
-          I’m Anna Froltsova is an independent creative designer & developer
-          focusing on <strong>web</strong> / <strong>app</strong> /{" "}
+          I’m Anna Froltsova, an independent creative designer & developer
+          specializing in <strong>web</strong> / <strong>app</strong> /{" "}
           <strong>smart motions</strong>.<br />
           <br />
-          Based in Kazakhstan / working remotely worldwide.
+          Available for remote work worldwide.
         </h3>
       </div>
     </div>

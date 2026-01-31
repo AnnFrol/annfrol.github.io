@@ -1,7 +1,8 @@
 /* Основные стили для контейнера мячиков */
 .falling-balls-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   height: 100vh;
   overflow: hidden;
   transition: transform 0.3s;
@@ -14,6 +15,10 @@
   transform: translateZ(0) scale(0.6);
   -webkit-transform: translateZ(0) scale(0.6);
 }
+.works-balls {
+  top: -43vh;
+}
+
 .process-balls {
   top: -110vh;
 }
@@ -30,6 +35,12 @@
   top: -14vh;
 }
 
+.works-ball-one {
+  position: absolute;
+  top: -18vh;
+  left: calc(63vw - 44px);
+}
+
 .ball-two {
   position: absolute;
   top: -15vh;
@@ -40,6 +51,11 @@
 .process-ball-two {
   left: calc(42vw - 147px);
   top: 1vh;
+}
+
+.works-ball-two {
+top: 0;
+left: calc(40vw + -124px);
 }
 
 .ball-three {
@@ -53,6 +69,12 @@
   left: calc(68vw + 50px);
   top: -1vh;
 }
+
+.works-ball-three {
+  top: -40px;
+  left: calc(60vw + 76px);
+}
+
 @media (min-width: 600px) {
   .falling-balls-container {
     top: -60vh;

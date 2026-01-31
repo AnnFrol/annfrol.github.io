@@ -48,7 +48,7 @@
 }
 
 /* Main Container */
-.chooseright-project {
+.chooseright-work {
   position: relative;
   overflow: hidden;
   opacity: 0; /* Скрываем весь контейнер до готовности анимаций */
@@ -56,7 +56,7 @@
   color: var(--white);
 }
 
-.chooseright-project p {
+.chooseright-work p {
   font-size: clamp(0.91rem, 1.7vw, 1.3rem);
 }
 
@@ -116,7 +116,7 @@
 }
 
 .chooseright-text,
-.chooseright-project {
+.chooseright-work {
   color: var(--black);
   font-size: clamp(0.91rem, 1.7vw, 1.3rem);
 }
@@ -421,7 +421,7 @@
   display: block;
 }
 
-.chooseright-fire-container .projectButtonTWO {
+.chooseright-fire-container .workButtonTWO {
   display: block;
   position: relative;
   left: auto;
@@ -436,7 +436,7 @@
   transform-origin: bottom left;
 }
 
-.chooseright-fire-container .projectButtonTWO svg {
+.chooseright-fire-container .workButtonTWO svg {
   width: 162px;
   height: 55px;
 }
@@ -539,7 +539,7 @@
 
 /* Media Queries - Desktop (min-width: 1200px) */
 @media screen and (min-width: 1200px) {
-  .chooseright-fire-container .projectButtonTWO {
+  .chooseright-fire-container .workButtonTWO {
     transform: scale(1);
   }
 

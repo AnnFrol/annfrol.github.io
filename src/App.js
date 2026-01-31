@@ -2,9 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import Home from "./Home";
+import WorksPage from "./WorksPage";
 import About from "./About";
 import Process from "./Process";
 import PrivacyPolicy from "./PrivacyPolicy";
+import WebsitePrivacyPolicy from "./WebsitePrivacyPolicy";
 import ChooseRight from "./ChooseRight";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -82,9 +84,11 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path={ROUTES.HOME} element={<Home />} />
+              <Route path={ROUTES.WORKS} element={<WorksPage />} />
               <Route path={ROUTES.ABOUT} element={<About />} />
               <Route path={ROUTES.PROCESS} element={<Process />} />
               <Route path={ROUTES.PRIVACY} element={<PrivacyPolicy />} />
+              <Route path={ROUTES.WEBSITE_PRIVACY} element={<WebsitePrivacyPolicy />} />
               <Route path={ROUTES.CHOOSERIGHT} element={<ChooseRight />} />
             </Routes>
           </main>

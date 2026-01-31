@@ -29,7 +29,6 @@
   --ease-in-quart: cubic-bezier(0.5, 0, 0.75, 0);
   --ease-out-quart: cubic-bezier(0.175, 0.79, 0.38, 0.905);
   --home-title-en: "Hey, I am";
-  --home-title-es: "Hola, soy";
 }
 .cursor {
   position: fixed;
@@ -120,6 +119,10 @@
   background-color: var(--background);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   cursor: none;
   font-weight: 200;
@@ -127,6 +130,7 @@ body {
   display: flex;
   background-color: var(--background);
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 h1 {
@@ -303,6 +307,7 @@ h5 {
   transition: 0.03s linear;
 }
 .active-link {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 a:active {
@@ -330,57 +335,6 @@ p {
   width: 100vw;
   z-index: 30;
   mix-blend-mode: difference;
-}
-
-.header_languag {
-  grid-column: 1 / 2;
-}
-
-.active-lang {
-  cursor: default;
-}
-.default-lang {
-  cursor: pointer;
-}
-
-.lang {
-  position: relative;
-  padding-bottom: 10px;
-  padding-left: 4px;
-  padding-right: 4px;
-  height: 53px;
-  align-items: center;
-}
-
-.active-lang > #lang-svg-En,
-#lang-svg-Es {
-  position: absolute;
-  top: 18px;
-  left: 1px;
-}
-
-.default-lang > #lang-svg-En,
-#lang-svg-Es {
-  position: absolute;
-  top: 18px;
-  left: 1px;
-}
-
-.default-lang > #lang-svg-En,
-#lang-svg-Es {
-  stroke-dasharray: 71;
-  stroke-dashoffset: 71;
-  transition: stroke-dashoffset 0.3s;
-}
-
-.default-lang:hover > #lang-svg-En,
-.default-lang:hover > #lang-svg-Es {
-  stroke-dashoffset: 0;
-}
-
-.default-cursor {
-  cursor: default;
-  display: inline;
 }
 
 .header_logo {
@@ -427,6 +381,13 @@ svg:hover #logo2 {
 .process-link .header_nav-desktop-svg {
   margin-left: -5px;
 }
+
+.works-link .header_nav-desktop-svg {
+  margin-left: 8px;
+}
+.about-link .header_nav-desktop-svg {
+  margin-left: 4px;
+}
 .header_nav-desktop a {
   display: flex;
   position: relative;
@@ -434,6 +395,7 @@ svg:hover #logo2 {
   padding-right: 12px;
   margin-right: 4px;
   height: 100%;
+  transition: color 1s ease;
 }
 
 .header_nav-desktop-svg {
@@ -448,7 +410,7 @@ svg:hover #logo2 {
 .process-link.active #nav-desktop-svg {
   stroke-dashoffset: 0;
 }
-.projects-link.active #nav-desktop-svg-projects {
+.works-link.active #nav-desktop-svg-works {
   stroke-dashoffset: 0;
 }
 
@@ -470,12 +432,12 @@ a:hover #nav-desktop-svg-about {
   stroke-dashoffset: 0;
 }
 
-#nav-desktop-svg-projects {
-  stroke-dasharray: 380;
-  stroke-dashoffset: 380;
+#nav-desktop-svg-works {
+  stroke-dasharray: 295;
+  stroke-dashoffset: 295;
   transition: stroke-dashoffset 0.6s;
 }
-a:hover #nav-desktop-svg-projects {
+a:hover #nav-desktop-svg-works {
   stroke-dashoffset: 0;
 }
 
@@ -743,7 +705,7 @@ svg:hover #SMbuttonSVG {
 .main_run {
   white-space: nowrap;
   overflow-x: hidden;
-  width: 100vw;
+  width: 100%;
   margin-top: 20vh;
   margin-bottom: 10vh;
   z-index: -10;
@@ -856,7 +818,7 @@ svg:hover #SMbuttonSVG {
 }
 .swiper {
   margin-top: 40px;
-  width: 100vw;
+  width: 100%;
   margin-left: 0 !important;
 }
 
@@ -918,7 +880,7 @@ svg:hover #SMbuttonSVG {
   cursor: pointer;
 }
 
-.project-categoryIMG {
+.work-categoryIMG {
   display: none;
   writing-mode: vertical-rl;
   right: calc(50% - min(30vw, 320px));
@@ -933,9 +895,8 @@ svg:hover #SMbuttonSVG {
   left: -4px;
 }
 
-.project-category {
+.work-category {
   margin-left: 12vw;
-  padding-top: 10px;
 }
 
 @keyframes moveInCircle {
@@ -963,65 +924,65 @@ svg:hover #SMbuttonSVG {
   position: absolute;
   z-index: -4;
 }
-.project-description {
+.work-description {
   position: relative;
   margin-left: min(12vw, 220px);
   margin-top: 48px;
 }
-.project-description svg {
+.work-description svg {
   position: absolute;
   z-index: -4;
 }
-.oneProject-SVGone {
+.oneWork-SVGone {
   width: 5em;
   margin-top: -1.4em;
   margin-left: 12em;
 }
-.oneProject-SVGtwo {
+.oneWork-SVGtwo {
   width: 3.5em;
   margin-top: 0.8em;
   margin-left: -0.2em;
 }
 
-.twoProject-SVGone {
+.twoWork-SVGone {
   width: 1.7em;
   margin-top: -0.2em;
-  margin-left: 11.4em;
+  margin-left: 11em;
 }
 
-.threeProject-SVGone {
+.threeWork-SVGone {
   width: 3em;
   margin-top: -2.3em;
   margin-left: 8em;
 }
-.fourProject-SVGone {
+.fourWork-SVGone {
   width: 3.5em;
   margin-top: -2.2em;
-  margin-left: 12.2em;
+  margin-left: 12em;
 }
-.fourProject-SVGtwo {
+.fourWork-SVGtwo {
   width: 3em;
   margin-top: 0.7em;
   margin-left: 0.4em;
 }
 
-.project-description a {
+.work-description a {
   font-weight: 600;
   cursor: pointer;
 }
-.projectButtonOne {
+.workButtonOne {
   margin-top: 24px;
   cursor: pointer;
   font-weight: 800;
 }
 
-.projectButton {
+.workButton {
   margin-top: 24px;
   cursor: pointer;
   margin-left: 12vw;
 }
 
-.projectButtonTWO {
+.workButtonTWO {
   display: none;
   position: absolute;
   left: max(0vw, 60px);
@@ -1037,13 +998,13 @@ svg:hover #SMbuttonSVG {
 
 /* Отключение анимации на мобильных */
 @media (max-width: 768px) {
-  .projectButtonTWO {
+  .workButtonTWO {
     animation: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .projectButtonTWO {
+  .workButtonTWO {
     animation: none;
   }
 }
@@ -1168,6 +1129,22 @@ svg:hover #SMbuttonSVG {
   margin-top: 20vw;
 }
 
+.privacy-footer-link {
+  color: var(--white-active);
+  text-decoration: none;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.privacy-footer-link:hover {
+  opacity: 1;
+}
+
+.privacy-footer-link:active {
+  opacity: 0.7;
+}
+
 .footerlogo {
   display: flex;
   justify-content: flex-end;
@@ -1208,7 +1185,7 @@ svg:hover #SMbuttonSVG {
   pointer-events: none;
 }
 
-.home-fire-container .projectButtonTWO {
+.home-fire-container .workButtonTWO {
   display: block;
   position: relative;
   left: auto;
@@ -1223,7 +1200,7 @@ svg:hover #SMbuttonSVG {
   transform-origin: bottom left;
 }
 
-.home-fire-container .projectButtonTWO svg {
+.home-fire-container .workButtonTWO svg {
   width: 162px;
   height: 55px;
 }
@@ -1249,5 +1226,205 @@ svg:hover #SMbuttonSVG {
 @media screen and (min-width: 600px) {
   .home-fire-container .fire-lotti {
     top: -140px;
+  }
+}
+
+/* Works Page Grid Styles */
+.works-h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.works-h1 .works-animated-h1 {
+  width: 80vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 100px;
+  padding: 0 5vw;
+  margin-top: -30vh;
+}
+
+.work-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-media {
+  position: relative;
+  width: 100%;
+}
+
+.work-media img,
+.work-media video {
+  width: 100%;
+  height: auto;
+}
+
+.work-info {
+  margin-left: 0;
+}
+
+/* Ссылка Behance: на картинке справа снизу, чёрный фон */
+.work-behance-link {
+  position: absolute;
+  bottom: 4.5px;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+.work-behance-link:hover {
+  opacity: 1;
+}
+.work-behance-link svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.works-grid .work-category {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+/* Отступы только для описания в сетке Works (слайдер на главной не трогаем) */
+.works-grid .work-description {
+  margin-left: 0;
+  margin-top: 28px;
+}
+
+@media screen and (min-width: 600px) {
+  .works-h1 {
+    text-align: center;
+  }
+  .works-grid {
+    justify-items: center;
+  }
+  .works-grid .work-item {
+    max-width: min(90vw, 640px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .works-grid .work-media img,
+  .works-grid .work-media video {
+    width: min(74vw, 630px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .works-h1 {
+    text-align: center;
+  }
+  .works-animated-h1 {
+    width: 100vw;
+    text-align: center;
+  }
+  
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 160px;
+    padding: 0 10vw;
+    justify-items: stretch;
+  }
+  .works-grid .work-item:not(:nth-child(3n+1)) {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Базовая сетка карточки: строка 1 — картинка + категория; строка 2 — описание внизу */
+  .works-grid .work-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+  }
+  .works-grid .work-info {
+    display: contents;
+  }
+  .works-grid .work-media {
+    width: fit-content;
+    max-width: 800px; /* макс. ширина картинки 630px — категория ровно в 10px справа (column-gap) */
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .works-grid .work-media img,
+  .works-grid .work-media video {
+    max-width: 800px;
+    width: 100%;
+  }
+  .works-grid .work-category {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    writing-mode: vertical-rl;
+    text-align: left;
+    align-self: start;
+  }
+  /* Описание появляется при наведении на карточку */
+  .works-grid .work-description {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .works-grid .work-item:hover .work-description {
+    opacity: 1;
+  }
+  .works-grid .work-description svg {
+    position: absolute;
+    z-index: -4;
+  }
+
+  /* Первый проект (Choose Right): картинка чуть прозрачнее при наведении на ссылку */
+  .works-grid .work-item:first-child .work-media-link img {
+    transition: opacity 0.3s ease;
+  }
+  .works-grid .work-item:first-child .work-media-link:hover img {
+    opacity: 0.85;
+  }
+
+  /* Большие карточки: сразу после картинки 10px, затем категория; описание внизу по горизонтали */
+  .works-grid .work-item:nth-child(3n+1) {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 10px;  /* справа от картинки 10px, потом категория (размер картинки задаёт первую колонку) */
+    row-gap: 32px;     /* от первой строки до описания */
+  }
+  .works-grid .work-item:nth-child(3n+1) .work-description {
+    margin-top: 0;
+  }
+
+  /* Маленькие карточки: справа от картинки 10px, затем категория */
+  .works-grid .work-item:not(:nth-child(3n+1)) {
+    column-gap: 10px;  /* сразу после картинки 10px, потом категория */
+  }
+
+  /* Только карточка 3: уменьшаем отступ у описания (не трогаем row-gap, чтобы не влиять на карточку 2) */
+  .works-grid .work-item:nth-child(3) .work-description {
+    margin-top: -80px;
+  }
+
+  .work-item:nth-child(even) {
+    margin-top: 80px;
   }
 }

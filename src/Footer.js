@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import runContact from "./assets/img/run_contact.svg";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
 import { openEmailClient } from "./utils/email";
-import { EMAIL_SUBJECT } from "./constants";
+import { EMAIL_SUBJECT, ROUTES } from "./constants";
 import { useScrollRunAnimation } from "./hooks/useScrollRunAnimation";
 
 function Footer() {
@@ -183,6 +184,9 @@ function Footer() {
           </svg>
         </div>
         <div className="footer-bottom">
+          <Link to={ROUTES.WEBSITE_PRIVACY} className="privacy-footer-link">
+            Website Privacy Policy
+          </Link>
           <div className="footerlogo">
           <svg
             xmlns="http://www.w3.org/2000/svg"

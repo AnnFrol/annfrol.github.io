@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Player } from "@lottiefiles/react-lottie-player";
 import Game from "./Game";
 import photo from "./assets/img/Photome.png";
 import Works from "./Works";
 import Services from "./Services";
 import runWorks from "./assets/img/run_works.svg";
-import { usePerformanceCheck } from "./hooks/usePerformanceCheck";
 import { openEmailClient } from "./utils/email";
 import { useScrollRunAnimation } from "./hooks/useScrollRunAnimation";
 
 function Home() {
-  const isLowPerformance = usePerformanceCheck();
   const [shouldLoadFire, setShouldLoadFire] = useState(false);
   const fireContainerRef = useRef(null);
   const runWorksContainerRef = useRef(null);
@@ -64,8 +62,7 @@ function Home() {
           id="bg-desktop-one"
           height="200px"
           width="200px"
-          filter={isLowPerformance ? "blur(50px)" : "blur(100px)"}
-          style={{ opacity: isLowPerformance ? 0.3 : 1 }}
+          filter="blur(100px)"
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle
@@ -82,8 +79,7 @@ function Home() {
           id="bg-one"
           height="300px"
           width="300px"
-          filter={isLowPerformance ? "blur(80px)" : "blur(200px)"}
-          style={{ opacity: isLowPerformance ? 0.3 : 1 }}
+          filter="blur(200px)"
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle r="48%" cx="50%" cy="50%" fill="var(--maxgreenyellow)" />
@@ -141,8 +137,7 @@ function Home() {
             id="bg-desktop-four"
             height="180"
             width="180"
-            filter={isLowPerformance ? "blur(60px)" : "blur(150px)"}
-            style={{ opacity: isLowPerformance ? 0.3 : 1 }}
+            filter="blur(150px)"
           >
             <circle r="48%" cx="50%" cy="50%" fill="var(--maxgreenyellow)" />
           </svg>
@@ -152,7 +147,7 @@ function Home() {
       <Services />
       {shouldLoadFire && (
         <div ref={fireContainerRef} className="home-fire-container">
-          <button className="projectButtonTWO">
+            <button className="workButtonTWO">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="162"
@@ -179,13 +174,11 @@ function Home() {
                 />
               </g>
             </svg>
-            <DotLottieReact
+            <Player
               src="https://lottie.host/d1f9a70f-4439-4c51-a1d4-f832771232a7/UzvBch780a.json"
               className="fire-lotti"
-              backgroundColor="transparent"
+              background="transparent"
               speed={1}
-              direction={1}
-              mode="normal"
               loop
               autoplay
             />

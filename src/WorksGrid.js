@@ -1,88 +1,46 @@
-import React, { useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import appChooseRight from "./assets/img/AppChooseRight.png";
 import webPromrating from "./assets/img/promrating.png";
 import appMarkIt from "./assets/img/mark_it.png";
 import bubbleWeb from "./assets/img/BubbleWeb.mp4";
 import LottieFire from "./LottieFire";
+import { ROUTES } from "./constants";
 
-function Works() {
-  const swiperRef = useRef(null);
+/* Та же иконка Behance, что в футере (SocialLinks) */
+function BehanceIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      aria-hidden
+    >
+      <path d="M22 7h-7V5h7v2Zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168Zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219Zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061ZM3 11h3.584c2.508 0 2.906-3-.312-3H3v3Zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016Z" />
+    </svg>
+  );
+}
 
+function WorksGrid() {
   useEffect(() => {
-    function setVideoAutoPlay() {
-      const video = document.querySelector("video");
-      if (video) {
-        if (window.innerWidth >= 1500) {
-          video.autoplay = true;
-          video.play(); // Запускает воспроизведение
-        } else {
-          video.autoplay = false;
-          video.pause(); // Останавливает воспроизведение
-        }
-      }
-    }
-
-    // Проверка при загрузке страницы
-    setVideoAutoPlay();
-
-    // Добавление обработчика события изменения размера окна
-    window.addEventListener("resize", setVideoAutoPlay);
-
-    // Обновление Swiper при изменении размера окна
-    const handleResize = () => {
-      if (swiperRef.current && swiperRef.current.swiper) {
-        swiperRef.current.swiper.update();
-      }
-      setVideoAutoPlay();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Очистка обработчика при размонтировании компонента
-    return () => {
-      window.removeEventListener("resize", setVideoAutoPlay);
-      window.removeEventListener("resize", handleResize);
-    };
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video) => {
+      video.muted = true;
+      video.play().catch((e) => console.log("Autoplay prevented:", e));
+    });
   }, []);
 
   return (
-    <>
-      <Swiper
-        ref={swiperRef}
-        modules={[Navigation, Pagination, Autoplay]}
-        slidesPerView="auto"
-        spaceBetween={10}
-        loop={false}
-        grabCursor={true}
-        centeredSlides={true}
-        breakpoints={{
-          1300: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-            centeredSlides: true,
-            loop: false, // Отключаем loop для 2 слайдов (нужно минимум 5 слайдов для loop с 2 slidesPerView)
-          },
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            centeredSlides: true,
-            loop: true, // Включаем loop для 1 слайда на мобильных (4 слайда достаточно)
-          },
-        }}
-        onSwiper={(swiper) => {
-          swiperRef.current = { swiper };
-        }}
-        id="sliderWorks"
-        className="swiper mySwiper"
-      >
-        <SwiperSlide className="swiper-slide active" id="choose-right">
-          <img src={appChooseRight} alt="App Choose Right" />
-          <h4 className="work-categoryIMG">APP Design, Development</h4>
+    <div className="works-grid">
+      <div className="work-item" id="choose-right">
+        <div className="work-media">
+          <Link to={ROUTES.CHOOSERIGHT} className="work-media-link">
+            <img src={appChooseRight} alt="App Choose Right" />
+          </Link>
+          <LottieFire />
+        </div>
+        <div className="work-info">
           <h4 className="work-category">APP Design, Development</h4>
           <h3 className="work-description">
             <svg
@@ -126,11 +84,23 @@ function Works() {
             help users make a choice <br />
             from a variety of options.
           </h3>
-          <LottieFire />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide" id="mark-it">
+        </div>
+      </div>
+
+      <div className="work-item" id="mark-it">
+        <div className="work-media">
           <img src={appMarkIt} alt="App Mark it" />
-          <h4 className="work-categoryIMG">Art Direction</h4>
+          <a
+            href="https://www.behance.net/gallery/93143637/MarkIT-Social-AR-App?tracking_source=project_owner_other_projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="work-behance-link"
+            aria-label="View on Behance"
+          >
+            <BehanceIcon />
+          </a>
+        </div>
+        <div className="work-info">
           <h4 className="work-category">Art Direction</h4>
           <h3 className="work-description">
             <svg
@@ -160,11 +130,24 @@ function Works() {
             Creating an ecosystem <br />
             in augmented reality.
             <br />
-            </h3>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide" id="promrating">
+          </h3>
+        </div>
+      </div>
+
+      <div className="work-item" id="promrating">
+        <div className="work-media">
           <img src={webPromrating} alt="Promrating" />
-          <h4 className="work-categoryIMG">WEB Design, Micromotion</h4>
+          <a
+            href="https://www.behance.net/gallery/96466109/Research-Agency"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="work-behance-link"
+            aria-label="View on Behance"
+          >
+            <BehanceIcon />
+          </a>
+        </div>
+        <div className="work-info">
           <h4 className="work-category">WEB Design, Micromotion</h4>
           <h3 className="work-description">
             <svg
@@ -188,10 +171,23 @@ function Works() {
             for the agency. The task is to create
             <br />a <strong>fresh</strong> and <strong>serious website</strong>.
           </h3>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide" id="Bubble">
-          <video src={bubbleWeb} muted loop></video>
-          <h4 className="work-categoryIMG">Art Direction</h4>
+        </div>
+      </div>
+
+      <div className="work-item" id="Bubble">
+        <div className="work-media">
+          <video src={bubbleWeb} muted loop autoPlay playsInline></video>
+          <a
+            href="https://www.behance.net/gallery/87550669/BUBBLE-Web"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="work-behance-link"
+            aria-label="View on Behance"
+          >
+            <BehanceIcon />
+          </a>
+        </div>
+        <div className="work-info">
           <h4 className="work-category">Art Direction</h4>
           <h3 className="work-description">
             <svg
@@ -231,10 +227,10 @@ function Works() {
             <br />
             universe crossovers.
           </h3>
-        </SwiperSlide>
-      </Swiper>
-    </>
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default Works;
+export default WorksGrid;

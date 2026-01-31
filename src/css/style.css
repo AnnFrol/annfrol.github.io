@@ -179,54 +179,6 @@ a:active {
   mix-blend-mode: difference;
 }
 
-.header_languag {
-	grid-column: 1 / 2;
-}
-
-.active-lang {
-	cursor: default;
-}
-.default-lang {
-	cursor: pointer;
-}
-
-.lang {
-	position: relative;
-	padding-bottom: 10px;
-	padding-left: 4px;
-	padding-right: 4px;
-	height: 53px;
-	align-items: center;
-}
-
-.active-lang > #lang-svg-En, #lang-svg-Es {
-	position: absolute;
-	top: 18px;
-	left: 1px;
-}
-
-.default-lang > #lang-svg-En, #lang-svg-Es {
-	position: absolute;
-	top: 18px;
-	left: 1px;
-}
-
-.default-lang > #lang-svg-En, #lang-svg-Es { 
-	stroke-dasharray: 71;
-	stroke-dashoffset: 71;
-	transition: stroke-dashoffset .3s;
-}
-
-.default-lang:hover > #lang-svg-En,
-.default-lang:hover > #lang-svg-Es {
-	stroke-dashoffset: 0;
-}
-
-.default-cursor {
-	cursor: default;
-	display: inline;
-}
-
 .header_logo {
 	text-align: center;
 	height: 100%;

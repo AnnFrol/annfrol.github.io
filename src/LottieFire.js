@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const LottieFire = () => {
   const [shouldLoad, setShouldLoad] = useState(false);
@@ -23,7 +23,7 @@ const LottieFire = () => {
   }, []);
 
   return (
-    <button className="projectButtonTWO">
+            <button className="workButtonTWO">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="162"
@@ -46,18 +46,13 @@ const LottieFire = () => {
         </g>
       </svg>
       {shouldLoad && (
-        <DotLottieReact
+        <Player
           src="https://lottie.host/d1f9a70f-4439-4c51-a1d4-f832771232a7/UzvBch780a.json"
           className="fire-lotti"
-          backgroundColor="transparent"
+          background="transparent"
           speed={1}
-          direction={1}
-          mode="normal"
           loop
           autoplay
-          onError={(error) => {
-            console.warn("Lottie animation failed to load:", error);
-          }}
         />
       )}
     </button>

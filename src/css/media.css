@@ -2,12 +2,6 @@
   .header_logo {
     transform: scale(1.2);
   }
-  .header_nav-desktop {
-    display: flex;
-  }
-  .header_nav-mobile {
-    display: none;
-  }
   .main_game {
     width: 130%;
     left: -2vw;
@@ -82,21 +76,27 @@
     align-items: center !important;
     flex-direction: column !important;
   }
-  .project-category {
+  #sliderWorks .work-category {
     display: none;
   }
-  .project-categoryIMG {
+  #sliderWorks .work-categoryIMG {
     display: initial;
   }
-  .projectButton {
+  .workButton {
     display: none;
   }
-  .projectButtonTWO {
+  .workButtonTWO {
     display: initial;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .header_nav-desktop {
+    display: flex;
+  }
+  .header_nav-mobile {
+    display: none;
+  }
   .main_game {
     width: 100%;
     left: 0;
