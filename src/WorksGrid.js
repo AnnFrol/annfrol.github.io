@@ -76,7 +76,7 @@ function WorksGrid() {
               />
             </svg>
             Applications for iPhones{" "}
-            <a href="/#/chooseright">
+            <a href="/chooseright">
               Choose
               <br />
               Right

@@ -616,7 +616,7 @@ function ChooseRight() {
         </p>
         <p className="chooseright-text chooseright-text-white">
           For more information about privacy, please see our{" "}
-          <a href="/#/privacy-policy" className="chooseright-link chooseright-link-white">
+          <a href="/privacy-policy" className="chooseright-link chooseright-link-white">
             Privacy Policy
           </a>
           .

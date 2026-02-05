@@ -1,6 +1,6 @@
 {
   "name": "annfrol",
-  "homepage": "https://annfrol.github.io/",
+  "homepage": "https://annfro.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
   "scripts": {
     "start": "ESLINT_NO_DEV_ERRORS=true react-scripts start",
     "start:clean": "rm -rf node_modules/.cache && npm start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",

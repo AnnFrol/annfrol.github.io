@@ -118,7 +118,7 @@ function Works() {
               />
             </svg>
             Applications for iPhones{" "}
-            <a href="/#/chooseright">
+            <a href="/chooseright">
               Choose
               <br />
               Right
