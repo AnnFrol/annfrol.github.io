@@ -31,11 +31,11 @@ function Footer() {
         <button
           className="contact_button button hover-this"
           onClick={() => {
-            navigator.clipboard.writeText("Ann.desi.d@gmail.com");
+            navigator.clipboard.writeText("Hello@annfro.com");
             alert("Email copied!");
           }}
         >
-          Ann.desi.d@gmail.com
+          Hello@annfro.com
         </button>
         <div className="cursor"></div>
         <div className="sidebar_footer">

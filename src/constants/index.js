@@ -1,6 +1,6 @@
 // Email configuration
-export const EMAIL = "Hi@annfro.com";
-export const EMAIL_OBFUSCATED = "Hi@annfro&com"; // For obfuscation
+export const EMAIL = "Hello@annfro.com";
+export const EMAIL_OBFUSCATED = "Hello@annfro.com"; // For obfuscation
 export const EMAIL_SUBJECT = "New Dream Project";
 
 // Social media links
