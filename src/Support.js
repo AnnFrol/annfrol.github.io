@@ -72,15 +72,6 @@ function Support() {
           </div>
         </section>
 
-        <section className="support-section support-contact">
-          <h2 className="support-section-title">Contact</h2>
-          <p className="support-text">
-            For questions, feedback or support about any of my apps, please write to:
-          </p>
-          <a href="mailto:support@annfro.com" className="support-email">
-            support@annfro.com
-          </a>
-        </section>
       </div>
     </div>
   );
