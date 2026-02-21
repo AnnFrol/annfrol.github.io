@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-const LottieFire = () => {
+const LottieFire = ({ href, to }) => {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
@@ -22,8 +23,7 @@ const LottieFire = () => {
     checkPerformance();
   }, []);
 
-  return (
-            <button className="workButtonTWO">
+  const svgContent = (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="162"
@@ -45,6 +45,29 @@ const LottieFire = () => {
           />
         </g>
       </svg>
+  );
+
+  const linkWrap = (children) => {
+    if (href) {
+      return (
+        <a href={href} className="workButtonTWO-svg-link" target="_blank" rel="noopener noreferrer" aria-label="Open in App Store">
+          {children}
+        </a>
+      );
+    }
+    if (to) {
+      return (
+        <Link to={to} className="workButtonTWO-svg-link" aria-label="Learn more">
+          {children}
+        </Link>
+      );
+    }
+    return children;
+  };
+
+  return (
+    <div className="workButtonTWO">
+      {linkWrap(svgContent)}
       {shouldLoad && (
         <Player
           src="https://lottie.host/d1f9a70f-4439-4c51-a1d4-f832771232a7/UzvBch780a.json"
@@ -55,7 +78,7 @@ const LottieFire = () => {
           autoplay
         />
       )}
-    </button>
+    </div>
   );
 };
 

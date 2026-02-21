@@ -2,8 +2,7 @@ import React from "react";
 import "./css/privacy.css";
 import AnimatedText from "./AnimatedText";
 import { getEmail, openEmailClient } from "./utils/email";
-import { Link } from "react-router-dom";
-import { ROUTES } from "./constants";
+import { ROUTES, CHOOSERIGHT_PRIVACY_URL } from "./constants";
 
 function WebsitePrivacyPolicy() {
   return (
@@ -136,9 +135,9 @@ function WebsitePrivacyPolicy() {
           <h3 className="privacy-subtitle">11. Other Policies</h3>
           <p className="privacy-text">
             If you are interested in the privacy practices of our mobile app ChooseRight!, please see the separate{" "}
-            <Link to={ROUTES.PRIVACY} className="privacy-link">
+            <a href={CHOOSERIGHT_PRIVACY_URL} className="privacy-link" target="_blank" rel="noopener noreferrer">
               ChooseRight! Privacy Policy
-            </Link>
+            </a>
             .
           </p>
         </div>

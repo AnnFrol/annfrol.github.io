@@ -10,6 +10,11 @@ export const SOCIAL_LINKS = {
   telegram: "https://t.me/AnnFroCom",
 };
 
+// App Store links (app id from App Store Connect)
+export const APP_STORE = {
+  CHOOSERIGHT: "https://apps.apple.com/app/id6759388003",
+};
+
 // Routes
 export const ROUTES = {
   HOME: "/",
@@ -17,9 +22,14 @@ export const ROUTES = {
   PROCESS: "/process",
   WORKS: "/works",
   PRIVACY: "/privacy-policy",
+  CHOOSERIGHT_PRIVACY: "/chooseright/privacy-policy",
   WEBSITE_PRIVACY: "/website-privacy-policy",
   CHOOSERIGHT: "/chooseright",
+  SUPPORT: "/support",
 };
+
+// Full URL for ChooseRight! Privacy Policy (canonical link)
+export const CHOOSERIGHT_PRIVACY_URL = "https://annfro.com/chooseright/privacy-policy";
 
 // Device detection constants
 export const MOBILE_BREAKPOINT = 768;

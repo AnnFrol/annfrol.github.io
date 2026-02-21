@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ROUTES, APP_STORE } from "./constants";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import appChooseRight from "./assets/img/AppChooseRight.png";
+import appYolkstimer from "./assets/img/AppYolkstimer.png";
 import webPromrating from "./assets/img/promrating.png";
 import appMarkIt from "./assets/img/mark_it.png";
 import bubbleWeb from "./assets/img/BubbleWeb.mp4";
@@ -80,8 +83,37 @@ function Works() {
         id="sliderWorks"
         className="swiper mySwiper"
       >
-        <SwiperSlide className="swiper-slide active" id="choose-right">
-          <img src={appChooseRight} alt="App Choose Right" />
+        <SwiperSlide className="swiper-slide active" id="yolks-timer">
+          <img src={appYolkstimer} alt="Yolks timer — App Store app" />
+          <h4 className="work-categoryIMG">APP Design, Development</h4>
+          <h4 className="work-category">APP Design, Development</h4>
+          <h3 className="work-description">
+            <svg
+              className="oneWork-SVGone"
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="100%"
+              viewBox="0 0 70 28"
+              fill="none"
+            >
+              <path
+                stroke="url(#a)"
+                vectorEffect="non-scaling-stroke"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M.5 20.5c15.7 2 54.5 5.8 62.5 1 10-6 4.5-16 0-17S12.8-.9 7.5 1.5c-6.5 3-10.5 14 2 22S58 22.5 65 16"
+              />
+            </svg>
+            <strong>Yolks Timer</strong> — iOS/Watch multi-step
+            <br />
+            cooking timer with Live Activity & Widget.
+          </h3>
+          <LottieFire />
+        </SwiperSlide>
+        <SwiperSlide className="swiper-slide" id="choose-right">
+          <Link to={ROUTES.CHOOSERIGHT}>
+            <img src={appChooseRight} alt="App Choose Right" />
+          </Link>
           <h4 className="work-categoryIMG">APP Design, Development</h4>
           <h4 className="work-category">APP Design, Development</h4>
           <h3 className="work-description">
@@ -118,15 +150,15 @@ function Works() {
               />
             </svg>
             Applications for iPhones{" "}
-            <a href="/chooseright">
+            <Link to={ROUTES.CHOOSERIGHT}>
               Choose
               <br />
               Right
-            </a>{" "}
+            </Link>{" "}
             help users make a choice <br />
             from a variety of options.
           </h3>
-          <LottieFire />
+          <LottieFire href={APP_STORE.CHOOSERIGHT} />
         </SwiperSlide>
         <SwiperSlide className="swiper-slide" id="mark-it">
           <img src={appMarkIt} alt="App Mark it" />
