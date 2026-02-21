@@ -184,9 +184,6 @@ function Footer() {
           </svg>
         </div>
         <div className="footer-bottom">
-          <Link to={ROUTES.SUPPORT} className="privacy-footer-link">
-            Support
-          </Link>
           <Link to={ROUTES.WEBSITE_PRIVACY} className="privacy-footer-link">
             Website Privacy Policy
           </Link>

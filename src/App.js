@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import Home from "./Home";
 import WorksPage from "./WorksPage";
@@ -8,7 +8,6 @@ import Process from "./Process";
 import PrivacyPolicy from "./PrivacyPolicy";
 import WebsitePrivacyPolicy from "./WebsitePrivacyPolicy";
 import ChooseRight from "./ChooseRight";
-import Support from "./Support";
 import Header from "./Header";
 import Footer from "./Footer";
 import PageLoader from "./PageLoader";
@@ -88,11 +87,9 @@ function App() {
               <Route path={ROUTES.WORKS} element={<WorksPage />} />
               <Route path={ROUTES.ABOUT} element={<About />} />
               <Route path={ROUTES.PROCESS} element={<Process />} />
-              <Route path={ROUTES.PRIVACY} element={<Navigate to={ROUTES.CHOOSERIGHT_PRIVACY} replace />} />
-              <Route path={ROUTES.CHOOSERIGHT_PRIVACY} element={<PrivacyPolicy />} />
+              <Route path={ROUTES.PRIVACY} element={<PrivacyPolicy />} />
               <Route path={ROUTES.WEBSITE_PRIVACY} element={<WebsitePrivacyPolicy />} />
               <Route path={ROUTES.CHOOSERIGHT} element={<ChooseRight />} />
-              <Route path={ROUTES.SUPPORT} element={<Support />} />
             </Routes>
           </main>
           <Footer />

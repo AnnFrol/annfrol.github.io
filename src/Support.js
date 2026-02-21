@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import "./css/support.css";
 import AnimatedText from "./AnimatedText";
 import { ROUTES, APP_STORE, CHOOSERIGHT_PRIVACY_URL } from "./constants";
-import appYolkstimer from "./assets/img/AppYolkstimer.png";
-import appChooseRight from "./assets/img/AppChooseRight.png";
-import iconYolkstimer from "./assets/img/AppYolkstimer.png";
 import iconChooseRight from "./assets/img/appIcon-choiceright.png";
 
 function DocIcon() {
@@ -18,16 +15,6 @@ function DocIcon() {
 }
 
 const APPS = [
-  {
-    id: "yolks-timer",
-    name: "Yolks Timer",
-    description: "iOS/Watch multi-step cooking timer with Live Activity, widget & PRO subscription.",
-    icon: iconYolkstimer,
-    iconAlt: "Yolks Timer app icon",
-    links: [
-      { label: "Support", href: "mailto:support@annfro.com" },
-    ],
-  },
   {
     id: "choose-right",
     name: "Choose Right",

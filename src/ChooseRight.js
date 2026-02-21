@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
-import { ROUTES, APP_STORE, CHOOSERIGHT_PRIVACY_URL } from "./constants";
+import { useLocation } from "react-router-dom";
+import { APP_STORE, CHOOSERIGHT_PRIVACY_URL } from "./constants";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Player } from "@lottiefiles/react-lottie-player";

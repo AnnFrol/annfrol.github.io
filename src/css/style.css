@@ -792,10 +792,6 @@ svg:hover #SMbuttonSVG {
 	transition: opacity 0.3s ease;
 }
 
-.footer-bottom .privacy-footer-link + .privacy-footer-link {
-	margin-left: 1.5rem;
-}
-
 .privacy-footer-link:hover {
 	opacity: 1;
 }

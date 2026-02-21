@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Game from "./Game";
-import { ROUTES } from "./constants";
 import photo from "./assets/img/Photome.png";
 import Works from "./Works";
 import Services from "./Services";
@@ -149,8 +147,7 @@ function Home() {
       <Services />
       {shouldLoadFire && (
         <div ref={fireContainerRef} className="home-fire-container">
-            <div className="workButtonTWO">
-            <Link to={ROUTES.CHOOSERIGHT} className="workButtonTWO-svg-link" aria-label="Choose Right app">
+            <button className="workButtonTWO">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="162"
@@ -177,7 +174,6 @@ function Home() {
                 />
               </g>
             </svg>
-            </Link>
             <Player
               src="https://lottie.host/d1f9a70f-4439-4c51-a1d4-f832771232a7/UzvBch780a.json"
               className="fire-lotti"
@@ -186,7 +182,7 @@ function Home() {
               loop
               autoplay
             />
-          </div>
+          </button>
         </div>
       )}
     </div>

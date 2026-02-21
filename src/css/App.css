@@ -991,9 +991,6 @@ svg:hover #SMbuttonSVG {
   padding: 140px 20px 10px 20px;
   animation: moveInCircle 3s linear infinite;
   will-change: transform;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
@@ -1140,10 +1137,6 @@ svg:hover #SMbuttonSVG {
   transition: opacity 0.3s ease;
 }
 
-.footer-bottom .privacy-footer-link + .privacy-footer-link {
-  margin-left: 1.5rem;
-}
-
 .privacy-footer-link:hover {
   opacity: 1;
 }
@@ -1210,13 +1203,6 @@ svg:hover #SMbuttonSVG {
 .home-fire-container .workButtonTWO svg {
   width: 162px;
   height: 55px;
-}
-
-.workButtonTWO-svg-link {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  line-height: 0;
 }
 
 .home-fire-container .fire-lotti {

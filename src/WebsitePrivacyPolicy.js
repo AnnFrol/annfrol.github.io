@@ -2,7 +2,7 @@ import React from "react";
 import "./css/privacy.css";
 import AnimatedText from "./AnimatedText";
 import { getEmail, openEmailClient } from "./utils/email";
-import { ROUTES, CHOOSERIGHT_PRIVACY_URL } from "./constants";
+import { CHOOSERIGHT_PRIVACY_URL } from "./constants";
 
 function WebsitePrivacyPolicy() {
   return (
