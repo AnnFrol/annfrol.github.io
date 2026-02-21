@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import appChooseRight from "./assets/img/AppChooseRight.png";
+import appYolkstimer from "./assets/img/AppYolkstimer.png";
 import webPromrating from "./assets/img/promrating.png";
 import appMarkIt from "./assets/img/mark_it.png";
 import bubbleWeb from "./assets/img/BubbleWeb.mp4";
 import LottieFire from "./LottieFire";
-import { ROUTES } from "./constants";
+import { ROUTES, APP_STORE } from "./constants";
 
 /* Та же иконка Behance, что в футере (SocialLinks) */
 function BehanceIcon() {
@@ -33,12 +34,43 @@ function WorksGrid() {
 
   return (
     <div className="works-grid">
+      <div className="work-item" id="yolks-timer">
+        <div className="work-media">
+          <img src={appYolkstimer} alt="Yolks timer — App Store app" />
+          <LottieFire />
+        </div>
+        <div className="work-info">
+          <h4 className="work-category">APP Design, Development</h4>
+          <h3 className="work-description">
+            <svg
+              className="oneWork-SVGone"
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="100%"
+              viewBox="0 0 70 28"
+              fill="none"
+            >
+              <path
+                stroke="url(#a)"
+                vectorEffect="non-scaling-stroke"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M.5 20.5c15.7 2 54.5 5.8 62.5 1 10-6 4.5-16 0-17S12.8-.9 7.5 1.5c-6.5 3-10.5 14 2 22S58 22.5 65 16"
+              />
+            </svg>
+            <strong>Yolks Timer</strong> — iOS/Watch multi-step cooking
+            <br />
+            timer with Live Activity, widget & PRO subscription.
+          </h3>
+        </div>
+      </div>
+
       <div className="work-item" id="choose-right">
         <div className="work-media">
           <Link to={ROUTES.CHOOSERIGHT} className="work-media-link">
             <img src={appChooseRight} alt="App Choose Right" />
           </Link>
-          <LottieFire />
+          <LottieFire href={APP_STORE.CHOOSERIGHT} />
         </div>
         <div className="work-info">
           <h4 className="work-category">APP Design, Development</h4>

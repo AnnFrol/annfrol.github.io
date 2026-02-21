@@ -392,6 +392,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.chooseright-app-icon:hover {
+  transform: scale(1.08);
+  opacity: 0.95;
 }
 
 .chooseright-app-icon img {
@@ -417,7 +424,6 @@
   bottom: 20px;
   left: 20px;
   z-index: 10;
-  pointer-events: none;
   display: block;
 }
 
@@ -430,15 +436,30 @@
   animation: none;
   background: none;
   border: none;
-  cursor: default;
-  pointer-events: none;
   transform: scale(0.8);
   transform-origin: bottom left;
+  pointer-events: auto;
+  min-width: 162px;
+  min-height: 55px;
 }
 
 .chooseright-fire-container .workButtonTWO svg {
   width: 162px;
   height: 55px;
+}
+
+.chooseright-fire-container .workButtonTWO-svg-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 162px;
+  height: 55px;
+  z-index: 10;
+  cursor: pointer;
 }
 
 .chooseright-fire-container .fire-lotti {
@@ -450,6 +471,7 @@
   z-index: -4;
   display: block;
   visibility: visible;
+  pointer-events: none;
   opacity: 1;
 }
 .chooseright-app-text, p {

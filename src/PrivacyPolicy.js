@@ -13,103 +13,77 @@ function PrivacyPolicy() {
       <div className="privacy-content">
         <div className="privacy-section">
           <h2 className="privacy-section-title">ChooseRight! Privacy Policy</h2>
-          <p className="privacy-last-updated">Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p className="privacy-last-updated">Last Updated: February 21, 2026</p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">1. Introduction</h3>
           <p className="privacy-text">
-            Welcome to ChooseRight!. ChooseRight! is a mobile application for iOS designed to help you make decisions without stress. The app allows users to create comparisons between options, add evaluation criteria (attributes), and rate each option. The application calculates relevance and helps you choose the optimal option.
+            Welcome to ChooseRight!. ChooseRight! is a mobile application for iOS designed to help you make decisions without stress. The app allows you to create comparisons between options, add evaluation criteria (attributes), and rate each option. The application calculates relevance and helps you choose the optimal option. An optional AI assistant can help you create comparison structure from a short description.
           </p>
           <p className="privacy-text">
-            We are committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use ChooseRight!. The most important thing to know is that <strong>all your data is stored locally on your device</strong>, and we do not collect, transmit, or have access to your personal information.
+            We are committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use ChooseRight!. Your comparison data is stored locally on your device. When you use the AI assistant feature, only the text you enter for that feature is sent to our AI provider to provide the service.
           </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">2. Information We Collect</h3>
           <p className="privacy-text">
-            <strong>ChooseRight! does not collect any personal information.</strong> All data created within the application is stored locally on your device using iOS Core Data framework. We do not have access to your data, and it is never transmitted to external servers.
+            <strong>Data stored only on your device (we do not collect or access this):</strong>
           </p>
           <p className="privacy-text">
-            The application stores the following information locally on your device:
+            All comparison-related data is stored locally on your device using the iOS Core Data framework. We do not have access to it, and it is not transmitted to our servers:
           </p>
           <ul className="privacy-list">
-            <li>
-              <strong>Comparisons:</strong> Comparisons you create between different options
-            </li>
-            <li>
-              <strong>Elements:</strong> Items you add for comparison
-            </li>
-            <li>
-              <strong>Criteria (Attributes):</strong> Evaluation criteria you configure
-            </li>
-            <li>
-              <strong>Ratings:</strong> Your ratings and evaluations of elements
-            </li>
-            <li>
-              <strong>App Preferences:</strong> Your app settings, including theme preferences (dark/light mode)
-            </li>
+            <li><strong>Comparisons:</strong> Comparisons you create between different options</li>
+            <li><strong>Elements:</strong> Items you add for comparison</li>
+            <li><strong>Criteria (Attributes):</strong> Evaluation criteria you configure</li>
+            <li><strong>Ratings:</strong> Your ratings and evaluations of elements</li>
+            <li><strong>App preferences:</strong> Your app settings, including theme (dark/light mode)</li>
           </ul>
           <p className="privacy-text">
-            <strong>Important:</strong> All this data remains on your device. We do not collect, access, or transmit any of this information.
+            <strong>Data processed when you use the AI assistant:</strong>
+          </p>
+          <p className="privacy-text">
+            If you use the optional AI assistant (e.g. to create a comparison from a phrase like "compare iPhone and Samsung"), the <strong>text you type</strong> for that request is sent to our AI provider <strong>Groq</strong> (<a href="https://groq.com" target="_blank" rel="noopener noreferrer" className="privacy-link">https://groq.com</a>) so we can return suggested items and attributes. We do not store this text on our servers. Groq processes it according to their privacy practices. We use this only to power the AI feature.
           </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">3. How We Use Your Information</h3>
           <p className="privacy-text">
-            Since we do not collect any information, we do not use your data in any way. All data processing happens locally on your device:
+            <strong>Local data:</strong><br />
+            All comparison data is processed only on your device. Relevance scores are calculated locally. No comparison content is sent to our or third-party servers.
+          </p>
+          <p className="privacy-text">
+            <strong>AI assistant:</strong><br />
+            When you use the AI assistant, we send only the request text you enter to Groq's API to generate comparison structure. We do not use this data for advertising, analytics, or tracking. We do not retain it on our systems.
           </p>
           <ul className="privacy-list">
-            <li>Your comparisons and ratings are processed locally to calculate relevance scores</li>
-            <li>Data is stored using iOS Core Data framework on your device</li>
-            <li>No data is sent to external servers or third-party services</li>
-            <li>No analytics, tracking, or advertising services are used</li>
+            <li>No analytics, tracking, or advertising services are used for your comparison data.</li>
+            <li>The app works <strong>offline</strong> for creating, editing, and viewing comparisons. <strong>Online use</strong> is limited to the optional AI assistant feature when you choose to use it.</li>
           </ul>
-          <p className="privacy-text">
-            The application works completely offline, and all your data remains on your device.
-          </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">4. Data Storage and Security</h3>
-          <p className="privacy-text">
-            <strong>All your data is stored exclusively on your device</strong> using iOS Core Data framework. This means:
-          </p>
           <ul className="privacy-list">
-            <li>Your data never leaves your device</li>
-            <li>Data is stored in the app's sandboxed container, protected by iOS security mechanisms</li>
-            <li>No data is transmitted over the internet</li>
-            <li>You have full control over your data - you can export it, delete it, or manage it as you wish</li>
+            <li>Your comparison data is stored only on your device (iOS Core Data, in the app's sandbox).</li>
+            <li>It is not transmitted over the internet except when you use the AI assistant (only the text of that request).</li>
+            <li>You can export data as <strong>PDF</strong> or <strong>.chooseright</strong> files and manage or delete data at any time.</li>
+            <li>We recommend using iOS security (passcode, Face ID, Touch ID) to protect your device.</li>
           </ul>
-          <p className="privacy-text">
-            You can export your data in the following formats:
-          </p>
-          <ul className="privacy-list">
-            <li><strong>PDF documents:</strong> Export comparisons as PDF files</li>
-            <li><strong>.chooseright files:</strong> Export your data in the app's native format for backup or transfer</li>
-          </ul>
-          <p className="privacy-text">
-            Since all data is stored locally, the security of your device is the primary factor in protecting your information. We recommend using standard iOS security features such as device passcodes, Face ID, or Touch ID.
-          </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">5. File Access and Permissions</h3>
           <p className="privacy-text">
-            ChooseRight! may request access to files through iOS system dialogs, but only with your explicit consent:
+            ChooseRight! may use file access only with your explicit consent via iOS:
           </p>
           <ul className="privacy-list">
-            <li>
-              <strong>PDF Export:</strong> When you export a comparison as PDF, the app uses iOS system dialogs to let you choose where to save the file. The app does not have permanent access to your file system.
-            </li>
-            <li>
-              <strong>Import/Export Files:</strong> You can import comparison files (.chooseright) or export your data through iOS system sharing dialogs. All file operations are initiated by you and require your explicit permission through iOS system dialogs.
-            </li>
-            <li>
-              <strong>No Permanent Access:</strong> The app does not have permanent access to your device's file system. All file operations are temporary and require your action through iOS system interfaces.
-            </li>
+            <li><strong>PDF export:</strong> You choose where to save the file via system dialogs.</li>
+            <li><strong>Import/Export (.chooseright):</strong> You initiate import or export; the app does not have permanent access to your file system.</li>
+            <li>All file operations are temporary and require your action through iOS.</li>
           </ul>
         </div>
 
@@ -121,66 +95,57 @@ function PrivacyPolicy() {
           <ul className="privacy-list">
             <li>Camera</li>
             <li>Microphone</li>
-            <li>Location services (GPS)</li>
+            <li>Location</li>
             <li>Contacts</li>
             <li>Photos library</li>
             <li>Calendar</li>
-            <li>Push notifications or local notifications</li>
+            <li>Push notifications</li>
           </ul>
-          <p className="privacy-text">
-            The app uses only standard iOS system functions for file operations and data sharing, all of which require your explicit consent through iOS system dialogs.
-          </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">7. Third-Party Services</h3>
           <p className="privacy-text">
-            ChooseRight! does not use any third-party analytics, tracking, or advertising services. The app works completely offline and does not integrate with external services.
+            <strong>Groq (AI assistant):</strong><br />
+            When you use the AI assistant, your request text is sent to Groq's API. Their privacy policy applies to that processing: <a href="https://groq.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="privacy-link">https://groq.com/privacy-policy</a> (or their current policy at groq.com).
           </p>
-          <ul className="privacy-list">
-            <li>
-              <strong>Apple App Store:</strong> When you download ChooseRight! from the App Store, Apple's privacy policy applies to your download and purchase. We do not receive any personal information from Apple.
-            </li>
-            <li>
-              <strong>iOS System Services:</strong> The app uses standard iOS frameworks (Core Data, File System APIs) that are part of the operating system. These do not transmit data to external servers.
-            </li>
-          </ul>
+          <p className="privacy-text">
+            <strong>Apple:</strong><br />
+            Downloads and in-app purchases are subject to Apple's privacy policy. We do not receive your personal information from Apple for those transactions.
+          </p>
+          <p className="privacy-text">
+            <strong>No other third-party analytics, tracking, or advertising</strong> are used for your comparison data.
+          </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">8. Your Rights and Data Control</h3>
-          <p className="privacy-text">
-            Since all your data is stored locally on your device, you have complete control over it:
-          </p>
           <ul className="privacy-list">
-            <li><strong>Access:</strong> All your data is accessible within the app. You can view, edit, or delete any comparison or data at any time.</li>
-            <li><strong>Export:</strong> You can export your data as PDF files or .chooseright files at any time through the app's export features.</li>
-            <li><strong>Delete:</strong> You can delete individual comparisons or all app data directly from the app. Uninstalling the app will also remove all locally stored data.</li>
-            <li><strong>Backup:</strong> You can create backups by exporting your data to files, which you can store wherever you choose.</li>
+            <li><strong>Access, edit, delete:</strong> All comparison data is in the app on your device; you can view, edit, or delete it at any time.</li>
+            <li><strong>Export:</strong> You can export data as PDF or .chooseright at any time.</li>
+            <li><strong>Uninstall:</strong> Removing the app deletes all local data.</li>
+            <li>We do not hold your comparison data on our servers, so there is nothing to request from us regarding that data. AI request text is not stored by us.</li>
           </ul>
-          <p className="privacy-text">
-            Since we do not collect or store any of your data on our servers, there is no data to request from us. All your data belongs to you and remains on your device.
-          </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">9. Children's Privacy</h3>
           <p className="privacy-text">
-            ChooseRight! is not intended for children under the age of 13. Since the app does not collect any personal information and all data is stored locally on the device, there are no privacy concerns related to data collection. However, parents should be aware that children can create and store comparisons within the app on their device.
+            ChooseRight! is not directed at children under 13. We do not knowingly collect personal information. Comparison data is stored only on the device; parents should be aware that children can create and store comparisons on their device.
           </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">10. Changes to This Privacy Policy</h3>
           <p className="privacy-text">
-            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.
+            We may update this policy. We will post the new version on this page and update the "Last Updated" date. Please review it periodically.
           </p>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">11. Contact Us</h3>
           <p className="privacy-text">
-            If you have any questions about this Privacy Policy or our data practices, please contact us at:
+            If you have questions about this Privacy Policy or our practices:
           </p>
           <p className="privacy-contact">
             <strong>Email:</strong>{" "}
@@ -199,24 +164,20 @@ function PrivacyPolicy() {
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">12. Summary</h3>
-          <p className="privacy-text">
-            <strong>Key Points:</strong>
-          </p>
           <ul className="privacy-list">
-            <li>All your data is stored locally on your device using iOS Core Data</li>
-            <li>We do not collect, access, or transmit any personal information</li>
-            <li>The app works completely offline</li>
-            <li>No analytics, tracking, or advertising services are used</li>
-            <li>File access is only granted through iOS system dialogs with your explicit consent</li>
-            <li>You have full control over your data - export, delete, or manage it as you wish</li>
-            <li>The app does not request access to camera, microphone, location, contacts, or other sensitive permissions</li>
+            <li>Comparison data is stored <strong>only on your device</strong> (Core Data); we do not collect or access it.</li>
+            <li>The app works <strong>offline</strong> for comparisons; <strong>online</strong> use is only for the optional <strong>AI assistant</strong>, when the text you enter is sent to <strong>Groq</strong> to generate suggestions.</li>
+            <li>We do not use analytics, tracking, or advertising on your comparison data.</li>
+            <li>File access happens only through iOS dialogs with your consent.</li>
+            <li>We do not request camera, microphone, location, contacts, or similar permissions.</li>
+            <li>You control your data: export, delete, or manage it in the app.</li>
           </ul>
         </div>
 
         <div className="privacy-section">
           <h3 className="privacy-subtitle">13. Consent</h3>
           <p className="privacy-text">
-            By using ChooseRight!, you consent to our Privacy Policy and agree to its terms. If you do not agree with this policy, please do not use our application.
+            By using ChooseRight!, you agree to this Privacy Policy. If you do not agree, please do not use the application.
           </p>
         </div>
       </div>
