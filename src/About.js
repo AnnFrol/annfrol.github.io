@@ -39,13 +39,14 @@ function About() {
       <FallingBalls page="about" />
       <div className="about-description">
         <AnimatedText
-          text={`7 years of extensive \nexperience in web \nagencies, collaborating \nwith both large-scale \ncompanies and innovative \nsmaller ones. This has \nequipped me with the \nability to effectively \nunderstand and meet \ncompanies' preferences \nand needs.`}
+          text={`Over 7 years in digital \nproduct environments, \npartnering with both \nlarge-scale organizations \nand innovative startups.\nThis experience refined \nmy strategic approach, \ndeepened my UX expertise,\nand sharpened my ability \nto align design with real \nbusiness impact.`}
         />
       </div>
       <div className="about-description-desktop">
         <AnimatedText
           text={`
-					7 years of extensive experience in web \nagencies, collaborating with both \nlarge-scale companies and innovative \nsmaller ones. This has equipped me with the \nability to effectively understand and meet \ncompanies' preferences and needs.`}
+					Over 7 years in digital product \nenvironments, partnering with both \nlarge-scale organizations \nand innovative startups. \nThis experience refined my strategic \napproach, deepened my UX expertise, \nand sharpened my ability to align \ndesign with real business impact.
+`}
         />
       </div>
 
