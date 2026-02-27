@@ -78,39 +78,34 @@ function About() {
         </div>
         <AnimatedText subtitle={"Principles \n& Guidelines"} />
         <div className="about-p">
-          <AnimatedText
-            blockText={
-              "I am dedicated to accountability and excellence, always meeting deadlines and putting forth maximum effort."
-            }
-          />
-          <AnimatedText
-            blockText={
-              "Driven by passion, I take on projects that captivate me, ensuring innovative and unique solutions."
-            }
-          />
-          <AnimatedText
-            blockText={
-              "In collaboration, I prioritize respectful, harmonious relationships, fostering a positive and calm working environment."
-            }
-          />
+<AnimatedText
+          blockText={
+            "I approach every product with ownership — from research and strategy to final execution. Clarity and responsibility guide my decisions."
+          }
+        />
+        
+        <AnimatedText
+          blockText={
+            "I believe design is not decoration, but structure. Strong products are built on research, systems, and thoughtful problem-solving."
+          }
+        />
         </div>
       </div>
       <div className="about_Skills">
         <AnimatedText subtitle="Skills" />
         <h3 className="about-p">
-          <span>
-            <strong>UX UI</strong> / <strong>Web Design</strong> /{" "}
-            <strong>Motions</strong>
-          </span>{" "}
-          /<br />
-          <span>
-            <strong>Presentation</strong> / <strong>CJM</strong> /{" "}
-            <strong>JTBD</strong>
-          </span>{" "}
-          /<br />
-          <span>
-            <strong>Front-End</strong>
-          </span>
+           <span>
+             <strong>Product Thinking</strong> / <strong>UX Research</strong> /{" "}
+             <strong>CJM</strong> / <strong>JTBD</strong>
+           </span>{" "}
+           /<br />
+           <span>
+             <strong>UX/UI Systems</strong> / <strong>iOS Product Design</strong> {" "}
+           </span>{" "}
+           /<br />
+           <span>
+             <strong>Design Direction</strong> / <strong>Creative Leadership</strong> / <strong>Dev Collaboration</strong>
+           </span>
         </h3>
         <div className="about_skills-SVG">
           <Player
