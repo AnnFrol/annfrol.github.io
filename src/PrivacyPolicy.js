@@ -13,7 +13,7 @@ function PrivacyPolicy() {
       <div className="privacy-content">
         <div className="privacy-section">
           <h2 className="privacy-section-title">ChooseRight! Privacy Policy</h2>
-          <p className="privacy-last-updated">Last Updated: February 21, 2026</p>
+          <p className="privacy-last-updated">Last Updated: March 4, 2026</p>
         </div>
 
         <div className="privacy-section">
@@ -22,7 +22,7 @@ function PrivacyPolicy() {
             Welcome to ChooseRight!. ChooseRight! is a mobile application for iOS designed to help you make decisions without stress. The app allows you to create comparisons between options, add evaluation criteria (attributes), and rate each option. The application calculates relevance and helps you choose the optimal option. An optional AI assistant can help you create comparison structure from a short description.
           </p>
           <p className="privacy-text">
-            We are committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use ChooseRight!. Your comparison data is stored locally on your device. When you use the AI assistant feature, only the text you enter for that feature is sent to our AI provider to provide the service.
+            We are committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use ChooseRight!. Your comparison data is stored locally on your device. When you use the AI assistant features, only the text or data you provide for those features is sent to an AI provider (see Section 2 and 7) to provide the service. The app chooses the provider automatically based on your device's region setting (country/region only; we do not use precise location).
           </p>
         </div>
 
@@ -45,7 +45,7 @@ function PrivacyPolicy() {
             <strong>Data processed when you use the AI assistant:</strong>
           </p>
           <p className="privacy-text">
-            If you use the optional AI assistant (e.g. to create a comparison from a phrase like "compare iPhone and Samsung"), the <strong>text you type</strong> for that request is sent to our AI provider <strong>Groq</strong> (<a href="https://groq.com" target="_blank" rel="noopener noreferrer" className="privacy-link">https://groq.com</a>) so we can return suggested items and attributes. We do not store this text on our servers. Groq processes it according to their privacy practices. We use this only to power the AI feature.
+            If you use the optional AI assistant (e.g. to create a comparison from a phrase like "compare iPhone and Samsung"), the <strong>text you type</strong> for that request is sent to the AI provider so we can return suggested items and attributes. <strong>Generate values:</strong> If you use "Generate values" to fill the table with +/-, the <strong>names of the items and criteria (attributes)</strong> in that comparison are sent to the AI provider. We do not store this data on our servers. The provider processes it according to their privacy practices; we use it only to power these features. The provider may be <strong>Groq</strong> (<a href="https://groq.com" target="_blank" rel="noopener noreferrer" className="privacy-link">https://groq.com</a>) for most regions, or <strong>OpenRouter</strong> (<a href="https://openrouter.ai" target="_blank" rel="noopener noreferrer" className="privacy-link">https://openrouter.ai</a>) for users in Russia and Belarus.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ function PrivacyPolicy() {
           </p>
           <p className="privacy-text">
             <strong>AI assistant:</strong><br />
-            When you use the AI assistant, we send only the request text you enter to Groq's API to generate comparison structure. We do not use this data for advertising, analytics, or tracking. We do not retain it on our systems.
+            When you use the AI assistant (creating a comparison from text or "Generate values"), we send only the relevant text or item/attribute names to the AI provider's API (Groq or OpenRouter, depending on your device region). We do not use this data for advertising, analytics, or tracking. We do not retain it on our systems.
           </p>
           <ul className="privacy-list">
             <li>No analytics, tracking, or advertising services are used for your comparison data.</li>
@@ -69,7 +69,7 @@ function PrivacyPolicy() {
           <h3 className="privacy-subtitle">4. Data Storage and Security</h3>
           <ul className="privacy-list">
             <li>Your comparison data is stored only on your device (iOS Core Data, in the app's sandbox).</li>
-            <li>It is not transmitted over the internet except when you use the AI assistant (only the text of that request).</li>
+            <li>It is not transmitted over the internet except when you use the AI assistant (only the text or item/attribute names you provide for that feature).</li>
             <li>You can export data as <strong>PDF</strong> or <strong>.chooseright</strong> files and manage or delete data at any time.</li>
             <li>We recommend using iOS security (passcode, Face ID, Touch ID) to protect your device.</li>
           </ul>
@@ -106,8 +106,15 @@ function PrivacyPolicy() {
         <div className="privacy-section">
           <h3 className="privacy-subtitle">7. Third-Party Services</h3>
           <p className="privacy-text">
-            <strong>Groq (AI assistant):</strong><br />
-            When you use the AI assistant, your request text is sent to Groq's API. Their privacy policy applies to that processing: <a href="https://groq.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="privacy-link">https://groq.com/privacy-policy</a> (or their current policy at groq.com).
+            <strong>AI providers (Groq and OpenRouter):</strong><br />
+            When you use the AI assistant (creating a comparison from text or "Generate values"), the relevant text or item/attribute names are sent to an AI provider's API. The app chooses the provider automatically by your device's region (country/region code only):
+          </p>
+          <ul className="privacy-list">
+            <li><strong>Groq</strong> (<a href="https://groq.com" target="_blank" rel="noopener noreferrer" className="privacy-link">https://groq.com</a>) is used in most regions. Their privacy policy: <a href="https://groq.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="privacy-link">https://groq.com/privacy-policy</a> (or the current policy at groq.com).</li>
+            <li><strong>OpenRouter</strong> (<a href="https://openrouter.ai" target="_blank" rel="noopener noreferrer" className="privacy-link">https://openrouter.ai</a>) is used for users in Russia and Belarus. Their privacy policy applies to that processing: <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer" className="privacy-link">https://openrouter.ai/privacy</a> (or the current policy at openrouter.ai).</li>
+          </ul>
+          <p className="privacy-text">
+            We do not control these providers' processing; their respective privacy policies apply.
           </p>
           <p className="privacy-text">
             <strong>Apple:</strong><br />
@@ -124,7 +131,7 @@ function PrivacyPolicy() {
             <li><strong>Access, edit, delete:</strong> All comparison data is in the app on your device; you can view, edit, or delete it at any time.</li>
             <li><strong>Export:</strong> You can export data as PDF or .chooseright at any time.</li>
             <li><strong>Uninstall:</strong> Removing the app deletes all local data.</li>
-            <li>We do not hold your comparison data on our servers, so there is nothing to request from us regarding that data. AI request text is not stored by us.</li>
+            <li>We do not hold your comparison data on our servers, so there is nothing to request from us regarding that data. Data sent to the AI provider (request text or item/attribute names) is not stored by us.</li>
           </ul>
         </div>
 
@@ -166,7 +173,8 @@ function PrivacyPolicy() {
           <h3 className="privacy-subtitle">12. Summary</h3>
           <ul className="privacy-list">
             <li>Comparison data is stored <strong>only on your device</strong> (Core Data); we do not collect or access it.</li>
-            <li>The app works <strong>offline</strong> for comparisons; <strong>online</strong> use is only for the optional <strong>AI assistant</strong>, when the text you enter is sent to <strong>Groq</strong> to generate suggestions.</li>
+            <li>The app works <strong>offline</strong> for comparisons; <strong>online</strong> use is only for the optional <strong>AI assistant</strong> (create from text or "Generate values"), when the relevant text or item/attribute names are sent to an <strong>AI provider</strong> (Groq in most regions, OpenRouter in Russia and Belarus) to generate suggestions.</li>
+            <li>The app uses your device's <strong>region setting</strong> (country/region only) to choose which AI provider to use; we do not use or send precise location.</li>
             <li>We do not use analytics, tracking, or advertising on your comparison data.</li>
             <li>File access happens only through iOS dialogs with your consent.</li>
             <li>We do not request camera, microphone, location, contacts, or similar permissions.</li>
